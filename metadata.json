@@ -1,0 +1,8 @@
+{
+  "name": "The Koncept House Studio",
+  "description": "Bespoke luxury interior architecture and turnkey studio in Hyderabad, crafting high-end villas, penthouses, and heritage-infused contemporary spaces across Jubilee Hills, Kokapet, and Financial District.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

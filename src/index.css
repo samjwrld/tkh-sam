@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Luxury Brand Neutral Palette */
+  --color-warm-ivory: #FAF8F5;
+  --color-warm-beige: #F5F1EA;
+  --color-warm-sand: #E8DFD3;
+  --color-warm-cream: #FAF7F2;
+  --color-warm-charcoal: #1C1B19;
+  --color-warm-espresso: #2A231D;
+  --color-warm-brass: #A8875A;
+  --color-warm-bronze: #C5A880;
+  --color-warm-accent: #9E7F56;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-warm-ivory);
+    color: var(--color-warm-charcoal);
+  }
+  
+  body {
+    background-color: var(--color-warm-ivory);
+    color: var(--color-warm-charcoal);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom subtle luxury scrollbars & image zooms */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F1EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8875A;
+}
+
+/* Subtle image reveal zoom utility */
+.image-zoom-container {
+  overflow: hidden;
+}
+.image-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.image-zoom-container:hover img {
+  transform: scale(1.05);
+}
+
+

@@ -1313,6 +1313,149 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
+          9.5 HYDERABAD LOCAL SEO & SEM DESTINATION MATRIX
+          ========================================== */}
+      <section id="hyderabad-local-seo" className="py-24 bg-[#F5F1EA] border-t border-[#E8DFD3]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E8DFD3]">
+            <div className="space-y-3 max-w-2xl">
+              <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
+                HYDERABAD ATELIER COVERAGE
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
+                Designing Luxury Residences Across Hyderabad
+              </h2>
+              <p className="text-sm text-[#1C1B19]/75 font-light leading-relaxed">
+                From Jubilee Hills independent estates to Kokapet gated villas & Financial District penthouses, we provide turnkey interior architecture tailored to Hyderabad's premier addresses.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 bg-[#FAF8F5] p-3.5 border border-[#E8DFD3] shrink-0">
+              <MapPin className="h-5 w-5 text-[#A8875A]" />
+              <div className="text-left">
+                <span className="font-mono text-[10px] font-bold text-[#1C1B19] block uppercase">SERVICING ALL PRIME ZONES</span>
+                <span className="text-[10px] font-mono text-[#A8875A]">100% IN-HOUSE FACTORY EXECUTION</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 Prime Location Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {[
+              {
+                neighborhood: 'Jubilee Hills & Banjara Hills',
+                focus: 'Independent Villas & Heritage Estates',
+                projects: 'Road No. 36, Film Nagar, MLA Colony',
+                specs: 'Burma Teak Millwork · Italian Marble · Private Elevators',
+                tag: 'ULTRA-LUXURY ESTATES'
+              },
+              {
+                neighborhood: 'Kokapet & Narsingi',
+                focus: 'Gated Luxury Villas & Sky Duplexes',
+                projects: 'My Home Bhooja, Jayabheri, Prestige City',
+                specs: 'Double-Height Ceilings · Smart Automation · Acoustic Panels',
+                tag: 'GATED VILLA COMMUNITIES'
+              },
+              {
+                neighborhood: 'Financial District & Gachibowli',
+                focus: 'Executive Penthouses & CXO Ateliers',
+                projects: 'Nanakramguda, Waverock Hub, Lansum Greens',
+                specs: 'Minimalist Layouts · Hidden Kitchens · Motorized Louvers',
+                tag: 'SKY PENTHOUSES'
+              },
+              {
+                neighborhood: 'Kondapur & Hitec City',
+                focus: 'Turnkey Residences & Experience Center',
+                projects: 'Opp. Sumadhura Horizon, Masjidbanda',
+                specs: 'In-House CNC Factory · 45-Day Delivery · 10-Yr Warranty',
+                tag: 'EXPERIENCE STUDIO HUB'
+              }
+            ].map((loc, idx) => (
+              <div
+                key={idx}
+                className="bg-[#FAF8F5] p-6 border border-[#E8DFD3] flex flex-col justify-between hover:border-[#A8875A] hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[9px] tracking-widest text-[#A8875A] font-bold uppercase bg-[#F5F1EA] px-2.5 py-1 border border-[#E8DFD3]">
+                      {loc.tag}
+                    </span>
+                    <span className="font-mono text-xs text-[#1C1B19]/40 font-bold">0{idx + 1}</span>
+                  </div>
+
+                  <h3 className="font-serif text-xl font-normal text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
+                    {loc.neighborhood}
+                  </h3>
+
+                  <p className="text-xs text-[#1C1B19]/80 font-medium">
+                    {loc.focus}
+                  </p>
+
+                  <div className="space-y-1.5 pt-3 border-t border-[#E8DFD3]/60 text-[11px] font-mono text-[#1C1B19]/70">
+                    <div className="flex items-center gap-1.5 text-[#A8875A] font-bold">
+                      <Compass className="h-3 w-3" />
+                      <span>{loc.projects}</span>
+                    </div>
+                    <p className="text-[10px] text-[#1C1B19]/60 leading-tight">
+                      {loc.specs}
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="/contact/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('contact');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="mt-6 pt-3 border-t border-[#E8DFD3] flex items-center justify-between text-[10px] font-mono font-bold text-[#1C1B19] group-hover:text-[#A8875A]"
+                >
+                  <span>BOOK SITE VISIT IN THIS ZONE</span>
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Local SEM Value Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#1C1B19] text-white p-8 sm:p-10 border border-[#A8875A]/40">
+            <div className="space-y-2 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
+                KONDAPUR FACTORY MANUFACTURED
+              </span>
+              <h4 className="font-serif text-xl font-light text-white">Direct German CNC Precision</h4>
+              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
+                Zero reliance on local carpenter delays. All wardrobes and kitchens are pre-engineered in our Kondapur modular facility with 1mm edge banding.
+              </p>
+            </div>
+
+            <div className="space-y-2 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
+                100% DECCAN VASTU INTEGRATION
+              </span>
+              <h4 className="font-serif text-xl font-light text-white">Certified Vastu Harmony</h4>
+              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
+                Full alignment of North-East entrance thresholds, South-West master suites, and Agni-mula kitchen layouts combined seamlessly with modern aesthetics.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
+                OVERSEAS & NRI CONCIERGE
+              </span>
+              <h4 className="font-serif text-xl font-light text-white">Build From Anywhere</h4>
+              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
+                US, UK, and Gulf NRI families receive weekly 4K drone & 360° video site walkthroughs with a single point of senior architectural contact.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ==========================================
           10. PRESS & RECOGNITION ROW
           ========================================== */}
       <section id="press-row" className="py-12 bg-[#FAF8F5]">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ViewState } from './types';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -60,6 +61,7 @@ export default function App() {
 
   const handleNavigation = (view: ViewState) => {
     setCurrentView(view);
+    window.scrollTo({ top: 0, behavior: 'instant' });
     
     // Push visual state to window.history to change URL bar dynamically
     let path = '/';
@@ -260,8 +262,22 @@ export default function App() {
       <Header currentView={currentView} onNavigate={handleNavigation} />
 
       {/* Main View Transition Frame */}
-      <main id="main-content-area" className="flex-grow transition-opacity duration-300">
-        {renderViewContent()}
+      <main id="main-content-area" className="flex-grow relative overflow-hidden">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={currentView}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ 
+              duration: 0.45, 
+              ease: [0.16, 1, 0.3, 1] 
+            }}
+            className="w-full"
+          >
+            {renderViewContent()}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Structured Dark Warm Footer */}

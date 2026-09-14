@@ -124,16 +124,15 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
           
-          {/* Studio Brand Logo - Renders local logo image tag (public/logo.png) & Brand Typography */}
+          {/* Studio Brand Combined Logo (Single PNG containing icon + text) */}
           <a 
             id="logo-link"
             href="/" 
             onClick={(e) => handleLinkClick(e, 'home')}
-            className="group flex items-center transition-transform hover:opacity-95"
+            className="group flex items-center transition-transform hover:opacity-95 shrink-0"
             aria-label="The Koncept House - Home"
           >
-            {/* Logo component manages local image swapping via <img src="/logo.png" alt="The Koncept House Logo" /> */}
-            <Logo className="h-10 sm:h-12" showSubtitle={true} logoPath="/logo.png" />
+            <Logo className="h-10 sm:h-12" showImage={true} showText={false} />
           </a>
 
           {/* Desktop Navigation Links */}

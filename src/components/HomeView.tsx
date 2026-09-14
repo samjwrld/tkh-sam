@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import GoldenGeometryBg from './GoldenGeometryBg';
 import BespokeOpArtPattern from './BespokeOpArtPattern';
@@ -29,6 +29,7 @@ import {
   AlertCircle,
   XCircle,
   Play,
+  Pause,
   Video,
   X,
   HelpCircle,
@@ -83,6 +84,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     }
   ];
 
+  // Featured Residence Carousel state
+  const [activeResIndex, setActiveResIndex] = useState<number>(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState<boolean>(false);
+
   // Process step state (1 to 5)
   const [activeProcessStep, setActiveProcessStep] = useState<number>(1);
 
@@ -96,6 +101,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     'project-spoorthi': 0,
     'project-anil': 0,
   });
+
+  const handleNextResidence = () => {
+    setActiveResIndex((prev) => (prev + 1) % featuredProjects.length);
+  };
+
+  const handlePrevResidence = () => {
+    setActiveResIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
+  };
 
   // FAQ open/close state
   const [openFaqId, setOpenFaqId] = useState<string | null>('faq-1');
@@ -165,7 +178,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       title: "Pramod's Residence",
       category: 'Minimalist Family Villa',
       filterType: 'villas',
-      location: 'Jubilee Hills, Hyderabad',
+      location: 'Amberpet, Hyderabad',
       area: '8,500 sq ft',
       year: '2025',
       images: [
@@ -225,6 +238,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       quote: 'Scratch-proof heavy-duty luxury built for multi-generational pet-friendly living.'
     }
   ];
+
+  // Automated Carousel Timer (switches residence every 5 seconds)
+  useEffect(() => {
+    if (isAutoplayPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveResIndex((prev) => (prev + 1) % featuredProjects.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isAutoplayPaused, featuredProjects.length]);
 
   const filteredProjects = activeProjectFilter === 'all' 
     ? featuredProjects 
@@ -304,42 +328,42 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const processSteps = [
     {
       number: '01',
-      title: 'Consultation & Lifestyle Brief',
-      subtitle: 'Mapping your daily rhythm & aesthetic vision',
-      description: 'We begin with an in-depth dialogue at our Kondapur studio or your residence. We analyze spatial orientation, Vastu alignments, natural lighting, and how your family uses every square foot.',
-      deliverables: ['Spatial orientation map', 'Lifestyle & Vastu brief', 'Initial budget outline', 'Material direction moodboard'],
+      title: 'Discovery & Interior Design Brief',
+      subtitle: 'Mapping interior aesthetics, spatial flow & material preferences',
+      description: 'We begin with an in-depth interior consultation at our studio or your residence. We analyze interior spatial flow, Vastu alignments, room lighting, color palettes, storage requirements, and how your family uses every living space.',
+      deliverables: ['Interior moodboard & color palette', 'Space planning & Vastu brief', 'Initial interior budget outline', 'Material & finish samples'],
       duration: '7 - 10 Days'
     },
     {
       number: '02',
-      title: 'Architectural Concept & Spatial Layout',
-      subtitle: 'Designing proportions, circulation & light',
-      description: 'Developing 3D photorealistic spatial models, ceiling volumes, and lighting schemas. We present customized layouts that respect Deccan light angles and create effortless flow.',
-      deliverables: ['3D photorealistic renderings', 'Acoustic & lighting plans', 'Furniture placement schematics', 'Material sample tray'],
+      title: 'Interior Concept & 3D Spatial Layout',
+      subtitle: 'Visualizing bespoke furniture, lighting & false ceiling designs',
+      description: 'Developing 3D photorealistic interior renderings, false ceiling designs, custom lighting schemas, and wall treatments. We curate bespoke furniture layouts and material palettes tailored for ultimate interior luxury.',
+      deliverables: ['3D photorealistic interior renderings', 'False ceiling & lighting layouts', 'Bespoke furniture schematics', 'Physical material sample tray'],
       duration: '2 - 3 Weeks'
     },
     {
       number: '03',
-      title: 'Detailed Design Development & Engineering',
-      subtitle: 'Precision CAD blueprints & custom millwork',
-      description: 'Creating comprehensive technical working drawings for civil modifications, HVAC ducting, smart home grids, and custom cabinetry for our in-house modular manufacturing plant.',
-      deliverables: ['Full CAD technical booklet', 'Electrical & plumbing grids', 'Millwork cut-list blueprints', 'Final fixed-quote itemization'],
+      title: 'Detailed Interior Engineering & Custom Millwork',
+      subtitle: 'Precision CAD drawings for modular furniture & woodwork',
+      description: 'Creating comprehensive interior working drawings for custom cabinetry, modular wardrobes, TV units, kitchen layouts, electrical points, and interior partition details for our in-house precision manufacturing plant.',
+      deliverables: ['Full interior CAD working drawings', 'Modular kitchen & wardrobe blueprints', 'Electrical & plumbing interior grids', 'Final fixed-quote itemization'],
       duration: '2 Weeks'
     },
     {
       number: '04',
-      title: 'Turnkey Execution & Millwork Fabrication',
-      subtitle: 'In-house factory precision & site management',
-      description: 'Our in-house modular factory precision-engineers your wardrobes and kitchens while our senior site leads supervise civil work, flooring, and electrical installations.',
-      deliverables: ['In-house factory assembly', 'Dedicated project manager', 'Weekly digital site reports', 'Milestone quality sign-offs'],
+      title: 'Turnkey Interior Execution & Factory Fabrication',
+      subtitle: 'Precision modular manufacturing & white-glove site installation',
+      description: 'Our in-house modular factory precision-crafts your custom wardrobes, kitchens, and wall panels, while our senior site engineers supervise civil updates, interior painting, wallpaper, panelling, and flooring installation.',
+      deliverables: ['Factory precision manufacturing', 'Dedicated interior project manager', 'Weekly progress & site reports', 'Quality assurance milestone sign-offs'],
       duration: '6 - 10 Weeks'
     },
     {
       number: '05',
-      title: 'Curated Handover & White-Glove Styling',
-      subtitle: 'Final art installation, deep cleaning & warranty',
-      description: 'We install custom textiles, fine art, and light fixtures, followed by deep white-glove acoustic and surface cleaning before handing over your keys with a 10-year structural warranty.',
-      deliverables: ['White-glove deep cleaning', 'Art & textile styling', '10-Year structural warranty', 'Care & maintenance dossier'],
+      title: 'Curated Interior Handover & White-Glove Styling',
+      subtitle: 'Final soft furnishings, art placement & white-glove cleaning',
+      description: 'We curate and install soft furnishings, custom curtains, rugs, accent lighting, and wall art, followed by white-glove deep cleaning before handing over your fully transformed interior with a 10-year warranty.',
+      deliverables: ['White-glove interior deep cleaning', 'Curtains, rugs & art styling', '10-Year interior material warranty', 'Care & maintenance dossier'],
       duration: '1 Week'
     }
   ];
@@ -399,8 +423,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     {
       id: 'faq-5',
-      question: 'How does the first consultation work at your Kondapur studio?',
-      answer: 'During your 60-minute studio visit, we review your floor plans, analyze your family lifestyle brief, and showcase physical material trays (travertine stone, Burma teak veneers, Bidri metal inlays, and Belgian linens). We then present a preliminary scope outline and fixed budget roadmap.'
+      question: 'How does the first consultation work at your Maseedbanda, Kondapur studio?',
+      answer: 'During your 60-minute studio visit at our Maseedbanda, Kondapur experience lounge (Opp. Sumadhura Horizon), we review your floor plans, analyze your family lifestyle brief, and showcase physical material trays (travertine stone, Burma teak veneers, Bidri metal inlays, and Belgian linens). We then present a preliminary scope outline and fixed budget roadmap.'
     }
   ];
 
@@ -585,60 +609,100 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
-          2. BRAND PHILOSOPHY & HERITAGE CRAFT
+          2. BRAND PHILOSOPHY
           ========================================== */}
       <section id="brand-philosophy" className="relative py-24 sm:py-32 bg-[#FAF8F5] text-[#1C1B19]">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center space-y-8">
+          <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
+            OUR DESIGN PHILOSOPHY
+          </span>
+          
+          <h2 className="font-serif text-3xl sm:text-5xl font-light leading-[1.2] text-[#1C1B19] max-w-4xl mx-auto">
+            "Modern luxury is not loudness. It is the weight of solid Burma teak, the calm temperature of hand-burnished travertine, and light filtered through quiet geometric proportions."
+          </h2>
+
+          <p className="text-base sm:text-lg text-[#1C1B19]/70 font-light leading-relaxed max-w-3xl mx-auto">
+            Founded in 2019 in Kondapur, <strong className="text-[#1C1B19] font-medium">The Koncept House</strong> bridges contemporary architectural minimalism with subtle references to local heritage — woven textures, metallic accents, and quiet restraint.
+          </p>
+
+          <div className="pt-4 flex items-center justify-center gap-6">
+            <div className="h-px w-16 bg-[#A8875A]"></div>
+            <span className="font-serif italic text-lg text-[#A8875A]">Spaces Crafted to be Lived In</span>
+            <div className="h-px w-16 bg-[#A8875A]"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          2.5 WHY CHOOSE US
+          ========================================== */}
+      <section id="why-choose-us" className="py-24 bg-[#FAF8F5] border-t border-[#E8DFD3]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Statement */}
-            <div className="lg:col-span-8 space-y-6">
-              <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
-                OUR DESIGN PHILOSOPHY
-              </span>
-              
-              <h2 className="font-serif text-3xl sm:text-5xl font-light leading-[1.2] text-[#1C1B19]">
-                "Modern luxury is not loudness. It is the weight of solid Burma teak, the calm temperature of hand-burnished travertine, and light filtered through quiet geometric proportions."
-              </h2>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
+              THE KONCEPT HOUSE ADVANTAGE
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
+              Why Choose Us
+            </h2>
+            <p className="text-base sm:text-lg text-[#1C1B19]/70 font-light leading-relaxed">
+              Besides great interior design, there are lots of reasons to choose Koncept house. Here are some of the most popular ones.
+            </p>
+          </div>
 
-              <p className="text-base sm:text-lg text-[#1C1B19]/70 font-light leading-relaxed max-w-2xl">
-                Founded in 2019 in Kondapur, <strong className="text-[#1C1B19] font-medium">The Koncept House</strong> bridges contemporary architectural minimalism with subtle references to Hyderabadi heritage — arched silhouettes, Bidriware metallic inlay, and Pochampally ikat textiles woven with quiet restraint.
-              </p>
-
-              <div className="pt-4 flex items-center gap-6">
-                <div className="h-px w-16 bg-[#A8875A]"></div>
-                <span className="font-serif italic text-lg text-[#A8875A]">Spaces Crafted to be Lived In</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-[#F5F1EA] p-8 border border-[#E8DFD3] hover:border-[#A8875A] transition-all hover:shadow-lg flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-[#A8875A]/10 text-[#A8875A] group-hover:bg-[#A8875A] group-hover:text-white transition-colors">
+                  <UserCheck className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-medium text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
+                  Free Designs with Professional Team
+                </h3>
+                <p className="text-sm text-[#1C1B19]/70 font-light leading-relaxed">
+                  Our team includes only the best decorators and interior designers in the industry & End to End Interior solutions
+                </p>
+              </div>
+              <div className="pt-6 border-t border-[#E8DFD3] mt-6 flex items-center gap-2 text-xs font-mono font-bold text-[#A8875A] uppercase tracking-wider">
+                <span>End-to-End Solutions</span>
+                <ArrowUpRight className="h-4 w-4" />
               </div>
             </div>
 
-            {/* Right Heritage Craft Grid */}
-            <div className="lg:col-span-4 bg-[#F5F1EA] p-8 border border-[#E8DFD3] space-y-6">
-              <h3 className="font-serif text-xl font-medium text-[#1C1B19] border-b border-[#E8DFD3] pb-3">
-                Signature Deccan Elements
-              </h3>
+            <div className="bg-[#F5F1EA] p-8 border border-[#E8DFD3] hover:border-[#A8875A] transition-all hover:shadow-lg flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-[#A8875A]/10 text-[#A8875A] group-hover:bg-[#A8875A] group-hover:text-white transition-colors">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-medium text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
+                  Best Materials and Warranty
+                </h3>
+                <p className="text-sm text-[#1C1B19]/70 font-light leading-relaxed">
+                  We offers a wide range of materials for your dream home including wood options, laminates, acrylics, glass and more
+                </p>
+              </div>
+              <div className="pt-6 border-t border-[#E8DFD3] mt-6 flex items-center gap-2 text-xs font-mono font-bold text-[#A8875A] uppercase tracking-wider">
+                <span>Premium Quality Assured</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </div>
+            </div>
 
-              <ul className="space-y-4 text-xs font-sans tracking-wide">
-                <li className="flex items-start gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#A8875A] mt-1.5 shrink-0"></span>
-                  <div>
-                    <strong className="block text-[#1C1B19]">Arched Spatial Thresholds</strong>
-                    <span className="text-[#1C1B19]/60">Softened doorways & alcoves echoing Nizami palace architecture.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#A8875A] mt-1.5 shrink-0"></span>
-                  <div>
-                    <strong className="block text-[#1C1B19]">Bidriware Metallic Inlay</strong>
-                    <span className="text-[#1C1B19]/60">Hand-finished brass and silver accents embedded in dark walnut.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#A8875A] mt-1.5 shrink-0"></span>
-                  <div>
-                    <strong className="block text-[#1C1B19]">Custom Millwork & In-House Factory</strong>
-                    <span className="text-[#1C1B19]/60">Precision cabinetry manufactured locally in Kondapur.</span>
-                  </div>
-                </li>
-              </ul>
+            <div className="bg-[#F5F1EA] p-8 border border-[#E8DFD3] hover:border-[#A8875A] transition-all hover:shadow-lg flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded bg-[#A8875A]/10 text-[#A8875A] group-hover:bg-[#A8875A] group-hover:text-white transition-colors">
+                  <Building2 className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-2xl font-medium text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
+                  Our in house Factory
+                </h3>
+                <p className="text-sm text-[#1C1B19]/70 font-light leading-relaxed">
+                  All our Modular products are produced in our in house Modular factory .
+                </p>
+              </div>
+              <div className="pt-6 border-t border-[#E8DFD3] mt-6 flex items-center gap-2 text-xs font-mono font-bold text-[#A8875A] uppercase tracking-wider">
+                <span>100% In-House Production</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </div>
             </div>
           </div>
         </div>
@@ -787,7 +851,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </div>
 
                 {/* Card Main Body */}
-                <div className="space-y-6 relative z-10">
+                <div className="space-y-4 relative z-10">
                   
                   {/* Top Row: Index Badge & Promise Title */}
                   <div className="flex items-start justify-between gap-4">
@@ -801,7 +865,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         </span>
                       </div>
 
-                      <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1B19] group-hover:text-[#A8875A] transition-colors duration-300">
+                      <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1B19] group-hover:text-[#A8875A] transition-colors duration-300 pt-1">
                         {promise.title}
                       </h3>
                     </div>
@@ -810,37 +874,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </div>
 
                   {/* Benefit Statement */}
-                  <div className="p-4 bg-white/70 group-hover:bg-[#FAF8F5] border border-[#E8DFD3]/60 transition-colors duration-300">
-                    <span className="font-mono text-[9px] text-[#A8875A] uppercase tracking-widest font-bold block mb-1">
-                      WHAT YOU EXPERIENCE:
-                    </span>
-                    <p className="text-xs sm:text-sm text-[#1C1B19]/85 font-normal leading-relaxed">
-                      {promise.benefit}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom Sealed "NEVER" Guarantee Box */}
-                <div className="mt-6 pt-4 border-t border-[#E8DFD3] relative z-10">
-                  <div className="bg-[#FAF8F5] group-hover:bg-amber-50/70 p-3.5 border-l-2 border-amber-600 transition-colors duration-300 flex items-start gap-3">
-                    <XCircle className="h-4 w-4 text-amber-700 shrink-0 mt-0.5" />
-                    <div className="space-y-0.5">
-                      <span className="font-mono text-[9px] font-bold text-amber-900 tracking-wider uppercase block">
-                        OUR STRICT POLICY:
-                      </span>
-                      <p className="text-[11px] font-mono font-semibold text-amber-950 leading-tight">
-                        {promise.never}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Animated Sealed Verification Label on Hover */}
-                  <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-[#A8875A] pt-1 opacity-70 group-hover:opacity-100 transition-opacity">
-                    <span className="inline-flex items-center gap-1 font-bold">
-                      <ShieldCheck className="h-3 w-3" /> VERIFIED GUARANTEE
-                    </span>
-                    <span className="tracking-widest">ATELIER SEAL ↗</span>
-                  </div>
+                  <p className="text-sm text-[#1C1B19]/80 font-light leading-relaxed pt-2">
+                    {promise.benefit}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -850,147 +886,152 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
-          5. FEATURED PROJECTS (3-IMAGE MINI CAROUSEL)
+          5. FEATURED RESIDENCES (EDITORIAL INTERACTIVE CAROUSEL)
           ========================================== */}
-      <section id="featured-projects" className="py-24 bg-[#F5F1EA] border-y border-[#E8DFD3]">
+      <section id="featured-projects" className="py-24 bg-[#F5F1EA] border-y border-[#E8DFD3] relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           
-          {/* Section Header & Filters */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          {/* Section Header & Carousel Navigation Controls */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="space-y-2">
               <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
-                SELECTED PORTFOLIO
+                SELECTED PORTFOLIO ARCHIVE
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
                 Featured Residences
               </h2>
             </div>
 
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-2 border border-[#E8DFD3] bg-[#FAF8F5] p-1.5">
-              {[
-                { id: 'all', label: 'ALL RESIDENCES' },
-                { id: 'villas', label: 'LUXURY VILLAS' },
-                { id: 'penthouses', label: 'PENTHOUSES' },
-                { id: 'fusion', label: 'HERITAGE FUSION' }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveProjectFilter(tab.id as any)}
-                  className={`px-4 py-2 font-sans text-[10px] font-bold tracking-[0.15em] uppercase transition-all ${
-                    activeProjectFilter === tab.id
-                      ? 'bg-[#1C1B19] text-[#FAF8F5]'
-                      : 'text-[#1C1B19]/70 hover:text-[#1C1B19] hover:bg-[#F5F1EA]'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            {/* Carousel Navigation Buttons & Counter */}
+            <div className="flex items-center gap-3 bg-[#FAF8F5] border border-[#E8DFD3] p-2.5 shadow-xs">
+              {/* Autoplay Pause / Play Toggle Button */}
+              <button
+                onClick={() => setIsAutoplayPaused(!isAutoplayPaused)}
+                className="flex h-9 w-9 items-center justify-center border border-[#E8DFD3] bg-white text-[#1C1B19] hover:bg-[#1C1B19] hover:text-[#C5A880] transition-all"
+                title={isAutoplayPaused ? "Resume Autoplay" : "Pause Autoplay"}
+                aria-label={isAutoplayPaused ? "Resume Autoplay" : "Pause Autoplay"}
+              >
+                {isAutoplayPaused ? (
+                  <Play className="h-3.5 w-3.5 fill-current ml-0.5 text-[#A8875A]" />
+                ) : (
+                  <Pause className="h-3.5 w-3.5 fill-current text-[#1C1B19]" />
+                )}
+              </button>
+
+              <span className="font-mono text-xs font-bold text-[#A8875A] px-2 tracking-widest">
+                {String(activeResIndex + 1).padStart(2, '0')} / {String(featuredProjects.length).padStart(2, '0')}
+              </span>
+
+              <div className="h-4 w-px bg-[#E8DFD3]"></div>
+
+              <button
+                onClick={handlePrevResidence}
+                className="flex h-10 w-10 items-center justify-center border border-[#E8DFD3] bg-white text-[#1C1B19] hover:bg-[#1C1B19] hover:text-[#C5A880] transition-all"
+                aria-label="Previous Residence"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              <button
+                onClick={handleNextResidence}
+                className="flex h-10 w-10 items-center justify-center border border-[#E8DFD3] bg-[#1C1B19] text-[#C5A880] hover:bg-[#A8875A] hover:text-white transition-all"
+                aria-label="Next Residence"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
 
-          {/* Asymmetric Grid with 3-Image Carousel */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {filteredProjects.map((project, idx) => {
-              const currentImgIdx = projectImageIndexes[project.id] || 0;
-              return (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: idx * 0.15 }}
-                  className={`group cursor-pointer ${idx % 2 === 1 ? 'md:mt-12' : ''}`}
-                  onClick={() => onNavigate(project.id as ViewState)}
-                >
-                  {/* Image Carousel Container */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1C1B19] mb-6">
-                    <img
-                      src={project.images[currentImgIdx]}
-                      alt={`${project.title} slide ${currentImgIdx + 1}`}
-                      className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                      referrerPolicy="no-referrer"
-                    />
+          {/* Main Active Residence Showcase Card with Autoplay Pause on Hover */}
+          <div 
+            onMouseEnter={() => setIsAutoplayPaused(true)}
+            onMouseLeave={() => setIsAutoplayPaused(false)}
+            className="relative"
+          >
+            {/* Subtle Animated Progress Bar for Autoplay */}
+            {!isAutoplayPaused && (
+              <motion.div
+                key={activeResIndex}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 5, ease: "linear" }}
+                className="absolute top-0 left-0 right-0 h-1 bg-[#A8875A] z-30 origin-left"
+              />
+            )}
+
+            <AnimatePresence mode="wait">
+              {(() => {
+                const currentProject = featuredProjects[activeResIndex];
+
+                return (
+                  <motion.div
+                    key={currentProject.id}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-[#FAF8F5] border border-[#E8DFD3] shadow-lg overflow-hidden"
+                  >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                     
-                    {/* Floating Specs Pill */}
-                    <div className="absolute top-4 left-4 z-10 bg-[#1C1B19]/90 px-3 py-1.5 backdrop-blur-md border border-[#A8875A]/40">
-                      <span className="font-mono text-[9px] tracking-widest text-[#C5A880] uppercase font-semibold">
-                        {project.area} • {project.year}
-                      </span>
-                    </div>
+                    {/* Image Showcase Column (7 cols) */}
+                    <div className="lg:col-span-7 relative bg-[#1C1B19] min-h-[360px] sm:min-h-[480px] lg:min-h-[560px] flex items-center justify-center overflow-hidden group">
+                      <img
+                        src={currentProject.images[0]}
+                        alt={currentProject.title}
+                        className="absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                        referrerPolicy="no-referrer"
+                      />
 
-                    {/* Next / Prev Carousel Controls */}
-                    <button
-                      onClick={(e) => handlePrevCarouselImage(e, project.id, project.images.length)}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 hover:bg-[#A8875A] transition-all"
-                      aria-label="Previous Image"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    <button
-                      onClick={(e) => handleNextCarouselImage(e, project.id, project.images.length)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 hover:bg-[#A8875A] transition-all"
-                      aria-label="Next Image"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-
-                    {/* Carousel Dots */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-black/50 px-3 py-1 rounded-full backdrop-blur-xs">
-                      {project.images.map((_, dotIdx) => (
-                        <span
-                          key={dotIdx}
-                          className={`h-1.5 rounded-full transition-all ${
-                            currentImgIdx === dotIdx ? 'w-5 bg-[#C5A880]' : 'w-1.5 bg-white/50'
-                          }`}
-                        ></span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Text Content */}
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] tracking-[0.2em] text-[#A8875A] uppercase font-semibold">
-                        {project.location}
-                      </span>
-                      <span className="text-xs text-[#1C1B19]/50 font-mono">{project.category}</span>
-                    </div>
-
-                    <h3 className="font-serif text-2xl font-normal text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-xs text-[#1C1B19]/70 font-light leading-relaxed">
-                      "{project.quote}"
-                    </p>
-
-                    {/* Material Pills */}
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.materials.map((mat, mIdx) => (
-                        <span key={mIdx} className="bg-[#FAF8F5] border border-[#E8DFD3] px-2.5 py-1 font-mono text-[9px] text-[#1C1B19]/70">
-                          {mat}
+                      {/* Top Location Badge */}
+                      <div className="absolute top-6 left-6 z-10 bg-[#1C1B19]/90 border border-[#A8875A]/40 px-4 py-2 backdrop-blur-md">
+                        <span className="font-mono text-xs tracking-widest text-[#C5A880] uppercase font-bold block">
+                          {currentProject.location}
                         </span>
-                      ))}
+                      </div>
                     </div>
+
+                    {/* Residence Details Column (5 cols) */}
+                    <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between space-y-8 bg-[#FAF8F5]">
+                      <div className="space-y-6">
+                        <div className="flex items-center justify-between border-b border-[#E8DFD3] pb-4">
+                          <span className="font-mono text-xs tracking-[0.2em] text-[#A8875A] uppercase font-bold">
+                            {currentProject.category}
+                          </span>
+                          <span className="font-mono text-xs text-[#1C1B19]/50 font-bold">
+                            0{activeResIndex + 1}
+                          </span>
+                        </div>
+
+                        <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#1C1B19]">
+                          {currentProject.title}
+                        </h3>
+
+                        <blockquote className="font-serif italic text-lg text-[#1C1B19]/80 border-l-2 border-[#A8875A] pl-4 py-1">
+                          "{currentProject.quote}"
+                        </blockquote>
+                      </div>
+
+                      {/* Action CTA */}
+                      <div className="pt-6 border-t border-[#E8DFD3]">
+                        <button
+                          onClick={() => onNavigate(currentProject.id as ViewState)}
+                          className="w-full inline-flex items-center justify-between bg-[#1C1B19] text-[#FAF8F5] px-6 py-4 font-sans text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#A8875A] transition-all group"
+                        >
+                          <span>EXPLORE RESIDENCE CASE STUDY</span>
+                          <ArrowUpRight className="h-4 w-4 text-[#C5A880] group-hover:text-white transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                        </button>
+                      </div>
+                    </div>
+
                   </div>
                 </motion.div>
               );
-            })}
-          </div>
-
-          {/* View All Projects Button */}
-          <div className="text-center pt-16">
-            <a
-              href="/projects/"
-              onClick={(e) => handleLinkClick(e, 'projects')}
-              className="inline-flex items-center gap-3 border-b-2 border-[#1C1B19] pb-1 font-sans text-xs font-bold tracking-[0.2em] uppercase text-[#1C1B19] transition-all hover:border-[#A8875A] hover:text-[#A8875A]"
-            >
-              <span>EXPLORE ALL RESIDENTIAL CASE STUDIES</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+            })()}
+          </AnimatePresence>
+        </div>
 
         </div>
       </section>
@@ -1078,10 +1119,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               HOW WE EXECUTE
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-white">
-              Our 5-Step Architectural Process
+              Our 5-Step Interior Process
             </h2>
             <p className="text-sm text-[#E8DFD3]/80 font-light">
-              From initial Vastu analysis to white-glove handover, every milestone is managed through a single point of contact with complete cost transparency.
+              From initial interior space planning to white-glove handover, every stage of your interior transformation is managed with complete transparency.
             </p>
           </div>
 
@@ -1192,13 +1233,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
-          8. CLIENT TESTIMONIALS & VIDEO TESTIMONIALS
+          8. CLIENT TESTIMONIALS
           ========================================== */}
       <section id="testimonials" className="py-24 bg-[#FAF8F5]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
-              CLIENT VOICES & VIDEO WALKTHROUGHS
+              CLIENT VOICES & TESTIMONIALS
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
               Verified Homeowner Reviews
@@ -1209,43 +1250,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             {testimonials.map((t, idx) => (
               <div 
                 key={idx}
-                className="bg-[#F5F1EA] border border-[#E8DFD3] relative flex flex-col justify-between hover:border-[#A8875A] transition-colors"
+                className="bg-[#F5F1EA] border border-[#E8DFD3] p-8 relative flex flex-col justify-between hover:border-[#A8875A] transition-all hover:shadow-lg"
               >
-                {/* Video Preview Thumbnail Header */}
-                <div 
-                  onClick={() => setActiveVideoModal({ title: t.projectSize, client: t.author, videoUrl: t.videoThumb })}
-                  className="relative aspect-video w-full overflow-hidden bg-black cursor-pointer group"
-                >
-                  <img
-                    src={t.videoThumb}
-                    alt={t.author}
-                    className="h-full w-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#A8875A] text-white shadow-xl group-hover:scale-110 transition-transform">
-                      <Play className="h-5 w-5 fill-current ml-0.5" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-3 left-3 bg-black/80 px-2.5 py-1 text-[9px] font-mono text-[#C5A880] flex items-center gap-1">
-                    <Video className="h-3 w-3" />
-                    <span>WATCH VIDEO ({t.videoDuration})</span>
-                  </div>
+                <div>
+                  <Quote className="h-8 w-8 text-[#A8875A]/50 mb-4" />
+                  <p className="font-serif italic text-base text-[#1C1B19]/90 font-normal leading-relaxed mb-6">
+                    "{t.quote}"
+                  </p>
                 </div>
 
-                <div className="p-8 flex-1 flex flex-col justify-between">
-                  <div>
-                    <Quote className="h-6 w-6 text-[#A8875A]/40 mb-3" />
-                    <p className="font-serif italic text-sm sm:text-base text-[#1C1B19]/90 font-normal leading-relaxed mb-6">
-                      "{t.quote}"
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#E8DFD3] space-y-1">
-                    <h4 className="font-sans font-bold text-sm text-[#1C1B19]">{t.author}</h4>
-                    <p className="text-xs text-[#A8875A] font-mono">{t.title}</p>
-                    <span className="text-[10px] text-[#1C1B19]/60 font-semibold block">{t.location}</span>
-                  </div>
+                <div className="pt-4 border-t border-[#E8DFD3] space-y-1">
+                  <h4 className="font-sans font-bold text-sm text-[#1C1B19]">{t.author}</h4>
+                  <p className="text-xs text-[#A8875A] font-mono">{t.title}</p>
+                  <span className="text-[10px] text-[#1C1B19]/60 font-semibold block">{t.location}</span>
                 </div>
               </div>
             ))}
@@ -1313,169 +1330,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
-          9.5 HYDERABAD LOCAL SEO & SEM DESTINATION MATRIX
-          ========================================== */}
-      <section id="hyderabad-local-seo" className="py-24 bg-[#F5F1EA] border-t border-[#E8DFD3]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E8DFD3]">
-            <div className="space-y-3 max-w-2xl">
-              <span className="font-mono text-xs tracking-[0.25em] text-[#A8875A] uppercase font-bold block">
-                HYDERABAD ATELIER COVERAGE
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
-                Designing Luxury Residences Across Hyderabad
-              </h2>
-              <p className="text-sm text-[#1C1B19]/75 font-light leading-relaxed">
-                From Jubilee Hills independent estates to Kokapet gated villas & Financial District penthouses, we provide turnkey interior architecture tailored to Hyderabad's premier addresses.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3 bg-[#FAF8F5] p-3.5 border border-[#E8DFD3] shrink-0">
-              <MapPin className="h-5 w-5 text-[#A8875A]" />
-              <div className="text-left">
-                <span className="font-mono text-[10px] font-bold text-[#1C1B19] block uppercase">SERVICING ALL PRIME ZONES</span>
-                <span className="text-[10px] font-mono text-[#A8875A]">100% IN-HOUSE FACTORY EXECUTION</span>
-              </div>
-            </div>
-          </div>
-
-          {/* 4 Prime Location Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              {
-                neighborhood: 'Jubilee Hills & Banjara Hills',
-                focus: 'Independent Villas & Heritage Estates',
-                projects: 'Road No. 36, Film Nagar, MLA Colony',
-                specs: 'Burma Teak Millwork · Italian Marble · Private Elevators',
-                tag: 'ULTRA-LUXURY ESTATES'
-              },
-              {
-                neighborhood: 'Kokapet & Narsingi',
-                focus: 'Gated Luxury Villas & Sky Duplexes',
-                projects: 'My Home Bhooja, Jayabheri, Prestige City',
-                specs: 'Double-Height Ceilings · Smart Automation · Acoustic Panels',
-                tag: 'GATED VILLA COMMUNITIES'
-              },
-              {
-                neighborhood: 'Financial District & Gachibowli',
-                focus: 'Executive Penthouses & CXO Ateliers',
-                projects: 'Nanakramguda, Waverock Hub, Lansum Greens',
-                specs: 'Minimalist Layouts · Hidden Kitchens · Motorized Louvers',
-                tag: 'SKY PENTHOUSES'
-              },
-              {
-                neighborhood: 'Kondapur & Hitec City',
-                focus: 'Turnkey Residences & Experience Center',
-                projects: 'Opp. Sumadhura Horizon, Masjidbanda',
-                specs: 'In-House CNC Factory · 45-Day Delivery · 10-Yr Warranty',
-                tag: 'EXPERIENCE STUDIO HUB'
-              }
-            ].map((loc, idx) => (
-              <div
-                key={idx}
-                className="bg-[#FAF8F5] p-6 border border-[#E8DFD3] flex flex-col justify-between hover:border-[#A8875A] hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-[9px] tracking-widest text-[#A8875A] font-bold uppercase bg-[#F5F1EA] px-2.5 py-1 border border-[#E8DFD3]">
-                      {loc.tag}
-                    </span>
-                    <span className="font-mono text-xs text-[#1C1B19]/40 font-bold">0{idx + 1}</span>
-                  </div>
-
-                  <h3 className="font-serif text-xl font-normal text-[#1C1B19] group-hover:text-[#A8875A] transition-colors">
-                    {loc.neighborhood}
-                  </h3>
-
-                  <p className="text-xs text-[#1C1B19]/80 font-medium">
-                    {loc.focus}
-                  </p>
-
-                  <div className="space-y-1.5 pt-3 border-t border-[#E8DFD3]/60 text-[11px] font-mono text-[#1C1B19]/70">
-                    <div className="flex items-center gap-1.5 text-[#A8875A] font-bold">
-                      <Compass className="h-3 w-3" />
-                      <span>{loc.projects}</span>
-                    </div>
-                    <p className="text-[10px] text-[#1C1B19]/60 leading-tight">
-                      {loc.specs}
-                    </p>
-                  </div>
-                </div>
-
-                <a
-                  href="/contact/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onNavigate('contact');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="mt-6 pt-3 border-t border-[#E8DFD3] flex items-center justify-between text-[10px] font-mono font-bold text-[#1C1B19] group-hover:text-[#A8875A]"
-                >
-                  <span>BOOK SITE VISIT IN THIS ZONE</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            ))}
-          </div>
-
-          {/* Local SEM Value Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#1C1B19] text-white p-8 sm:p-10 border border-[#A8875A]/40">
-            <div className="space-y-2 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
-              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
-                KONDAPUR FACTORY MANUFACTURED
-              </span>
-              <h4 className="font-serif text-xl font-light text-white">Direct German CNC Precision</h4>
-              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
-                Zero reliance on local carpenter delays. All wardrobes and kitchens are pre-engineered in our Kondapur modular facility with 1mm edge banding.
-              </p>
-            </div>
-
-            <div className="space-y-2 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
-              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
-                100% DECCAN VASTU INTEGRATION
-              </span>
-              <h4 className="font-serif text-xl font-light text-white">Certified Vastu Harmony</h4>
-              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
-                Full alignment of North-East entrance thresholds, South-West master suites, and Agni-mula kitchen layouts combined seamlessly with modern aesthetics.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <span className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase font-bold block">
-                OVERSEAS & NRI CONCIERGE
-              </span>
-              <h4 className="font-serif text-xl font-light text-white">Build From Anywhere</h4>
-              <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
-                US, UK, and Gulf NRI families receive weekly 4K drone & 360° video site walkthroughs with a single point of senior architectural contact.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ==========================================
-          10. PRESS & RECOGNITION ROW
-          ========================================== */}
-      <section id="press-row" className="py-12 bg-[#FAF8F5]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <span className="font-mono text-[10px] tracking-[0.25em] text-[#1C1B19]/50 uppercase block text-center mb-8 font-semibold">
-            FEATURED & RECOGNIZED IN LEADING DESIGN PUBLICATIONS
-          </span>
-
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
-            <span className="font-serif text-xl font-bold tracking-widest text-[#1C1B19]">ARCHITECTURAL DIGEST INDIA</span>
-            <span className="font-serif text-xl font-semibold tracking-wider text-[#1C1B19]">ELLE DECOR INDIA</span>
-            <span className="font-serif text-xl font-medium tracking-tight text-[#1C1B19]">TRENDS LUXURY</span>
-            <span className="font-serif text-xl font-bold italic text-[#1C1B19]">VOGUE LIVING</span>
-            <span className="font-mono text-sm tracking-widest font-bold text-[#1C1B19]">DECCAN CHRONICLE LUXE</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ==========================================
-          11. CONSULTATION BOOKING & ENQUIRY FORM
+          10. CONSULTATION BOOKING & ENQUIRY FORM
           ========================================== */}
       <section id="consultation-booking" className="py-24 bg-[#1C1B19] text-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -1490,14 +1345,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Schedule a Studio Consultation.
               </h2>
               <p className="text-sm text-[#E8DFD3]/80 font-light leading-relaxed">
-                Whether you are building a new 10,000 sq ft villa in Jubilee Hills or acquiring a sky penthouse in Kokapet, our design directors will review your floor plans and present bespoke material directions.
+                Whether you are designing a new villa or penthouse in Maseedbanda, Kondapur, Kokapet, or Financial District, our design directors will review your floor plans at our studio and present bespoke material directions.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-white/10">
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 text-[#C5A880] shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">KONDAPUR EXPERIENCE STUDIO</h4>
+                    <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">MASEEDBANDA, KONDAPUR EXPERIENCE STUDIO</h4>
                     <p className="text-xs text-[#E8DFD3]/70 leading-relaxed mt-1">
                       4th Floor, Sadanand Yadav's Buildings,<br />
                       Opp. Sumadhura Horizon, Masjidbanda, Kondapur,<br />
@@ -1520,7 +1375,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <Clock className="h-5 w-5 text-[#C5A880] shrink-0" />
                   <div>
                     <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">STUDIO HOURS</h4>
-                    <p className="text-xs text-[#E8DFD3]/70">Monday – Saturday: 10:00 AM – 8:00 PM</p>
+                    <p className="text-xs text-[#E8DFD3]/70">Monday – Saturday: 10:00 AM – 7:00 PM</p>
                   </div>
                 </div>
               </div>

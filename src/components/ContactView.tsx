@@ -122,7 +122,7 @@ export default function ContactView() {
                   <a href="tel:+919888192345" className="block text-sm text-warm-charcoal font-semibold mt-1 hover:text-warm-accent transition-colors">
                     +91 98881 92345
                   </a>
-                  <p className="text-xs text-warm-charcoal/60">Studio Desk hours: 10:00 AM - 8:00 PM</p>
+                  <p className="text-xs text-warm-charcoal/60">Studio Desk hours: Monday – Saturday: 10:00 AM – 7:00 PM</p>
                 </div>
               </div>
 

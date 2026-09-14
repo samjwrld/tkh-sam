@@ -90,7 +90,7 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
               <span className="block text-[10px] font-mono tracking-widest text-warm-bronze uppercase font-bold">INSPIRED BY THIS DESIGN?</span>
               <h3 className="font-display text-xl font-bold">Let's craft a similar elite aesthetic in your home</h3>
               <p className="text-xs text-warm-cream/60 leading-relaxed">
-                Our space designers in Gachibowli, Jubilee Hills, and Kondapur are ready to help customize these trends according to your floor plan specifications.
+                Our space designers in Maseedbanda, Kondapur, Gachibowli, and Hitec City are ready to help customize these trends according to your floor plan specifications.
               </p>
             </div>
 

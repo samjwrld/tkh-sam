@@ -1,5 +1,6 @@
 import React from 'react';
 import { ViewState } from '../types';
+import Logo from './Logo';
 import { Compass, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Calendar } from 'lucide-react';
 
 interface FooterProps {
@@ -40,21 +41,11 @@ export default function Footer({ onNavigate }: FooterProps) {
 
       {/* Main Grid */}
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand & Socials Column */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-10 w-10 items-center justify-center rounded bg-warm-bronze text-warm-charcoal">
-                <Compass className="h-5.5 w-5.5" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display text-lg font-bold tracking-widest text-white">
-                  THE KONCEPT HOUSE
-                </span>
-                <span className="font-mono text-[9px] tracking-[0.2em] text-[#C5A880] uppercase font-semibold">
-                  SPACES CRAFTED TO BE LIVED IN
-                </span>
-              </div>
+            <div>
+              <Logo variant="light" className="h-10 sm:h-12" showSubtitle={true} />
             </div>
             
             <p className="text-sm leading-relaxed text-warm-cream/60">
@@ -189,28 +180,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Mini Interactive Map View */}
-          <div className="space-y-4">
-            <h4 className="font-display text-sm font-bold tracking-widest text-white uppercase">
-              Coverage Area
-            </h4>
-            <p className="text-xs text-warm-cream/50 leading-relaxed">
-              Serving Kondapur, Gachibowli, Madhapur, Jubilee Hills, Financial District, Manikonda, Miyapur, and across Hyderabad.
-            </p>
-            <div className="relative h-28 w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 p-1">
-              {/* Simulated Map SVG */}
-              <div className="absolute inset-0 flex items-center justify-center bg-zinc-900">
-                <svg className="absolute inset-0 h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <path d="M0 20 Q 30 40 50 10 T 100 30 M30 0 L 30 100 M 0 60 Q 40 70 80 50 T 100 90 M70 0 L 70 100" stroke="#c5a880" strokeWidth="0.5" fill="none" />
-                </svg>
-                <div className="relative flex flex-col items-center justify-center text-center">
-                  <MapPin className="h-5 w-5 text-warm-bronze animate-bounce" />
-                  <span className="font-mono text-[9px] tracking-wider text-warm-bronze uppercase mt-1 font-semibold">Kondapur, HYD</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

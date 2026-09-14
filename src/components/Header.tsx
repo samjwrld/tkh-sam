@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ViewState } from '../types';
+import Logo from './Logo';
 import { 
   Menu, 
   X, 
@@ -50,7 +51,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
   const megaMenuProjects = [
     { 
       label: 'Pramod Residence', 
-      tag: 'JUBILEE HILLS · 8,500 SQ.FT', 
+      tag: 'AMBERPET · 8,500 SQ.FT', 
       view: 'project-pramod' as ViewState, 
       img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
       subtitle: 'Minimalist Architectural Villa'
@@ -123,25 +124,16 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
           
-          {/* Studio Brand Logo */}
+          {/* Studio Brand Logo - Renders local logo image tag (public/logo.png) & Brand Typography */}
           <a 
             id="logo-link"
             href="/" 
             onClick={(e) => handleLinkClick(e, 'home')}
-            className="group flex items-center gap-3.5"
+            className="group flex items-center transition-transform hover:opacity-95"
+            aria-label="The Koncept House - Home"
           >
-            <div className="flex h-10 w-10 items-center justify-center border border-[#241F16] bg-[#241F16] text-[#C5A880] transition-all duration-300 group-hover:scale-105">
-              <Compass className="h-5 w-5 text-[#C5A880] transition-transform duration-500 group-hover:rotate-45" />
-            </div>
-            
-            <div className="flex flex-col">
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#241F16] group-hover:text-[#A8875A] transition-colors">
-                THE KONCEPT HOUSE
-              </span>
-              <span className="font-mono text-[9px] tracking-[0.22em] font-bold uppercase text-[#A8875A]">
-                INTERIOR ARCHITECTURE · HYDERABAD
-              </span>
-            </div>
+            {/* Logo component manages local image swapping via <img src="/logo.png" alt="The Koncept House Logo" /> */}
+            <Logo className="h-10 sm:h-12" showSubtitle={true} logoPath="/logo.png" />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -231,9 +223,9 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                               </div>
 
                               <div className="pt-4 border-t border-[#E8DFD3] bg-[#F5F1EA] p-3">
-                                <span className="font-mono text-[9px] text-[#A8875A] font-bold block uppercase mb-0.5">HYDERABAD STUDIO</span>
+                                <span className="font-mono text-[9px] text-[#A8875A] font-bold block uppercase mb-0.5">MASEEDBANDA, KONDAPUR STUDIO</span>
                                 <p className="text-[11px] text-[#241F16]/80 font-light leading-snug">
-                                  Custom villas in Kokapet, Jubilee Hills & Financial District.
+                                  Custom villas & interiors in Maseedbanda, Kondapur, Kokapet & Financial District.
                                 </p>
                               </div>
                             </div>
@@ -394,7 +386,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                     </span>
                     <div className="flex items-center gap-2 text-xs font-medium text-[#241F16]">
                       <MapPin className="h-4 w-4 text-[#A8875A] shrink-0" />
-                      <span>Road No. 36, Jubilee Hills, Hyderabad</span>
+                      <span>Opp. Sumadhura Horizon, Maseedbanda, Kondapur, Hyderabad</span>
                     </div>
                   </div>
 
@@ -466,7 +458,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                       Callback in 60 Seconds
                     </h3>
                     <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
-                      Enter your phone number to receive an immediate call from our Jubilee Hills studio lead.
+                      Enter your phone number to receive an immediate call from our Maseedbanda, Kondapur studio lead.
                     </p>
                   </div>
 

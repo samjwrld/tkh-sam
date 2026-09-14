@@ -1,0 +1,14 @@
+===================================================
+THE KONCEPT HOUSE - LOGO ATTACHMENT INSTRUCTIONS
+===================================================
+
+To upload or attach your custom brand logo:
+
+1. Save your logo image as `logo.png` or `logo.svg`.
+2. Upload or copy your file into this `/public` folder.
+3. If using `logo.png`, place it directly at `/public/logo.png`.
+4. If using `logo.svg`, replace the placeholder `/public/logo.svg`.
+
+Dimensions Recommended:
+- 200x200 px or 500x500 px (Square 1:1 ratio)
+- Transparent background PNG or SVG.

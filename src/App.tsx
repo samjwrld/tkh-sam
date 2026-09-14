@@ -148,7 +148,7 @@ export default function App() {
                     Best Home Interior Designers Near Me in Hyderabad
                   </h1>
                   <p className="text-xs sm:text-sm text-warm-cream/60">
-                    Your search for top-rated local interior experts in Jubilee Hills, Gachibowli, and Kondapur ends here.
+                    Your search for top-rated local interior experts in Maseedbanda, Kondapur, Gachibowli, and Hitec City ends here.
                   </p>
                 </div>
                 <button

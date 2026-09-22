@@ -53,22 +53,22 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const heroProjects = [
     {
-      id: 'jubilee-estate',
-      title: "The Jubilee Hills Estate",
+      id: 'hyderabad-sanctuary',
+      title: "The Hyderabad Sanctuary Villa",
       subtitle: "8,500 sq ft Independent Villa • Burma Teak & Travertine Courtyard",
-      location: "Road No. 36, Jubilee Hills",
+      location: "Hyderabad",
       tagline: "Spaces Crafted to be Lived In.",
-      quote: "Blending contemporary architectural minimalism with quiet Nizami arched thresholds.",
+      quote: "Blending contemporary interior minimalism with quiet architectural thresholds.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85",
       stats: { sqft: "8,500 SQ FT", type: "LUXURY VILLA", year: "2025" }
     },
     {
-      id: 'kokapet-sky',
-      title: "The Kokapet Sky Sanctuary",
+      id: 'hyderabad-sky',
+      title: "The Hyderabad Sky Sanctuary",
       subtitle: "4,200 sq ft Penthouse • Acoustically Tuned Acoustic Paneling",
-      location: "Aparna Luxor Park, Kondapur",
+      location: "Aparna Luxor Park, Hyderabad",
       tagline: "Quiet Luxury Above The City.",
-      quote: "Organic textures, imported Italian marble, and custom-milled cabinetry from our Kondapur facility.",
+      quote: "Organic textures, imported Italian marble, and custom-milled cabinetry from our Hyderabad facility.",
       image: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=2000&q=85",
       stats: { sqft: "4,200 SQ FT", type: "PENTHOUSE", year: "2025" }
     },
@@ -122,7 +122,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     phone: '',
     email: '',
     propertyType: 'Luxury Villa',
-    location: 'Jubilee Hills',
+    location: 'Hyderabad',
     areaSqFt: '5,000 - 8,000 sq ft',
     budgetRange: '₹1 Cr – ₹3 Cr',
     timeline: 'Within 3 Months',
@@ -146,7 +146,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         phone: '',
         email: '',
         propertyType: 'Luxury Villa',
-        location: 'Jubilee Hills',
+        location: 'Hyderabad',
         areaSqFt: '5,000 - 8,000 sq ft',
         budgetRange: '₹1 Cr – ₹3 Cr',
         timeline: 'Within 3 Months',
@@ -192,9 +192,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'project-tanushree',
       title: "Tanushree's Residence",
-      category: 'Earthy Wabi-Sabi Penthouse',
+      category: 'Earthy Luxury Residence',
       filterType: 'penthouses',
-      location: 'Aparna Luxor Park, Kondapur',
+      location: 'Aparna Luxor Park, Hyderabad',
       area: '4,200 sq ft',
       year: '2025',
       images: [
@@ -219,14 +219,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80',
       ],
       materials: ['Bidri Metal Inlay', 'Laser Cut Brass Screen', 'Calibrated Quartz'],
-      quote: 'Nizami architectural arches paired seamlessly with modern Italian leather.'
+      quote: 'Nizami interior arches paired seamlessly with modern Italian leather.'
     },
     {
       id: 'project-anil',
       title: "Anil's Residence",
       category: 'Modernist Gated Villa',
       filterType: 'villas',
-      location: 'Narsingi & Financial District',
+      location: 'Hyderabad',
       area: '6,200 sq ft',
       year: '2025',
       images: [
@@ -260,14 +260,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       id: 'concern-villa',
       title: 'Building your dream villa',
       description: 'From bare civil structure to complete turn-key move in. We manage structural modifications, electrical grids, plumbing, HVAC, and custom furniture.',
-      tag: 'TURNKEY VILLA ARCHITECTURE',
+      tag: 'TURNKEY VILLA INTERIOR STUDIO',
       targetView: 'premium-interiors' as ViewState,
       icon: Building2
     },
     {
       id: 'concern-nri',
       title: 'NRI? Build your Hyderabad home from abroad',
-      description: 'Live video walkthroughs, weekly WhatsApp reporting, digital milestone sign-offs, and a single trusted project lead in Hyderabad.',
+      description: 'Live video walkthroughs, weekly WhatsApp reporting, milestone sign-offs, and a single trusted project lead in Hyderabad.',
       tag: 'REMOTE DESIGN MANAGEMENT',
       targetView: 'contact' as ViewState,
       icon: Globe
@@ -275,7 +275,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'concern-renovation',
       title: 'Renovating a family home',
-      description: 'Modernize layout and lighting while respecting heirloom pieces, memory-rich architecture, and generational space comfort.',
+      description: 'Modernize layout and lighting while respecting heirloom pieces, memory-rich interiors, and generational space comfort.',
       tag: 'HERITAGE MODERNIZATION',
       targetView: 'modern-interiors' as ViewState,
       icon: Hammer
@@ -294,7 +294,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const brandPromises = [
     {
       title: 'One Dedicated Point of Contact',
-      benefit: 'Direct access to your assigned senior architectural lead throughout the entire journey.',
+      benefit: 'Direct access to your assigned senior interior design lead throughout the entire journey.',
       never: 'NEVER passed around between vendor sub-contractors or junior site reps.'
     },
     {
@@ -311,11 +311,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       title: 'We Own Every Risk & Surprise',
       benefit: 'Full accountability for site variations, civil adjustments, and material lead times.',
       never: 'NEVER leave structural hiccups or supplier issues on your shoulders.'
-    },
-    {
-      title: 'Timelines Committed in Writing',
-      benefit: 'Legally binding milestone schedule with penalties if we breach handover dates.',
-      never: 'NEVER endless delays, vague promises, or trailing finish dates.'
     },
     {
       title: 'Materials Built to Last 10+ Years',
@@ -368,32 +363,32 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     }
   ];
 
-  // Detailed Testimonials with full client name, profession, and neighborhood
-  const testimonials = [
+  interface TestimonialItem {
+    quote: string;
+    author: string;
+    title?: string;
+    location?: string;
+    videoDuration: string;
+    videoThumb: string;
+  }
+
+  // Detailed Testimonials
+  const testimonials: TestimonialItem[] = [
     {
-      quote: "The Koncept House transformed our Kokapet villa into a timeless sanctuary. The way they integrated subtle Nizami arch motifs with Burma teak millwork is pure art. Zero budget surprises.",
-      author: "Vikram & Ananya Reddy",
-      title: "Tech Founder & Angel Investor",
-      location: "Villa Owner, Jubilee Hills Road No. 36",
-      projectSize: "9,200 sq.ft. Independent Villa",
+      quote: "Recently, Koncept House Interiors completed the interior work for my new home. They did an excellent job and delivered everything on time. Siresha ma’am suggested many valuable improvements that truly enhanced our interior design. Her ideas made a big difference in the overall look and feel of our home. Overall, I had a very good experience with Koncept House Interiors. Thank you for designing my home so beautifully!",
+      author: "Bala Naresh Nalamati",
       videoDuration: "1:45",
       videoThumb: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
     },
     {
-      quote: "Being based in Silicon Valley, managing a project in Hyderabad felt daunting. Their weekly digital reporting, single point of contact, and flawless execution made it completely effortless.",
-      author: "Dr. Sandeep Rao",
-      title: "Senior Director, Silicon Valley Tech",
-      location: "NRI Residence Owner, Kokapet",
-      projectSize: "7,500 sq.ft. Gated Community Villa",
+      quote: "Working with The Koncept House interior Design Studio has been an exceptional experience. As NRI clients, we initially reached out through Instagram, impressed by the quality and style showcased in their online portfolio. The trust we placed in them was well-placed, as they have delivered outstanding results that truly reflect their expertise and attention to detail. From initial consultation to final execution, their professionalism and creativity have exceeded our expectations. We highly recommend The Koncept House interior Design Studio to anyone seeking top-notch interior design solutions!",
+      author: "Amruthamma Kudikilla",
       videoDuration: "2:10",
       videoThumb: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
     },
     {
-      quote: "Their in-house factory precision is unmatched in Hyderabad. Every wardrobe fit, soft-close runner, and hidden lighting cove was executed with millimeter perfection.",
-      author: "Sudheer Varma",
-      title: "Executive Vice President, Global Tech",
-      location: "Duplex Owner, Kohinoor Aurobindo, HITEC City",
-      projectSize: "4,100 sq.ft. Sky Duplex",
+      quote: "Koncept house has been wonderful designing our house. The output is very good, totally recommendable. Sirisha garu being the nicest, she was being very crisp and clear on each design session. Timely & quality delivery is appreciated.",
+      author: "Snehalata Reddy",
       videoDuration: "1:30",
       videoThumb: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=800&q=80"
     }
@@ -403,28 +398,38 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const faqItems = [
     {
       id: 'faq-1',
-      question: 'What budget ranges do you work with for residential projects?',
-      answer: 'We craft turnkey interiors across three primary tiers: Premium (₹50 Lakhs – ₹1 Crore), Luxury (₹1 Crore – ₹3 Crores), and Bespoke Estates (₹3 Crores+). Each tier includes complete fixed-price transparency with no hidden costs, covering civil adjustments, false ceiling, lighting, modular cabinetry, and imported furniture.'
+      question: 'What is included in your complete turnkey interior design scope for a home?',
+      answer: 'Our turnkey scope delivers a complete, move-in ready home. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, electrical profile additions, and site cleanup. You hand over the keys and walk into a pristine, fully finished home.'
     },
     {
       id: 'faq-2',
-      question: 'How long does a typical turnkey interior project take from design to handover?',
-      answer: 'For 3BHK/4BHK luxury apartments, complete execution takes 45 to 60 days. Multi-story gated villas (6,000 to 12,000 sq ft) take 90 to 120 days. Timelines are committed in writing with milestone sign-offs supported by our in-house Kondapur manufacturing factory.'
+      question: 'How do you guarantee long-lasting material quality in Hyderabad’s climate?',
+      answer: 'We use water-resistant Boiling Waterproof (BWP) plywood for kitchen wet zones and High-Density Moisture-Resistant (HDMR) boards for wardrobes and dry storage areas. All cabinetry is precision-edged at our in-house Hyderabad factory using hot-melt PUR edgebanding to prevent moisture ingress. We pair these with premium German-engineered soft-close hinges and heavy-duty tandem drawer runners.'
     },
     {
       id: 'faq-3',
-      question: 'Are your interior layouts 100% Vastu compliant?',
-      answer: 'Yes. Our lead architects work closely with accredited Vastu consultants to align main entrance thresholds, Pooja altars, kitchen hob orientations, and master bedroom placements without compromising contemporary aesthetics or spatial flow.'
+      question: 'How long does a turnkey interior project take from design approval to final handover?',
+      answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your furniture and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, clean, and strictly adheres to written timeline commitments.'
     },
     {
       id: 'faq-4',
-      question: 'Do you handle civil work, plumbing, electrical, and structural alterations?',
-      answer: 'Yes, absolutely. As a complete turnkey interior architecture consultancy, we handle civil wall removals, electrical rewiring, plumbing re-routing, HVAC ducting, and false ceiling structural framing. You do not need to coordinate with external civil contractors.'
+      question: 'Can I monitor my site progress remotely if I am an NRI or busy working professional?',
+      answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp and email, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
     },
     {
       id: 'faq-5',
-      question: 'How does the first consultation work at your Maseedbanda, Kondapur studio?',
-      answer: 'During your 60-minute studio visit at our Maseedbanda, Kondapur experience lounge (Opp. Sumadhura Horizon), we review your floor plans, analyze your family lifestyle brief, and showcase physical material trays (travertine stone, Burma teak veneers, Bidri metal inlays, and Belgian linens). We then present a preliminary scope outline and fixed budget roadmap.'
+      question: 'Do you handle civil modifications, electrical rewiring, and false ceiling work under one roof?',
+      answer: 'Yes. As a complete turnkey studio, we manage all civil alterations, electrical point additions, plumbing rerouting, false ceiling structural framing, LED profile installations, and wall painting. You work with a single unified team, eliminating the stress of managing external contractors or multiple vendors.'
+    },
+    {
+      id: 'faq-6',
+      question: 'How to choose the right interior designer in Hyderabad for your home?',
+      answer: 'To choose the right interior designer in Hyderabad, evaluate their portfolio of completed residential homes, verify if they operate an in-house manufacturing factory for modular cabinetry precision, demand a transparent line-item BOQ with zero hidden costs, review client testimonials across Hyderabad, and ensure they provide written timeline commitments with post-handover warranty support.'
+    },
+    {
+      id: 'faq-7',
+      question: 'How does the first consultation work at your Hyderabad studio?',
+      answer: 'During your 60-minute studio visit at our Hyderabad experience lounge (Opp. Sumadhura Horizon), we review your floor plans, analyze your family lifestyle brief, and showcase physical material trays (acrylic finishes, high-pressure laminates, veneer samples, stone counters, and soft-close hardware). We then present a transparent itemized scope and execution roadmap.'
     }
   ];
 
@@ -531,7 +536,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             }}
             className="font-sans text-base sm:text-xl font-light text-[#241F16] max-w-xl leading-relaxed mt-8 sm:mt-12"
           >
-            Thoughtfully crafted homes and commercial spaces, shaped around the way you live.
+            Thoughtfully crafted luxury residences, villas, and apartments, shaped around the way you live.
           </motion.p>
 
           {/* Minimal Text-Style CTA */}
@@ -567,16 +572,16 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="relative h-[65vh] min-h-[480px] max-h-[750px] w-full overflow-hidden shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90"
-              alt="Jubilee Hills Luxury Residence Interior by The Koncept House"
+              alt="Hyderabad Residential Luxury Interior by The Koncept House"
               className="h-full w-full object-cover object-center filter brightness-[0.92] contrast-[1.05] transition-transform duration-1000 hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
             {/* Soft Ambient Vignette Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#241F16]/80 via-transparent to-[#241F16]/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#241F16]/90 via-transparent to-[#241F16]/30"></div>
 
             {/* Architectural Location Tag */}
             <div className="absolute top-6 left-6 sm:top-10 sm:left-10 bg-[#241F16]/85 backdrop-blur-md px-4 py-2 border border-white/10 text-[10px] sm:text-xs font-mono tracking-[0.2em] text-[#C5A880] uppercase">
-              JUBILEE HILLS ESTATE · LIVING ATELIER
+              HYDERABAD RESIDENTIAL SANCTUARY · LIVING ATELIER
             </div>
 
             {/* Floating Editorial Quote Card */}
@@ -585,12 +590,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-6 left-6 right-6 sm:left-auto sm:right-10 sm:bottom-12 sm:max-w-xl bg-[#241F16]/90 backdrop-blur-xl border border-[#C5A880]/30 p-6 sm:p-8 md:p-10 shadow-2xl space-y-4"
+              className="absolute bottom-6 left-6 right-6 sm:left-auto sm:right-10 sm:bottom-12 sm:max-w-xl bg-[#241F16]/90 backdrop-blur-xl border border-[#C5A880]/30 p-6 sm:p-8 md:p-10 shadow-2xl space-y-5"
             >
-              <div className="flex items-center gap-3">
-                <span className="h-px w-8 bg-[#C5A880]"></span>
-                <span className="font-mono text-[10px] tracking-[0.25em] text-[#C5A880] uppercase font-bold">
-                  ATELIER PHILOSOPHY
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-8 bg-[#C5A880]"></span>
+                  <span className="font-mono text-[10px] tracking-[0.25em] text-[#C5A880] uppercase font-bold">
+                    ATELIER PHILOSOPHY
+                  </span>
+                </div>
+                <span className="hidden sm:inline-block font-mono text-[9px] tracking-widest text-[#F5E1DC]/50 uppercase">
+                  8,500 SQ. FT. VILLA
                 </span>
               </div>
 
@@ -598,9 +608,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 “A home should not be a museum of possessions, but a sanctuary of quiet light, tactile textures, and effortless human flow.”
               </blockquote>
 
-              <div className="pt-2 flex items-center justify-between border-t border-white/10 text-xs font-sans text-[#C5A880]/80">
-                <span className="font-medium tracking-wider">THE KONCEPT HOUSE</span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#F5E1DC]/60">HYDERABAD · 2026</span>
+              <div className="pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-white/10 text-xs font-sans text-[#C5A880]/80">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium tracking-wider">THE KONCEPT HOUSE</span>
+                  <span className="text-[#F5E1DC]/40">•</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#F5E1DC]/60">HYDERABAD · 2026</span>
+                </div>
+
+                <button
+                  onClick={(e) => handleLinkClick(e, 'projects')}
+                  className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#C5A880] hover:text-white transition-colors group cursor-pointer"
+                >
+                  <span>EXPLORE RESIDENCES</span>
+                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -622,7 +643,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </h2>
 
           <p className="text-base sm:text-lg text-[#1C1B19]/70 font-light leading-relaxed max-w-3xl mx-auto">
-            Founded in 2019 in Kondapur, <strong className="text-[#1C1B19] font-medium">The Koncept House</strong> bridges contemporary architectural minimalism with subtle references to local heritage — woven textures, metallic accents, and quiet restraint.
+            Founded in 2019 in Hyderabad, <strong className="text-[#1C1B19] font-medium">The Koncept House</strong> bridges contemporary interior minimalism with subtle references to local heritage — woven textures, metallic accents, and quiet restraint.
           </p>
 
           <div className="pt-4 flex items-center justify-center gap-6">
@@ -898,7 +919,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 SELECTED PORTFOLIO ARCHIVE
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
-                Featured Residences
+                Selected Residences
               </h2>
             </div>
 
@@ -1046,7 +1067,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               OUR SCOPE & CAPABILITIES
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
-              Turnkey Architectural Services
+              Turnkey Interior Studio Services
             </h2>
           </div>
 
@@ -1055,13 +1076,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {
                 num: '01',
                 title: 'Luxury Villa Interiors',
-                desc: 'End-to-end interior architecture for multi-story gated villas in Jubilee Hills, Kokapet, and Narsingi. Structural layout customization, ceiling volumes, and climate-responsive cooling.',
-                tags: ['Villas', 'Penthouses', 'Farmhouses']
+                desc: 'End-to-end interior design for multi-story gated villas across Hyderabad. Spatial layout customization, ceiling design, and climate-responsive comfort.',
+                tags: ['Villas', 'Penthouses', 'Gated Residences']
               },
               {
                 num: '02',
                 title: 'In-House Modular Factory',
-                desc: 'State-of-the-art manufacturing facility in Kondapur. Precision-milled Burma teak wardrobes, German-engineered hardware, and zero-wobble kitchen carcasses.',
+                desc: 'State-of-the-art manufacturing facility in Hyderabad. Precision-milled Burma teak wardrobes, German-engineered hardware, and zero-wobble kitchen carcasses.',
                 tags: ['Burma Teak', 'Italian Acrylic', 'German Fittings']
               },
               {
@@ -1105,7 +1126,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* ==========================================
-          7. OUR PROCESS IN 5 ARCHITECTURAL STEPS
+          7. OUR PROCESS IN 5 INTERIOR DESIGN STEPS
           ========================================== */}
       <section id="our-process" className="py-24 bg-[#2A231D] text-white relative overflow-hidden">
         {/* Subtle Background Pattern */}
@@ -1242,18 +1263,46 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               CLIENT VOICES & TESTIMONIALS
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1C1B19]">
-              Verified Homeowner Reviews
+              Client Reviews & Testimonials
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Staggered Fade-In Testimonials Grid */}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {testimonials.map((t, idx) => (
-              <div 
+              <motion.div 
                 key={idx}
-                className="bg-[#F5F1EA] border border-[#E8DFD3] p-8 relative flex flex-col justify-between hover:border-[#A8875A] transition-all hover:shadow-lg"
+                variants={{
+                  hidden: { opacity: 0, y: 30, scale: 0.98 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.16, 1, 0.3, 1],
+                    },
+                  },
+                }}
+                whileHover={{ y: -6, transition: { duration: 0.3, ease: 'easeOut' } }}
+                className="bg-[#F5F1EA] border border-[#E8DFD3] p-8 relative flex flex-col justify-between hover:border-[#A8875A] transition-all hover:shadow-xl group"
               >
                 <div>
-                  <Quote className="h-8 w-8 text-[#A8875A]/50 mb-4" />
+                  <Quote className="h-8 w-8 text-[#A8875A]/50 mb-4 group-hover:text-[#A8875A] transition-colors duration-300" />
                   <p className="font-serif italic text-base text-[#1C1B19]/90 font-normal leading-relaxed mb-6">
                     "{t.quote}"
                   </p>
@@ -1261,12 +1310,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
                 <div className="pt-4 border-t border-[#E8DFD3] space-y-1">
                   <h4 className="font-sans font-bold text-sm text-[#1C1B19]">{t.author}</h4>
-                  <p className="text-xs text-[#A8875A] font-mono">{t.title}</p>
-                  <span className="text-[10px] text-[#1C1B19]/60 font-semibold block">{t.location}</span>
+                  {t.title && <p className="text-xs text-[#A8875A] font-mono">{t.title}</p>}
+                  {t.location && <span className="text-[10px] text-[#1C1B19]/60 font-semibold block">{t.location}</span>}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -1283,7 +1332,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               Frequently Asked Questions
             </h2>
             <p className="text-xs text-[#1C1B19]/60 font-mono">
-              Everything you need to know about budgets, timelines, civil scope, and Vastu compliance.
+              Everything you need to know about project scope, materials, timelines, and execution.
             </p>
           </div>
 
@@ -1345,17 +1394,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Schedule a Studio Consultation.
               </h2>
               <p className="text-sm text-[#E8DFD3]/80 font-light leading-relaxed">
-                Whether you are designing a new villa or penthouse in Maseedbanda, Kondapur, Kokapet, or Financial District, our design directors will review your floor plans at our studio and present bespoke material directions.
+                Whether you are designing a new villa, penthouse, or luxury apartment in Hyderabad, our design directors will review your floor plans at our studio and present bespoke material directions.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-white/10">
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 text-[#C5A880] shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">MASEEDBANDA, KONDAPUR EXPERIENCE STUDIO</h4>
+                    <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">HYDERABAD EXPERIENCE STUDIO</h4>
                     <p className="text-xs text-[#E8DFD3]/70 leading-relaxed mt-1">
                       4th Floor, Sadanand Yadav's Buildings,<br />
-                      Opp. Sumadhura Horizon, Masjidbanda, Kondapur,<br />
+                      Opp. Sumadhura Horizon,<br />
                       Hyderabad, Telangana - 500084
                     </p>
                   </div>
@@ -1365,8 +1414,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <Phone className="h-5 w-5 text-[#C5A880] shrink-0" />
                   <div>
                     <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">DIRECT DESK</h4>
-                    <a href="tel:+919888192345" className="text-xs text-[#E8DFD3]/90 hover:text-[#C5A880] transition-colors">
-                      +91 98881 92345
+                    <a href="tel:+918907545678" className="text-xs text-[#E8DFD3]/90 hover:text-[#C5A880] transition-colors">
+                      +91 89075 45678
                     </a>
                   </div>
                 </div>
@@ -1375,7 +1424,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <Clock className="h-5 w-5 text-[#C5A880] shrink-0" />
                   <div>
                     <h4 className="font-mono text-xs text-[#C5A880] uppercase font-bold tracking-wider">STUDIO HOURS</h4>
-                    <p className="text-xs text-[#E8DFD3]/70">Monday – Saturday: 10:00 AM – 7:00 PM</p>
+                    <p className="text-xs text-[#E8DFD3]/70">Wednesday – Monday: 10:00 AM – 6:00 PM (Tuesday Closed)</p>
                   </div>
                 </div>
               </div>
@@ -1396,7 +1445,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   <div className="border-b border-white/10 pb-4">
                     <h3 className="font-serif text-2xl font-light text-white">Private Project Enquiry</h3>
                     <p className="text-xs text-[#E8DFD3]/60 font-mono mt-1">
-                      Complete this brief to schedule your consultation with our lead architectural team.
+                      Complete this brief to schedule your consultation with our lead interior design team.
                     </p>
                   </div>
 
@@ -1446,7 +1495,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <option value="Sky Penthouse">Sky Penthouse / Duplex</option>
                         <option value="4BHK Premium Flat">4BHK Premium Residence</option>
                         <option value="Farmhouse">Private Farmhouse / Estate</option>
-                        <option value="Commercial">Commercial / Executive Workspace</option>
+                        <option value="3BHK Premium Flat">3BHK Premium Residence</option>
                       </select>
                     </div>
 
@@ -1459,13 +1508,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         onChange={(e) => setFormState({ ...formState, location: e.target.value })}
                         className="w-full bg-[#1C1B19] border border-white/20 px-4 py-3 text-xs text-white focus:border-[#C5A880] focus:outline-none"
                       >
-                        <option value="Jubilee Hills">Jubilee Hills</option>
-                        <option value="Banjara Hills">Banjara Hills</option>
-                        <option value="Kokapet">Kokapet</option>
-                        <option value="Gachibowli">Gachibowli</option>
-                        <option value="Financial District">Financial District</option>
-                        <option value="Kondapur">Kondapur / HITEC City</option>
-                        <option value="Narsingi">Narsingi / Gandipet</option>
+                        <option value="Hyderabad">Hyderabad Region</option>
+                        <option value="Central Hyderabad">Central Hyderabad</option>
+                        <option value="West Hyderabad">West Hyderabad</option>
+                        <option value="North Hyderabad">North Hyderabad</option>
+                        <option value="South Hyderabad">South Hyderabad</option>
                         <option value="NRI External">NRI / Overseas Client</option>
                       </select>
                     </div>

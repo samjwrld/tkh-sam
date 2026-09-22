@@ -6,7 +6,7 @@ export default function ContactView() {
     name: '',
     phone: '',
     email: '',
-    location: 'Gachibowli',
+    location: 'Hyderabad',
     service: 'Full Home Interior',
     budget: '5 - 10 Lakhs',
     message: ''
@@ -56,7 +56,7 @@ export default function ContactView() {
                 name: '',
                 phone: '',
                 email: '',
-                location: 'Gachibowli',
+                location: 'Hyderabad',
                 service: 'Full Home Interior',
                 budget: '5 - 10 Lakhs',
                 message: ''
@@ -108,8 +108,7 @@ export default function ContactView() {
                 <div>
                   <h4 className="font-display text-xs font-bold tracking-wider text-warm-accent uppercase">EXPERIENCE STUDIO ADDRESS</h4>
                   <p className="text-sm text-warm-charcoal font-semibold mt-1">4th Floor, Sadanand Yadav's Buildings,</p>
-                  <p className="text-xs text-warm-charcoal/60">Opp. Sumadhura Horizon, Masjidbanda, Kondapur,</p>
-                  <p className="text-xs text-warm-charcoal/60">Hyderabad, Telangana - 500084</p>
+                  <p className="text-xs text-warm-charcoal/60">Opp. Sumadhura Horizon, Hyderabad, Telangana - 500084</p>
                 </div>
               </div>
 
@@ -119,10 +118,10 @@ export default function ContactView() {
                 </div>
                 <div>
                   <h4 className="font-display text-xs font-bold tracking-wider text-warm-accent uppercase">CALL DIRECTLY</h4>
-                  <a href="tel:+919888192345" className="block text-sm text-warm-charcoal font-semibold mt-1 hover:text-warm-accent transition-colors">
-                    +91 98881 92345
+                  <a href="tel:+918907545678" className="block text-sm text-warm-charcoal font-semibold mt-1 hover:text-warm-accent transition-colors">
+                    +91 89075 45678
                   </a>
-                  <p className="text-xs text-warm-charcoal/60">Studio Desk hours: Monday – Saturday: 10:00 AM – 7:00 PM</p>
+                  <p className="text-xs text-warm-charcoal/60">Studio Desk hours: Wednesday – Monday: 10:00 AM – 6:00 PM (Tuesday Closed)</p>
                 </div>
               </div>
 
@@ -225,14 +224,12 @@ export default function ContactView() {
                     onChange={handleChange}
                     className="w-full rounded-lg border border-warm-cream/80 bg-warm-beige/30 px-4 py-3.5 text-sm text-warm-charcoal outline-none transition-colors focus:border-warm-bronze focus:bg-white"
                   >
-                    <option value="Gachibowli">Gachibowli</option>
-                    <option value="Jubilee Hills">Jubilee Hills</option>
-                    <option value="Kondapur">Kondapur</option>
-                    <option value="Madhapur">Madhapur</option>
-                    <option value="Manikonda">Manikonda</option>
-                    <option value="Miyapur">Miyapur</option>
-                    <option value="Patancheru">Patancheru</option>
-                    <option value="Other Hyderabad Area">Other Hyderabad Area</option>
+                    <option value="Hyderabad">Hyderabad Region</option>
+                    <option value="Central Hyderabad">Central Hyderabad</option>
+                    <option value="West Hyderabad">West Hyderabad</option>
+                    <option value="North Hyderabad">North Hyderabad</option>
+                    <option value="South Hyderabad">South Hyderabad</option>
+                    <option value="NRI Overseas">NRI / Overseas Client</option>
                   </select>
                 </div>
 
@@ -254,7 +251,7 @@ export default function ContactView() {
                     <option value="Full Home Interior">Full Home Interior</option>
                     <option value="Modular Kitchen Only">Modular Kitchen Only</option>
                     <option value="Living Room Redesign">Living Room Redesign</option>
-                    <option value="Office & Commercial">Office & Commercial</option>
+                    <option value="Luxury Bedroom & Master Suites">Luxury Bedroom & Master Suites</option>
                     <option value="Renovations & Expansion">Renovations & Expansion</option>
                   </select>
                 </div>
@@ -290,7 +287,7 @@ export default function ContactView() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="e.g., 3BHK flat floor plan in Gachibowli, looking for an earthy luxury theme with organic wood finishes and smart modular kitchen solutions."
+                  placeholder="e.g., 3BHK residence floor plan in Hyderabad, looking for an earthy luxury theme with organic wood finishes and smart modular kitchen solutions."
                   className="w-full rounded-lg border border-warm-cream/80 bg-warm-beige/30 px-4 py-3 text-sm text-warm-charcoal outline-none transition-colors focus:border-warm-bronze focus:bg-white"
                 ></textarea>
               </div>

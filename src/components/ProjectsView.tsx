@@ -152,7 +152,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
                   THE DESIGN
                 </span>
                 <h3 className="font-display text-lg font-bold text-warm-charcoal">
-                  Our Bespoke Architectural Solution
+                  Our Bespoke Interior Solution
                 </h3>
                 <p className="text-xs sm:text-sm text-warm-charcoal/70 leading-relaxed font-light">
                   {activeProject.solution || activeProject.desc}
@@ -240,7 +240,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
           Projects by The Koncept House
         </h1>
         <p className="text-base text-warm-charcoal/60 max-w-2xl mx-auto leading-relaxed">
-          Walk through our portfolio of custom-designed homes across Hyderabad, where architecture, natural light, and structural precision meet.
+          Walk through our portfolio of custom-designed homes across Hyderabad, where interior aesthetics, natural light, and material craftsmanship meet.
         </p>
       </section>
 

@@ -14,50 +14,195 @@ import { ArrowRight, Sparkles, MapPin, Compass, ShieldCheck } from 'lucide-react
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
 
-  // Handle URL synchronisation for better UX and SEO compliance
+  // Handle URL synchronisation for page refreshes, direct links, and SEO compliance
   useEffect(() => {
     const handleLocationChange = () => {
-      const path = window.location.pathname;
-      if (path === '/about-us/') {
-        setCurrentView('about');
-      } else if (path === '/projects/') {
-        setCurrentView('projects');
-      } else if (path === '/projects/pramod-residence/') {
-        setCurrentView('project-pramod');
-      } else if (path === '/projects/anils-residence/') {
-        setCurrentView('project-anil');
-      } else if (path === '/projects/sudheers-residence/') {
-        setCurrentView('project-sudheer');
-      } else if (path === '/projects/spoorthis-residence/') {
-        setCurrentView('project-spoorthi');
-      } else if (path === '/projects/tanushrees-residence/') {
-        setCurrentView('project-tanushree');
-      } else if (path === '/our-blogs/') {
-        setCurrentView('blogs');
-      } else if (path === '/contact/') {
-        setCurrentView('contact');
-      } else if (path === '/home-interior-designers-near-me/') {
-        setCurrentView('home-interior-designers-near-me');
-      } else if (path === '/premium-interior-designers/') {
-        setCurrentView('premium-interiors');
-      } else if (path === '/modern-interior-designers/') {
-        setCurrentView('modern-interiors');
-      } else if (path === '/luxury-interior-designers/') {
-        setCurrentView('luxury-interiors');
-      } else {
-        setCurrentView('home');
+      let rawPath = window.location.pathname.toLowerCase().trim();
+      
+      // Strip trailing slashes unless it's root '/'
+      if (rawPath.length > 1 && rawPath.endsWith('/')) {
+        rawPath = rawPath.slice(0, -1);
+      }
+
+      switch (rawPath) {
+        case '/about-us':
+        case '/about':
+        case '/about-us.html':
+          setCurrentView('about');
+          break;
+        case '/projects':
+        case '/our-projects':
+        case '/portfolio':
+        case '/projects.html':
+          setCurrentView('projects');
+          break;
+        case '/projects/pramod-residence':
+        case '/projects/pramod':
+          setCurrentView('project-pramod');
+          break;
+        case '/projects/anils-residence':
+        case '/projects/anil':
+          setCurrentView('project-anil');
+          break;
+        case '/projects/sudheers-residence':
+        case '/projects/sudheer':
+          setCurrentView('project-sudheer');
+          break;
+        case '/projects/spoorthis-residence':
+        case '/projects/spoorthi':
+          setCurrentView('project-spoorthi');
+          break;
+        case '/projects/tanushrees-residence':
+        case '/projects/tanushree':
+          setCurrentView('project-tanushree');
+          break;
+        case '/our-blogs':
+        case '/blogs':
+        case '/blog':
+          setCurrentView('blogs');
+          break;
+        case '/contact':
+        case '/contact-us':
+        case '/contact.html':
+          setCurrentView('contact');
+          break;
+        case '/home-interior-designers-near-me':
+          setCurrentView('home-interior-designers-near-me');
+          break;
+        case '/premium-interior-designers':
+          setCurrentView('premium-interiors');
+          break;
+        case '/modern-interior-designers':
+          setCurrentView('modern-interiors');
+          break;
+        case '/luxury-interior-designers':
+          setCurrentView('luxury-interiors');
+          break;
+        case '':
+        case '/':
+        default:
+          setCurrentView('home');
+          break;
       }
     };
 
-    // Listen to popstate (browser back/forward buttons)
+    // Listen to popstate (browser back/forward buttons and state changes)
     window.addEventListener('popstate', handleLocationChange);
-    // Initial parse on load
+    // Initial parse on load/refresh
     handleLocationChange();
 
     return () => {
       window.removeEventListener('popstate', handleLocationChange);
     };
   }, []);
+
+  // Dynamically synchronize document title, meta tags, and canonical links for SEO tools & audits
+  useEffect(() => {
+    const seoMap: Record<ViewState, { title: string; description: string; path: string }> = {
+      home: {
+        title: "The Koncept House | Luxury Interior Designers in Hyderabad",
+        description: "The Koncept House is Hyderabad's premier luxury interior design studio. Crafting bespoke villas, penthouses, and high-end residences in Hyderabad with refined local heritage and contemporary minimalism.",
+        path: "/"
+      },
+      about: {
+        title: "About Us | The Koncept House – Luxury Interior Design Studio Hyderabad",
+        description: "Discover the story, design philosophy, and in-house manufacturing capabilities behind The Koncept House, Hyderabad's leading luxury interior design studio.",
+        path: "/about-us/"
+      },
+      projects: {
+        title: "Luxury Interior Projects & Portfolio | The Koncept House Hyderabad",
+        description: "Explore our portfolio of luxury residential interiors in Hyderabad, including independent villas, penthouses, and high-rise duplexes.",
+        path: "/projects/"
+      },
+      'project-pramod': {
+        title: "Pramod's Residence | Minimalist Family Villa Interior Hyderabad",
+        description: "Inside Pramod's Residence: A 9,200 sq.ft. luxury family villa interior crafted with warm Burma teak, Italian marble, and bespoke millwork.",
+        path: "/projects/pramod-residence/"
+      },
+      'project-anil': {
+        title: "Anil's Residence | Pet-Friendly Luxury Villa Interiors Hyderabad",
+        description: "Explore Anil's Residence: Pet-friendly luxury villa interiors featuring scratch-resistant finishes, custom cabinetry, and seamless spatial flow.",
+        path: "/projects/anils-residence/"
+      },
+      'project-sudheer': {
+        title: "Sudheer's Residence | Sky Duplex Interior Design Hyderabad",
+        description: "Sudheer's Residence: A 4,100 sq.ft. luxury sky duplex interior with acoustically tuned paneling, Italian marble, and custom lighting.",
+        path: "/projects/sudheers-residence/"
+      },
+      'project-spoorthi': {
+        title: "Spoorthi's Residence | Heritage Modern Luxury Interiors Hyderabad",
+        description: "Spoorthi's Residence at Kohinoor Aurobindo: Timeless Bidriware brass inlay and Pochampally silk accents paired with contemporary luxury.",
+        path: "/projects/spoorthis-residence/"
+      },
+      'project-tanushree': {
+        title: "Tanushree's Residence | Organic Earthy Luxury Interiors Hyderabad",
+        description: "Tanushree's Residence at Aparna Luxor Park: High-end organic textures, lime-wash finishes, and custom-milled cabinetry.",
+        path: "/projects/tanushrees-residence/"
+      },
+      blogs: {
+        title: "Interior Design Insights & Trends Blog | The Koncept House",
+        description: "Expert interior design advice, luxury Hyderabad home trends, modular kitchen guides, and material selection tips from The Koncept House.",
+        path: "/our-blogs/"
+      },
+      contact: {
+        title: "Contact Us & Book Studio Consultation | The Koncept House Hyderabad",
+        description: "Get in touch with The Koncept House for bespoke interior design consultations in Hyderabad. Visit our studio or request a turnkey estimate.",
+        path: "/contact/"
+      },
+      'home-interior-designers-near-me': {
+        title: "Best Home Interior Designers Near Me in Hyderabad | The Koncept House",
+        description: "Top-rated local home interior designers in Hyderabad. Turnkey design, in-house modular manufacturing, and zero-delay execution.",
+        path: "/home-interior-designers-near-me/"
+      },
+      'premium-interiors': {
+        title: "Premium Interior Designers in Hyderabad | The Koncept House",
+        description: "Bespoke premium interior design services in Hyderabad. High-end materials, custom furniture fabrication, and white-glove turnkey execution.",
+        path: "/premium-interior-designers/"
+      },
+      'modern-interiors': {
+        title: "Modern Interior Designers in Hyderabad | The Koncept House",
+        description: "Modern, minimalist interior designers in Hyderabad. Smart modular kitchens, spatial planning, and clutter-free luxury layouts.",
+        path: "/modern-interior-designers/"
+      },
+      'luxury-interiors': {
+        title: "Luxury Villa & Penthouse Interior Designers in Hyderabad | The Koncept House",
+        description: "Prestige villa and penthouse interior design specialists in Hyderabad. Bespoke millwork, Italian marble, and architectural lighting.",
+        path: "/luxury-interior-designers/"
+      }
+    };
+
+    const currentSeo = seoMap[currentView] || seoMap.home;
+
+    // 1. Update Document Title
+    document.title = currentSeo.title;
+
+    // 2. Helper to set/update meta tag
+    const setMetaTag = (selector: string, attrName: string, attrVal: string, content: string) => {
+      let tag = document.querySelector(selector);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attrName, attrVal);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    setMetaTag('meta[name="description"]', 'name', 'description', currentSeo.description);
+    setMetaTag('meta[property="og:title"]', 'property', 'og:title', currentSeo.title);
+    setMetaTag('meta[property="og:description"]', 'property', 'og:description', currentSeo.description);
+
+    const canonicalUrl = window.location.origin + currentSeo.path;
+    setMetaTag('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+
+    // 3. Update Canonical Link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
+  }, [currentView]);
 
   const handleNavigation = (view: ViewState) => {
     setCurrentView(view);
@@ -148,7 +293,7 @@ export default function App() {
                     Best Home Interior Designers Near Me in Hyderabad
                   </h1>
                   <p className="text-xs sm:text-sm text-warm-cream/60">
-                    Your search for top-rated local interior experts in Maseedbanda, Kondapur, Gachibowli, and Hitec City ends here.
+                    Your search for top-rated local interior experts in Hyderabad ends here.
                   </p>
                 </div>
                 <button

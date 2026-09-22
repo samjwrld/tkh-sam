@@ -46,7 +46,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               About The Koncept House
             </h1>
             <p className="text-lg text-warm-charcoal/80 leading-relaxed font-light">
-              We believe a home should be an authentic physical reflection of its occupants. For over 15 years, our elite team of architects and interior space designers has been creating premium, bespoke interiors across Hyderabad.
+              We believe a home should be an authentic physical reflection of its occupants. For over 15 years, our elite team of interior designers and spatial specialists has been creating premium, bespoke interiors across Hyderabad.
             </p>
             <p className="text-sm text-warm-charcoal/70 leading-relaxed">
               By combining high-end international design philosophies with our own advanced, state-of-the-art modular manufacturing facility, we provide a unified, seamless design-and-build experience. From initial conceptual blueprints and photorealistic 3D renders to modular kitchen fabrication and electrical tiling civil work, we handle everything under one roof.
@@ -68,7 +68,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl border border-warm-cream/50 bg-warm-charcoal">
               <img
                 src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=800&q=80"
-                alt="The Koncept House Lead Architect drafting interior layouts"
+                alt="The Koncept House Lead Interior Designer drafting layouts"
                 className="h-full w-full object-cover opacity-90 transition-transform duration-500 hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -108,71 +108,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Space Curators */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-bold tracking-widest text-warm-accent uppercase block">
-            THE CREATIVE BRAINS
-          </span>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-warm-charcoal">
-            Meet Our Principal Space Designers
-          </h2>
-          <p className="text-sm text-warm-charcoal/60">
-            A cohesive team of architects, interior designers, and technical engineers dedicated to absolute perfection.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="group rounded-2xl border border-warm-cream bg-white p-4 text-center space-y-4 transition-all hover:shadow-lg">
-            <div className="aspect-square rounded-xl overflow-hidden bg-warm-cream">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                alt="Sanjay Kumar - Principal Design Director"
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div>
-              <h4 className="font-display text-lg font-bold text-warm-charcoal">Sanjay Kumar</h4>
-              <p className="text-xs font-mono text-warm-accent tracking-widest uppercase font-semibold mt-1">Design Principal & Co-Founder</p>
-              <p className="text-xs text-warm-charcoal/60 mt-2 max-w-[280px] mx-auto">12+ years directing luxury residential projects with clean minimalist philosophies.</p>
-            </div>
-          </div>
-
-          <div className="group rounded-2xl border border-warm-cream bg-white p-4 text-center space-y-4 transition-all hover:shadow-lg">
-            <div className="aspect-square rounded-xl overflow-hidden bg-warm-cream">
-              <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
-                alt="Neha Sharma - Head Space Stylist"
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div>
-              <h4 className="font-display text-lg font-bold text-warm-charcoal">Neha Sharma</h4>
-              <p className="text-xs font-mono text-warm-accent tracking-widest uppercase font-semibold mt-1">Head of Residential Styling</p>
-              <p className="text-xs text-warm-charcoal/60 mt-2 max-w-[280px] mx-auto">Specializes in transitional fusions, fabric technologies, and organic room textures.</p>
-            </div>
-          </div>
-
-          <div className="group rounded-2xl border border-warm-cream bg-white p-4 text-center space-y-4 transition-all hover:shadow-lg">
-            <div className="aspect-square rounded-xl overflow-hidden bg-warm-cream">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-                alt="Rohan Mehta - Technical Execution Chief"
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div>
-              <h4 className="font-display text-lg font-bold text-warm-charcoal">Rohan Mehta</h4>
-              <p className="text-xs font-mono text-warm-accent tracking-widest uppercase font-semibold mt-1">Chief Execution Architect</p>
-              <p className="text-xs text-warm-charcoal/60 mt-2 max-w-[280px] mx-auto">Manages our modular factory facility and site technical compliance audits.</p>
-            </div>
           </div>
         </div>
       </section>

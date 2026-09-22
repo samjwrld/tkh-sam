@@ -45,11 +45,11 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand & Socials Column */}
           <div className="space-y-6">
             <div>
-              <Logo variant="light" className="h-10 sm:h-12" showSubtitle={true} />
+              <Logo variant="light" className="h-10 sm:h-12" showImage={true} showText={false} />
             </div>
             
             <p className="text-sm leading-relaxed text-warm-cream/60">
-              The Koncept House is premiering elite, smart, and highly functional home and commercial interiors in Hyderabad. We manufacture top-tier modular kitchens and custom furniture in our private, state-of-the-art facility.
+              The Koncept House specializes exclusively in elite, smart, and highly functional residential home interiors in Hyderabad. We manufacture top-tier modular kitchens and custom furniture in our private, state-of-the-art facility.
             </p>
 
             <div className="flex items-center gap-3">
@@ -163,14 +163,14 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <span>
                   The Koncept House Studio,<br />
                   4th Floor, Sadanand Yadav's Buildings,<br />
-                  Opp. Sumadhura Horizon, Masjidbanda, Kondapur,<br />
+                  Opp. Sumadhura Horizon,<br />
                   Hyderabad, Telangana - 500084
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-warm-bronze shrink-0" />
-                <a href="tel:+919888192345" className="hover:text-warm-bronze transition-colors">
-                  +91 98881 92345
+                <a href="tel:+918907545678" className="hover:text-warm-bronze transition-colors">
+                  +91 89075 45678
                 </a>
               </li>
               <li className="flex items-center gap-3">

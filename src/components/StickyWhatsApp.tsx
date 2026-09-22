@@ -126,7 +126,7 @@ export default function StickyWhatsApp() {
         {/* Floating WhatsApp Button */}
         <a
           id="sticky-whatsapp-cta"
-          href="https://wa.link/1ibryc"
+          href="https://wa.me/918907545678"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-2xl transition-all duration-300 hover:bg-emerald-600 hover:scale-110 active:scale-95 hover:ring-4 hover:ring-warm-bronze/40 hover:shadow-[0_0_20px_rgba(197,168,128,0.8)]"

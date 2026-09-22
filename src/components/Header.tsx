@@ -54,25 +54,25 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
       tag: 'AMBERPET · 8,500 SQ.FT', 
       view: 'project-pramod' as ViewState, 
       img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
-      subtitle: 'Minimalist Architectural Villa'
+      subtitle: 'Minimalist Luxury Villa'
     },
     { 
       label: "Anil's Residence", 
-      tag: 'KOKAPET · 6,200 SQ.FT', 
+      tag: 'HYDERABAD · 6,200 SQ.FT', 
       view: 'project-anil' as ViewState, 
       img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80',
       subtitle: 'Pet-Friendly Luxury Residence'
     },
     { 
       label: "Sudheer's Residence", 
-      tag: 'FINANCIAL DISTRICT · 4,100 SQ.FT', 
+      tag: 'HYDERABAD · 4,100 SQ.FT', 
       view: 'project-sudheer' as ViewState, 
       img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80',
       subtitle: 'Compact Penthouse Atelier'
     },
     { 
       label: "Spoorthi's Residence", 
-      tag: 'BANJARA HILLS · 7,800 SQ.FT', 
+      tag: 'HYDERABAD · 7,800 SQ.FT', 
       view: 'project-spoorthi' as ViewState, 
       img: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=600&q=80',
       subtitle: 'Nizami Heritage Fusion'
@@ -222,9 +222,9 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                               </div>
 
                               <div className="pt-4 border-t border-[#E8DFD3] bg-[#F5F1EA] p-3">
-                                <span className="font-mono text-[9px] text-[#A8875A] font-bold block uppercase mb-0.5">MASEEDBANDA, KONDAPUR STUDIO</span>
+                                <span className="font-mono text-[9px] text-[#A8875A] font-bold block uppercase mb-0.5">HYDERABAD EXPERIENCE STUDIO</span>
                                 <p className="text-[11px] text-[#241F16]/80 font-light leading-snug">
-                                  Custom villas & interiors in Maseedbanda, Kondapur, Kokapet & Financial District.
+                                  Custom luxury villas & home interiors across Hyderabad.
                                 </p>
                               </div>
                             </div>
@@ -385,7 +385,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                     </span>
                     <div className="flex items-center gap-2 text-xs font-medium text-[#241F16]">
                       <MapPin className="h-4 w-4 text-[#A8875A] shrink-0" />
-                      <span>Opp. Sumadhura Horizon, Maseedbanda, Kondapur, Hyderabad</span>
+                      <span>Opp. Sumadhura Horizon, Hyderabad</span>
                     </div>
                   </div>
 
@@ -441,7 +441,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                   <CheckCircle2 className="h-14 w-14 text-[#C5A880] mx-auto animate-bounce" />
                   <h3 className="font-serif text-2xl font-light text-white">Callback Request Confirmed</h3>
                   <p className="text-xs text-[#E8DFD3]/80 leading-relaxed font-light">
-                    Our Senior Architectural Lead is placing a direct call to <span className="font-mono text-[#C5A880] font-bold">{callbackPhone}</span> within the next 60 seconds.
+                    Our Senior Design Lead is placing a direct call to <span className="font-mono text-[#C5A880] font-bold">{callbackPhone}</span> within the next 60 seconds.
                   </p>
                 </div>
               ) : (
@@ -457,7 +457,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                       Callback in 60 Seconds
                     </h3>
                     <p className="text-xs text-[#E8DFD3]/70 font-light leading-relaxed">
-                      Enter your phone number to receive an immediate call from our Maseedbanda, Kondapur studio lead.
+                      Enter your phone number to receive an immediate call from our Hyderabad studio lead.
                     </p>
                   </div>
 
@@ -485,7 +485,7 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                         required
                         value={callbackPhone}
                         onChange={(e) => setCallbackPhone(e.target.value)}
-                        placeholder="+91 98881 92345"
+                        placeholder="+91 89075 45678"
                         className="w-full bg-white/5 border border-white/20 px-4 py-3 text-xs text-white focus:border-[#C5A880] focus:outline-none transition-colors"
                       />
                     </div>

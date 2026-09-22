@@ -68,15 +68,15 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
 
           {/* Article Body Content */}
           <div className="space-y-6 text-base text-warm-charcoal/80 leading-relaxed font-light">
-            <p className="font-semibold text-warm-charcoal text-lg">
+            <p className="font-semibold text-warm-charcoal text-lg border-l-2 border-warm-bronze pl-4 py-1 italic bg-warm-cream/40 rounded-r-lg">
               {selectedPost.excerpt}
             </p>
             
             {/* Split full content by double linebreaks for proper paragraph reading */}
             {selectedPost.fullContent.split('\n\n').map((paragraph, index) => (
-              <p key={index}>
+              <div key={index} className="space-y-2 whitespace-pre-line text-warm-charcoal/90">
                 {paragraph}
-              </p>
+              </div>
             ))}
           </div>
 
@@ -90,7 +90,7 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
               <span className="block text-[10px] font-mono tracking-widest text-warm-bronze uppercase font-bold">INSPIRED BY THIS DESIGN?</span>
               <h3 className="font-display text-xl font-bold">Let's craft a similar elite aesthetic in your home</h3>
               <p className="text-xs text-warm-cream/60 leading-relaxed">
-                Our space designers in Maseedbanda, Kondapur, Gachibowli, and Hitec City are ready to help customize these trends according to your floor plan specifications.
+                Our space designers in Hyderabad are ready to help customize these trends according to your floor plan specifications.
               </p>
             </div>
 
@@ -123,7 +123,7 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
           The Koncept House Blog
         </h1>
         <p className="text-base text-warm-charcoal/60 max-w-2xl mx-auto leading-relaxed">
-          Technical design guidelines, luxury material evaluations, and spatial optimization strategies direct from our team of principal architects.
+          Technical design guidelines, luxury material evaluations, and spatial optimization strategies direct from our team of principal interior designers.
         </p>
       </section>
 

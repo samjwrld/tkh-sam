@@ -34,19 +34,19 @@ export const SERVICES_DATA: Service[] = [
       'Custom floating TV media consoles with timber veneer styling',
       'Statement focal wall paneling in marble, louvers, or concrete textures',
       'Bespoke, hand-upholstered sofas, lounges, and designer coffee tables',
-      'Layered architectural lighting including cove, track, and accent lights'
+      'Layered ambient lighting including cove, track, and accent lights'
     ]
   },
   {
-    id: 'office-and-commercial-interiors',
-    title: 'Office and Commercial Interiors',
-    description: 'High-performance, beautifully branded commercial layouts created to foster workplace creativity, employee well-being, and positive brand recognition.',
-    icon: 'Briefcase',
+    id: 'luxury-bedroom-and-suites',
+    title: 'Luxury Bedroom & Master Suites',
+    description: 'Bespoke bedroom sanctuaries crafted with acoustically padded headboards, walk-in closets, and customized mood lighting tailored for restful luxury.',
+    icon: 'Bed',
     items: [
-      'Acoustic-treated meeting rooms and collaborative hub clusters',
-      'Ergonomic workstation setups and custom executive desks',
-      'Stunning reception, client lounge, and board room designs',
-      'Integrated electrical grids, server setups, and fire-safety compliance'
+      'Custom floor-to-ceiling walk-in wardrobes with glass & tinted mirrors',
+      'Ergonomic acoustic headboard paneling and plush leatherette trims',
+      'Integrated study nooks, dressing vanities & concealed jewelry drawers',
+      'Layered nightstand lighting, reading spotlights & dimmable cove glow'
     ]
   },
   {
@@ -89,7 +89,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'project-spoorthi',
     title: "Spoorthi's Residence – Subtle Fusion of Styles | Kohinoor Aurobindo",
     subtitle: 'Timeless Indian heritage paired with contemporary luxury.',
-    location: 'Kohinoor Aurobindo, Gachibowli, Hyderabad',
+    location: 'Kohinoor Aurobindo, Hyderabad',
     style: 'Transitional Fusion',
     size: '4,100 sq.ft. 4BHK Premium Flat',
     year: '2025',
@@ -114,7 +114,7 @@ export const PROJECTS_DATA: Project[] = [
     style: 'Scandinavian Compact',
     size: '1,800 sq.ft. 2BHK Smart Flat',
     year: '2024',
-    desc: 'Proof that architectural luxury is determined by layout intelligence rather than square footage. This cozy, breezy apartment uses specialized light-reflecting materials, customized dual-purpose multi-functional storage units, and soft pastel colors to design a highly practical and stress-free modern home.',
+    desc: 'Proof that interior design luxury is determined by layout intelligence rather than square footage. This cozy, breezy apartment uses specialized light-reflecting materials, customized dual-purpose multi-functional storage units, and soft pastel colors to design a highly practical and stress-free modern home.',
     brief: 'A professional consultant requested a spacious, open layout within a compact 1,800 sq.ft. footprint. The client needed high-capacity storage for a vast book collection and kitchen gadgets, but insisted the flat must feel like an open, airy loft without bulky closets blocking light.',
     solution: 'We engineered custom multi-functional modular storage: a wall-embedded fold-out dining table, a slide-out vertical kitchen pantry, and a bespoke guest Murphy-bed. Strategic floor-to-ceiling mirror placements and sliding glass panels maximize natural light penetration across the layout.',
     result: 'The apartment feels twice its physical volume. All bulky elements are concealed flat against the walls, creating an exceptionally breezy, high-performance urban retreat.',
@@ -130,7 +130,7 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: 'project-anil',
     title: "Anil's Residence – Pet-Friendly Villa Charm | Patancheru",
-    subtitle: 'Luxury villa architecture engineered for pets and luxury lovers.',
+    subtitle: 'Luxury villa interior design engineered for pets and luxury lovers.',
     location: 'Patancheru, Hyderabad',
     style: 'Contemporary Rustic Villa',
     size: '5,500 sq.ft. 4BHK Independent Villa',
@@ -152,12 +152,12 @@ export const PROJECTS_DATA: Project[] = [
     id: 'project-tanushree',
     title: "Tanushree's Residence – Earthy Luxury at Its Best | Aparna Luxor Park",
     subtitle: 'High-end organic textures and tactile finishes.',
-    location: 'Aparna Luxor Park, Kondapur, Hyderabad',
+    location: 'Aparna Luxor Park, Hyderabad',
     style: 'Earthy Luxury / Organic',
     size: '4,800 sq.ft. 4BHK Premium Flat',
     year: '2025',
     desc: 'An absolute masterpiece of raw luxury and sensory texture. The home relies on gorgeous local hand-troweled lime-wash wall coatings, rustic travertine countertops, textured linens, and solid timber. Every corner exhibits a highly comforting tactile warmth that makes high-end living feel peaceful and authentic.',
-    brief: 'An artist requested a home entirely free of cold, glossy plastics or generic commercial laminates. She wanted a sensory, highly tactile environment focusing on natural textures, breathable organic fabrics, sustainable local masonry, and deep earth tones that reflect morning sunlight softly.',
+    brief: 'An artist requested a home entirely free of cold, glossy plastics or mass-produced synthetic laminates. She wanted a sensory, highly tactile environment focusing on natural textures, breathable organic fabrics, sustainable local masonry, and deep earth tones that reflect morning sunlight softly.',
     solution: 'We specified hand-troweled lime-wash wall treatments, solid local teakwood columns, and raw travertine washbasins. Cabinet fronts feature hand-woven organic rattan panels. Natural mineral paints and textured linens were hand-sourced, completely replacing conventional chemical coatings.',
     result: 'A breathtakingly calm, quiet, and warm organic luxury home. The walls softly diffuse Hyderabad’s harsh sunlight, creating a tactile sanctuary of comfort.',
     details: [
@@ -185,86 +185,204 @@ export const TRUST_BADGES = [
 export const BLOGS_DATA: BlogPost[] = [
   {
     id: 'blog-1',
-    title: 'Top Hyderabad Interior Trends for 2026: Earthy Luxury & Smart Modular Kitchens',
-    excerpt: 'Discover how Hyderabad homeowners are embracing organic textures, earthy tones, and high-performance modular kitchen designs that blend aesthetics with daily utility.',
-    fullContent: 'Hyderabad’s luxury interior design space is undergoing a magnificent shift. Standard high-gloss modern interiors are making way for "Earthy Luxury." Think handcrafted lime-wash walls, organic textures, terracotta tile accents, and textured linen furniture. Additionally, the culinary hub is getting a major upgrade with smart modular kitchens. Homeowners in Maseedbanda, Kondapur, and Gachibowli are demanding heavy-duty water-retardant marine ply carcasses integrated with high-end German tandem drawer systems. This comprehensive guide highlights how to marry luxury textures with functional, heavy-use cooking features designed for Indian recipe preparation styles.',
-    date: 'June 18, 2026',
+    title: 'Villa Interior Design Cost in Hyderabad: Kokapet, Jubilee Hills & Financial District Guide',
+    excerpt: 'Planning to design a 4BHK or 5BHK luxury villa in Hyderabad? Explore itemized interior cost breakdowns, material choices (Italian marble, Burma Teak, BWP Ply), and budget allocation strategies for Kokapet, Jubilee Hills, and Financial District residences.',
+    fullContent: `Designing a luxury villa in Hyderabad’s prime enclaves like Jubilee Hills, Kokapet, Financial District, and Tellapur demands a refined balance between grandeur and functional longevity. Independent villas ranging from 4,500 sq.ft. to 10,000+ sq.ft. require a structured approach to interior budgeting to prevent scope creep and budget overruns.
+
+1. Budget Allocation Breakdown for Hyderabad Villas:
+- Structural Woodwork & Modular Cabinetry (40%): High-Density Moisture-Resistant (HDMR) and Boiling Waterproof (BWP) plywood for kitchen, foyer, master wardrobes, and crockery units.
+- Premium Finishes & Paneling (25%): Italian Travertine wall cladding, veneer wall paneling, and acoustic fluted louvers.
+- Loose Furniture & Custom Upholstery (20%): Bespoke couches, marble dining tables, and accent armchairs.
+- False Ceiling & Architectural Lighting (15%): Magnetic track lights, warm LED coves, and acoustic gypsum framing.
+
+2. In-House Factory vs. On-Site Carpenter Execution:
+For villas in Hyderabad, on-site carpenter fabrication often leads to uneven edge-banding, dust contamination, and extended timelines. Operating an in-house manufacturing factory allows hot-melt PUR edgebanding that seals plywood against Hyderabad's seasonal humidity, delivering millimeter-precise joinery and smooth soft-close drawer action.
+
+3. Key Line-Item BOQ Transparency:
+Always demand a line-item Bill of Quantities (BOQ) with zero hidden clauses before signing contracts. Ensure your interior studio commits to written 45-60 day handover deadlines with penalty clauses for delay protection.`,
+    date: 'September 15, 2026',
     author: 'Sanjay Kumar (Design Principal)',
-    category: 'Design Trends',
-    readTime: '5 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=600&q=80'
+    category: 'Villa Interiors & Pricing',
+    readTime: '7 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'blog-2',
-    title: 'How to Design a Clutter-Free, Minimalist Living Room in Gachibowli Homes',
-    excerpt: 'Learn the core design principles of space-saving custom furniture, hidden storage units, and soft neutral color palettes that make urban apartments look incredibly spacious.',
-    fullContent: 'Urban high-rise flats in areas like Gachibowli and the Financial District present unique spatial conditions. To make a modern living room truly feel airy and free, we rely on warm minimalist principles. We utilize handles-free, ceiling-height wall storage units that physically vanish into the drywall. Multi-functional furniture, such as coffee tables that slide out to double as laptop desks, and sleek hanging TV panels with backlighting help expand visual boundaries. Dive into our step-by-step layout design checklist to turn a compact 2BHK or 3BHK living area into a high-end relaxing sanctuary.',
-    date: 'May 10, 2026',
+    title: 'Modular Kitchen Design Trends in Hyderabad: BWP Plywood, PUR Edgebanding & Indian Cooking Durability',
+    excerpt: 'Discover high-performance modular kitchen designs engineered specifically for heavy Indian cooking styles in Hyderabad homes. Learn about water-retardant BWP plywood, tandem drawers, and anti-fingerprint acrylic finishes.',
+    fullContent: `The kitchen is the heartbeat of every Hyderabad home. Indian cooking involves heavy spice roasting, high-heat tadka frying, and frequent water usage, making standard modular kitchen materials deteriorate within a few years if not engineered correctly.
+
+1. Essential Material Standards:
+- Marine Grade BWP Plywood (IS:710 Standard): Mandatory for sink units and wet prep areas to withstand moisture and prevent warping or termite infestation.
+- PUR Hot-Melt Edgebanding: Prevents water ingress along cabinet door edges, guaranteeing zero swelling over decades of daily use.
+- German Hardware Integration: Heavy-duty soft-close tandem drawers rated for 50kg+ loads to easily accommodate heavy brass & stainless steel cookware.
+
+2. Popular Layouts in Hyderabad High-Rises & Villas:
+- Parallel / Galley Kitchens: Ideal for compact 3BHK high-rises in Gachibowli and Kondapur, optimizing the ergonomic cooking triangle.
+- Island Modular Kitchens: Perfect for open-plan villas in Kokapet and Manikonda, combining breakfast counters with concealed appliances and integrated induction hobs.
+
+3. Low-Maintenance Finishes:
+Anti-fingerprint matte laminates and back-painted toughened glass shutters are rapidly replacing glossy finishes in Hyderabad, offering effortless wipe-clean maintenance against turmeric and oil splatters.`,
+    date: 'August 28, 2026',
     author: 'Neha Sharma (Senior Space Stylist)',
-    category: 'Minimalist Interiors',
-    readTime: '4 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'
+    category: 'Modular Kitchens',
+    readTime: '6 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'blog-3',
-    title: 'Selecting the Perfect Pet-Friendly Fabrics and Textures for Luxury Villas',
-    excerpt: 'Designing an elegant home shouldn’t mean compromising on your pet’s comfort. Read our comprehensive guide to high-performance, scratch-resistant luxury fabrics.',
-    fullContent: 'Can a home with multi-pet families remain absolutely gorgeous and clean? Absolutely. In our recent custom villa design in Patancheru, we pioneered pet-inclusive luxury. The secret lies in material technology. High-durability polyurethane-coated leatherette, tight weave flat fabrics, scratch-resistant quartz tabletops, and anti-slip satin-finish tile flooring are game-changers. This guide details how you can construct cozy built-in resting corners for your pets inside main media consoles and select gorgeous high-end textiles that shed fur easily and resist liquid stains.',
-    date: 'April 22, 2026',
-    author: 'Rohan Mehta (Technical Architect)',
-    category: 'Pet-Friendly Design',
+    title: 'NRI Home Interior Design Guide for Hyderabad Properties: Remote Tracking & On-Time Handover',
+    excerpt: 'Building or renovating a home in Hyderabad from abroad? Learn how NRIs in the US, UK, and Gulf manage turnkey interior execution with weekly 4K video updates, transparent BOQs, and zero site-visit hassle.',
+    fullContent: `Non-Resident Indians (NRIs) buying gated community villas or luxury apartments in Hyderabad often face the anxiety of managing interior execution from thousands of miles away. Misaligned budgets, vendor delays, and substandard material substitutions are common pitfalls when dealing with unorganized contractors.
+
+1. The Single Point of Contact Model:
+Instead of coordinating between separate carpenters, painters, electricians, and false-ceiling vendors, NRIs benefit immensely from a unified turnkey studio. A dedicated Project Lead manages all site operations, schedule tracking, and quality audits.
+
+2. Real-Time Remote Site Progress Protocols:
+- Weekly 4K Video Walkthroughs: Detailed site video logs covering electrical conduit runs, false ceiling framing, and tile leveling.
+- WhatsApp Progress Dashboard: Direct access to milestone checklists, material delivery receipts, and photo logs.
+- Digital Material Approval: Material sample kits dispatched directly or reviewed via high-definition video calls.
+
+3. Written Timeline & Penalty Guarantees:
+Demand a legally binding agreement specifying factory manufacturing schedules, site installation phases, and handover dates. This ensures your Hyderabad property is ready for immediate move-in or high-yield rental deployment upon your arrival.`,
+    date: 'August 12, 2026',
+    author: 'Sanjay Kumar (Design Principal)',
+    category: 'NRI Special Guide',
+    readTime: '5 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'blog-4',
+    title: 'Earthy Luxury & Heritage Fusion: Hyderabad Interior Design Trends for 2026',
+    excerpt: 'Explore how top Hyderabad interior designers are fusing Nizami architectural motifs, Bidriware brass inlays, and Pochampally silk upholstery with modern warm minimalism for timeless residential spaces.',
+    fullContent: `Hyderabad’s architectural landscape is witnessing a magnificent movement: Earthy Luxury infused with subtle heritage motifs. Homeowners in Banjara Hills, Jubilee Hills, and Film Nagar are moving away from sterile, cookie-cutter modern interiors in favor of spaces that feel deeply grounded, warm, and distinctly rooted in regional art.
+
+1. Heritage Modern Accents:
+- Bidriware Brass Inlays: Delicate brass profiles inlaid into dark walnut wood panels or natural stone foyer walls.
+- Nizami Arches & Fluted Detailing: Softer curved doorway frames and fluted teak partition screens that create gentle spatial transitions.
+- Pochampally & Kalamkari Textiles: Custom-upholstered throw cushions and lounge chairs featuring traditional weave patterns against neutral linen couches.
+
+2. Tactile Natural Finishes:
+- Textured Lime-Wash Walls: Hand-troweled earthy lime washes that breathe, handle Hyderabad humidity effortlessly, and age gracefully.
+- Terracotta & Gwalior Stone Accents: Warm earthy terracotta tiles paired with honed Italian marble flooring for tactile richness.
+
+3. Warm Minimalist Furniture Profiles:
+Low-slung, sleek furniture silhouettes in Burma teak wood ensure the space remains airy and uncluttered while retaining opulent craftsmanship.`,
+    date: 'July 24, 2026',
+    author: 'Rohan Mehta (Technical Director)',
+    category: 'Design Trends',
     readTime: '6 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'blog-5',
+    title: '3BHK & 4BHK Apartment Interior Design Checklist for Gachibowli & Kondapur High-Rises',
+    excerpt: 'Essential interior planning guide for IT professionals and families moving into high-rise apartments in Gachibowli, Kondapur, Puppalguda, and Narsingi. Maximize storage, acoustic comfort, and lighting.',
+    fullContent: `High-rise living in Hyderabad’s tech corridors—Gachibowli, Kondapur, Nallagandla, and Puppalguda—requires smart spatial engineering. With typical 3BHK and 4BHK floor plans ranging from 1,800 sq.ft. to 3,500 sq.ft., optimizing available square footage without crowding the home is paramount.
+
+1. Foyer & Entryway Organization:
+Create a multi-functional shoe console with ventilated shutters, hidden umbrella storage, a seating bench, and a key drop nook that sets a welcoming tone upon entering.
+
+2. Floor-to-Ceiling Storage Innovation:
+- Concealed Loft Space: Extend bedroom wardrobe doors up to the ceiling using heavy-duty tandem hinges to utilize vertical space efficiently.
+- Multi-Purpose Study & Work Nooks: Compact wall-mounted folding desks with built-in LED profile lighting and power management grommets.
+
+3. Acoustic Comfort for High-Rise Apartments:
+High-rise towers near major roadways benefit from acoustic drywall paneling, plush rugs, double-glazed balcony sliders, and soft fabric drapery to eliminate ambient traffic noise.
+
+4. Balcony Leisure Transformations:
+Transform apartment balconies into relaxing green oases with weather-resistant composite wooden deck flooring, vertical plant walls, and custom stone bar counters.`,
+    date: 'July 05, 2026',
+    author: 'Neha Sharma (Senior Space Stylist)',
+    category: 'Apartment Interiors',
+    readTime: '5 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'blog-6',
+    title: 'How to Choose the Right Turnkey Interior Designer in Hyderabad: BOQ, Factory & Warranty Rules',
+    excerpt: 'Avoid contractor delays, hidden costs, and material compromises. Check out the 5 critical evaluation rules every Hyderabad homeowner must follow before hiring an interior designer.',
+    fullContent: `Selecting the right interior studio in Hyderabad is the single most important decision for your home project. With hundreds of freelancers, design aggregators, and local contractors operating in the market, distinguishing true quality from aggressive marketing requires careful due diligence.
+
+Rule 1: Verify In-House Manufacturing Capabilities
+Ask to visit the studio’s manufacturing factory in Hyderabad. Studios operating automated beam saws, edge-banders, and CNC routers deliver consistent factory precision, unlike contractors relying on manual hand-tools on-site.
+
+Rule 2: Insist on a Transparent Line-Item BOQ
+Never accept lump-sum estimates. A professional BOQ specifies exact board brands (e.g., CenturyPly, Greenply BWP), laminate thickness (1mm/1.5mm), hinge models (Blum/Hettich), and unit dimensions.
+
+Rule 3: Check Completed Residential Homes Across Hyderabad
+Request to visit recently completed villa or apartment projects in areas like Jubilee Hills, Kokapet, or Gachibowli to inspect joinery alignment, drawer smoothness, and paint finishes firsthand.
+
+Rule 4: Review Written Timeline Commitments
+Ensure your contract includes a clear project schedule with defined milestone dates and delay penalty clauses.
+
+Rule 5: Verify Post-Handover Warranty & Service Network
+Choose a studio that provides a written 10-year warranty on modular cabinetry and maintains a local maintenance team in Hyderabad for prompt post-handover support.`,
+    date: 'June 20, 2026',
+    author: 'Sanjay Kumar (Design Principal)',
+    category: 'Studio Selection',
+    readTime: '6 min read',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
 export const FAQS_DATA: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'How do I get started with your interior design services?',
-    answer: 'Getting started with The Koncept House is easy! Simply book an online consultation through our website or visit our Hyderabad studio. We begin with a detailed discovery meeting to understand your style, floor plan, functional requirements, and estimated budget. From there, we formulate structural zoning options and design directions.'
+    question: 'What is included in your complete turnkey interior design scope for a 2BHK, 3BHK, or 4BHK home?',
+    answer: 'Our turnkey scope delivers a complete, move-in ready home. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, electrical profile additions, and site cleanup. You hand over the keys and walk into a pristine, fully finished home.'
   },
   {
     id: 'faq-2',
-    question: 'Do you offer complete turnkey interior solutions?',
-    answer: 'Yes, we specialize in complete end-to-end turnkey solutions. This covers space planning, 2D layout drawings, 3D photorealistic renderings, material procurement, carpentry fabrication at our own modular factory, electrical, plumbing, false ceiling, civil works, painting, and professional on-site installation. You hand over the keys and walk into a beautifully finished home.'
+    question: 'How do you guarantee long-lasting material quality in Hyderabad’s climate?',
+    answer: 'We use water-resistant Boiling Waterproof (BWP) plywood for kitchen wet zones and High-Density Moisture-Resistant (HDMR) boards for wardrobes and dry storage areas. All cabinetry is precision-edged at our in-house Hyderabad factory using hot-melt PUR edgebanding to prevent moisture ingress. We pair these with premium German-engineered soft-close hinges and heavy-duty tandem drawer runners.'
   },
   {
     id: 'faq-3',
-    question: 'How long does a typical interior project take?',
-    answer: 'A standard modular kitchen or living room remodel takes about 30 to 40 days. Complete, bespoke 2BHK/3BHK turnkey home interiors usually require 60 to 75 working days from design sign-off to delivery, depending on the complexity of customized civil work, marble installations, and wood-veneer detailing.'
+    question: 'How long does a turnkey home interior project take from design approval to final handover?',
+    answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your furniture and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, clean, and strictly adheres to written timeline commitments.'
   },
   {
     id: 'faq-4',
-    question: 'Do you work within specific budgets?',
-    answer: 'Yes, we believe premium interior design should be achievable. We customize our material specs, hardware levels, and decorative features to align with your financial guidelines. We provide highly transparent, itemized quotes with absolutely zero hidden costs, so you know exactly where every rupee is allocated.'
+    question: 'Can I monitor my site progress remotely if I am an NRI or busy working professional?',
+    answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp and email, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
   },
   {
     id: 'faq-5',
-    question: 'Will I get 3D designs before execution?',
-    answer: 'Absolutely. We provide high-resolution, photorealistic 3D interior renders of your rooms before any physical execution begins. This lets you visualize the lighting, textures, furniture placement, and colors exactly, giving you the power to request edits before fabrication.'
+    question: 'Do you handle civil modifications, electrical rewiring, and false ceiling work under one roof?',
+    answer: 'Yes. As a complete turnkey studio, we manage all civil alterations, electrical point additions, plumbing rerouting, false ceiling structural framing, LED profile installations, and wall painting. You work with a single unified team, eliminating the stress of managing external contractors or multiple vendors.'
+  },
+  {
+    id: 'faq-6',
+    question: 'How to choose the right interior designer in Hyderabad for your home?',
+    answer: 'To choose the right interior designer in Hyderabad, evaluate their portfolio of completed residential homes, verify if they operate an in-house manufacturing factory for modular cabinetry precision, demand a transparent line-item BOQ with zero hidden costs, review client testimonials across Hyderabad, and ensure they provide written timeline commitments with post-handover warranty support.'
+  },
+  {
+    id: 'faq-7',
+    question: 'What warranty and post-handover support do you provide for modular cabinetry and finishes?',
+    answer: 'We stand firmly behind our manufacturing precision with a comprehensive 10-year structural warranty on factory modular cabinetry and a 1-year free service warranty covering hardware alignment, door adjustments, and routine maintenance checks post-handover.'
   }
 ];
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
-    name: 'Mrs. Keerthi R.',
-    locality: 'Gachibowli',
-    text: 'Working with The Koncept House was an absolute dream. They transformed our 4BHK apartment in Gachibowli into a tranquil, organic haven. The earthy finishes, textured lime-wash, and custom wood veneer wardrobes they delivered exceeded our wild expectations. Their modular kitchen is not just breathtaking but incredibly functional!',
+    name: 'Bala Naresh Nalamati',
+    locality: 'Hyderabad',
+    text: 'Recently, Koncept House Interiors completed the interior work for my new home. They did an excellent job and delivered everything on time. Siresha ma’am suggested many valuable improvements that truly enhanced our interior design. Her ideas made a big difference in the overall look and feel of our home. Overall, I had a very good experience with Koncept House Interiors. Thank you for designing my home so beautifully!',
     rating: 5,
-    initials: 'KR'
+    initials: 'BN'
   },
   {
-    name: 'Mr. Rajeev Varma',
-    locality: 'Madhapur',
-    text: 'Their design-led innovation is outstanding! I wanted a high-end, transitional office and lounge room that could host corporate guests but feel welcoming. They blended timeless teak paneling with Italian furniture profiles seamlessly. Everything was manufactured in their factory and installed in record time.',
+    name: 'Amruthamma Kudikilla',
+    locality: 'Hyderabad (NRI Client)',
+    text: 'Working with The Koncept House interior Design Studio has been an exceptional experience. As NRI clients, we initially reached out through Instagram, impressed by the quality and style showcased in their online portfolio. The trust we placed in them was well-placed, as they have delivered outstanding results that truly reflect their expertise and attention to detail. From initial consultation to final execution, their professionalism and creativity have exceeded our expectations. We highly recommend The Koncept House interior Design Studio to anyone seeking top-notch interior design solutions!',
     rating: 5,
-    initials: 'RV'
+    initials: 'AK'
   },
   {
-    name: 'Mrs. Sunita Rao',
-    locality: 'Kondapur',
-    text: 'I highly recommend The Koncept House for turnkey interiors. From initial 3D renders to final handover, their team displayed immense professionalism and 100% transparency on budgets. The custom compact storage in my kitchen has made daily organization a breeze. Simply the best designers in Hyderabad!',
+    name: 'Snehalata Reddy',
+    locality: 'Hyderabad',
+    text: 'Koncept house has been wonderful designing our house. The output is very good, totally recommendable. Sirisha garu being the nicest, she was being very crisp and clear on each design session. Timely & quality delivery is appreciated.',
     rating: 5,
     initials: 'SR'
   },

@@ -80,7 +80,7 @@ export default function Logo({
               className="font-mono text-[7.5px] sm:text-[8.5px] tracking-[0.22em] font-bold uppercase mt-1 block"
               style={{ color: subtitleColor }}
             >
-              INTERIOR ARCHITECTURE
+              INTERIOR STUDIO
             </span>
           )}
         </div>

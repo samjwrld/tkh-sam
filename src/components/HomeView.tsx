@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import GoldenGeometryBg from './GoldenGeometryBg';
 import BespokeOpArtPattern from './BespokeOpArtPattern';
+import PaymentTimeline from './PaymentTimeline';
 import { ViewState } from '../types';
 import { 
   Home as HomeIcon, 
@@ -97,7 +98,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Mini image carousel state for project cards
   const [projectImageIndexes, setProjectImageIndexes] = useState<{ [key: string]: number }>({
     'project-pramod': 0,
-    'project-tanushree': 0,
+    'project-piyush': 0,
     'project-spoorthi': 0,
     'project-anil': 0,
   });
@@ -171,7 +172,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     }));
   };
 
-  // Featured Projects Data with 3-Image Carousel each
+  // Featured Projects Data with 3-Image Carousel each (Mapped to local directory /public/images/selected-residences/)
   const featuredProjects = [
     {
       id: 'project-pramod',
@@ -182,6 +183,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       area: '8,500 sq ft',
       year: '2025',
       images: [
+        '/images/selected-residences/pramod-1.jpg',
+        '/images/selected-residences/pramod-2.jpg',
+        '/images/selected-residences/pramod-3.jpg',
+      ],
+      fallbackImages: [
         'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80',
@@ -190,20 +196,25 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       quote: 'A study in light wood accents, quiet negative spaces, and hidden custom storage.'
     },
     {
-      id: 'project-tanushree',
-      title: "Tanushree's Residence",
-      category: 'Earthy Luxury Residence',
+      id: 'project-piyush',
+      title: "Piyush's Residence",
+      category: 'Contemporary Italian Luxury',
       filterType: 'penthouses',
-      location: 'Aparna Luxor Park, Hyderabad',
-      area: '4,200 sq ft',
+      location: 'Aurobindo Regent, Kondapur, Hyderabad',
+      area: '4,070 sq ft',
       year: '2025',
       images: [
-        'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=80',
+        '/images/selected-residences/piyush-1.jpg',
+        '/images/selected-residences/piyush-2.jpg',
+        '/images/selected-residences/piyush-3.jpg',
       ],
-      materials: ['Travertine Stone', 'Tactile Linen', 'Antique Brass'],
-      quote: 'Organic textures and warm neutral tones crafting an elevated sky sanctuary.'
+      fallbackImages: [
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80',
+      ],
+      materials: ['Statuario Marble', 'Champagne Gold Trim', 'Lutron Automation'],
+      quote: 'Refined Italian luxury and intelligent smart home automation at Aurobindo Regent.'
     },
     {
       id: 'project-spoorthi',
@@ -214,6 +225,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       area: '4,100 sq ft',
       year: '2025',
       images: [
+        '/images/selected-residences/spoorthi-1.jpg',
+        '/images/selected-residences/spoorthi-2.jpg',
+        '/images/selected-residences/spoorthi-3.jpg',
+      ],
+      fallbackImages: [
         'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80',
@@ -230,6 +246,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       area: '6,200 sq ft',
       year: '2025',
       images: [
+        '/images/selected-residences/anil-1.jpg',
+        '/images/selected-residences/anil-2.jpg',
+        '/images/selected-residences/anil-3.jpg',
+      ],
+      fallbackImages: [
         'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
@@ -983,6 +1004,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <AnimatePresence mode="wait">
               {(() => {
                 const currentProject = featuredProjects[activeResIndex];
+                const activeImgIdx = projectImageIndexes[currentProject.id] || 0;
+                const activeImgSrc = currentProject.images[activeImgIdx];
+                const fallbackImgSrc = currentProject.fallbackImages[activeImgIdx];
 
                 return (
                   <motion.div
@@ -998,7 +1022,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     {/* Image Showcase Column (7 cols) */}
                     <div className="lg:col-span-7 relative bg-[#1C1B19] min-h-[360px] sm:min-h-[480px] lg:min-h-[560px] flex items-center justify-center overflow-hidden group">
                       <img
-                        src={currentProject.images[0]}
+                        key={activeImgSrc}
+                        src={activeImgSrc}
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (target.src !== fallbackImgSrc) {
+                            target.src = fallbackImgSrc;
+                          }
+                        }}
                         alt={currentProject.title}
                         className="absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
                         referrerPolicy="no-referrer"
@@ -1011,6 +1042,40 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <span className="font-mono text-xs tracking-widest text-[#C5A880] uppercase font-bold block">
                           {currentProject.location}
                         </span>
+                      </div>
+
+                      {/* Photo Carousel Dots / Navigation Controls on Image */}
+                      <div className="absolute bottom-6 left-6 z-10 flex items-center gap-2 bg-[#1C1B19]/80 border border-[#E8DFD3]/20 px-3 py-1.5 backdrop-blur-md">
+                        <button
+                          onClick={(e) => handlePrevCarouselImage(e, currentProject.id, currentProject.images.length)}
+                          className="text-[#C5A880] hover:text-white transition-colors p-1"
+                          title="Previous Photo"
+                        >
+                          <ChevronLeft className="h-4 w-4" />
+                        </button>
+
+                        <div className="flex gap-1.5 px-1">
+                          {currentProject.images.map((_, dotIdx) => (
+                            <button
+                              key={dotIdx}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setProjectImageIndexes((prev) => ({ ...prev, [currentProject.id]: dotIdx }));
+                              }}
+                              className={`h-1.5 transition-all rounded-full ${
+                                activeImgIdx === dotIdx ? 'w-5 bg-[#C5A880]' : 'w-1.5 bg-white/40 hover:bg-white'
+                              }`}
+                            />
+                          ))}
+                        </div>
+
+                        <button
+                          onClick={(e) => handleNextCarouselImage(e, currentProject.id, currentProject.images.length)}
+                          className="text-[#C5A880] hover:text-white transition-colors p-1"
+                          title="Next Photo"
+                        >
+                          <ChevronRight className="h-4 w-4" />
+                        </button>
                       </div>
                     </div>
 
@@ -1252,6 +1317,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
         </div>
       </section>
+
+      {/* ==========================================
+          7.5. HASSLE-FREE PAYMENT TIMELINE
+          ========================================== */}
+      <PaymentTimeline />
 
       {/* ==========================================
           8. CLIENT TESTIMONIALS

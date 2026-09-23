@@ -82,7 +82,7 @@ export const PROJECTS_DATA: Project[] = [
       'Concealed ambient LED lighting to maximize room height and soothe eyes',
       'Integrated modular workspace within a quiet master bedroom alcove'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/selected-residences/pramod-1.jpg',
     linkUrl: '/projects/'
   },
   {
@@ -103,7 +103,7 @@ export const PROJECTS_DATA: Project[] = [
       'High-gloss acrylic handle-less kitchen drawers with premium Quartz island',
       'Grand master bedroom featuring tufted velvet headboards and elegant marble-cladding walls'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/selected-residences/spoorthi-1.jpg',
     linkUrl: '/projects/'
   },
   {
@@ -124,7 +124,7 @@ export const PROJECTS_DATA: Project[] = [
       'Extremely space-efficient vertical slide-out pantry system in the kitchen',
       'Bespoke Murphy-bed setup in guest room to easily transition from guest suite to playroom'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/selected-residences/sudheer-1.jpg',
     linkUrl: '/projects/'
   },
   {
@@ -145,28 +145,28 @@ export const PROJECTS_DATA: Project[] = [
       'Concealed pet-washing station in the utility room with specialized drying racks',
       'Beautiful double-height glass windows framing panoramic garden vistas'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/selected-residences/anil-1.jpg',
     linkUrl: '/projects/'
   },
   {
-    id: 'project-tanushree',
-    title: "Tanushree's Residence – Earthy Luxury at Its Best | Aparna Luxor Park",
-    subtitle: 'High-end organic textures and tactile finishes.',
-    location: 'Aparna Luxor Park, Hyderabad',
-    style: 'Earthy Luxury / Organic',
-    size: '4,800 sq.ft. 4BHK Premium Flat',
+    id: 'project-piyush',
+    title: "Piyush's Residence – Contemporary Italian Luxury | Aurobindo Regent",
+    subtitle: 'Refined sophistication, custom marble accents, and smart automation.',
+    location: 'Aurobindo Regent, Kondapur, Hyderabad',
+    style: 'Contemporary Italian Luxury',
+    size: '4,070 sq.ft. 4BHK High-Rise Residence',
     year: '2025',
-    desc: 'An absolute masterpiece of raw luxury and sensory texture. The home relies on gorgeous local hand-troweled lime-wash wall coatings, rustic travertine countertops, textured linens, and solid timber. Every corner exhibits a highly comforting tactile warmth that makes high-end living feel peaceful and authentic.',
-    brief: 'An artist requested a home entirely free of cold, glossy plastics or mass-produced synthetic laminates. She wanted a sensory, highly tactile environment focusing on natural textures, breathable organic fabrics, sustainable local masonry, and deep earth tones that reflect morning sunlight softly.',
-    solution: 'We specified hand-troweled lime-wash wall treatments, solid local teakwood columns, and raw travertine washbasins. Cabinet fronts feature hand-woven organic rattan panels. Natural mineral paints and textured linens were hand-sourced, completely replacing conventional chemical coatings.',
-    result: 'A breathtakingly calm, quiet, and warm organic luxury home. The walls softly diffuse Hyderabad’s harsh sunlight, creating a tactile sanctuary of comfort.',
+    desc: 'A spectacular high-rise sanctuary in Aurobindo Regent. Designed with Italian marble flooring, bespoke fluted wall paneling, subtle architectural cove lighting, and state-of-the-art smart home integration.',
+    brief: 'A high-profile C-suite executive wanted a sleek, ultra-modern luxury home in Aurobindo Regent. He requested expansive social entertaining zones, a state-of-the-art concealed acoustic home theater, and automated Lutron scene-lighting across all suites.',
+    solution: 'We opened the layout into an expansive living-dining expanse clad in book-matched Statuario marble. We integrated acoustic fabric paneling hidden behind champagne gold metal trim in the entertainment zone, and installed smart Lutron lighting controls.',
+    result: 'An effortlessly sophisticated urban haven that effortlessly transitions from an elegant executive host venue to a serene family retreat.',
     details: [
-      'Stunning bespoke travertine wash basins and custom floating shelves',
-      'Organic lime wash plaster finishes and hand-woven rattan cabinet panels',
-      'Warm earthy color palette (warm terracotta, soft clay, deep forest sand, rich olive)',
-      'Floor-to-ceiling customized fluted wooden columns acting as gentle dividers'
+      'Book-matched Italian Statuario marble flooring and custom champagne gold accents',
+      'Integrated smart home automation for Lutron lighting, climate, and window motorized drapes',
+      'Concealed acoustic home entertainment zone with bespoke fluted veneer paneling',
+      'Custom Italian lacquered island kitchen with concealed motorized appliance garages'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/selected-residences/piyush-1.jpg',
     linkUrl: '/projects/'
   }
 ];

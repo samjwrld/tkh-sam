@@ -59,7 +59,7 @@ export type ViewState =
   | 'project-spoorthi'
   | 'project-sudheer'
   | 'project-anil'
-  | 'project-tanushree'
+  | 'project-piyush'
   | 'premium-interiors'
   | 'modern-interiors'
   | 'luxury-interiors'

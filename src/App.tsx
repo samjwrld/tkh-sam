@@ -52,9 +52,9 @@ export default function App() {
         case '/projects/spoorthi':
           setCurrentView('project-spoorthi');
           break;
-        case '/projects/tanushrees-residence':
-        case '/projects/tanushree':
-          setCurrentView('project-tanushree');
+        case '/projects/piyushs-residence':
+        case '/projects/piyush':
+          setCurrentView('project-piyush');
           break;
         case '/our-blogs':
         case '/blogs':
@@ -98,76 +98,90 @@ export default function App() {
 
   // Dynamically synchronize document title, meta tags, and canonical links for SEO tools & audits
   useEffect(() => {
-    const seoMap: Record<ViewState, { title: string; description: string; path: string }> = {
+    const seoMap: Record<ViewState, { title: string; description: string; path: string; image: string }> = {
       home: {
         title: "The Koncept House | Luxury Interior Designers in Hyderabad",
         description: "The Koncept House is Hyderabad's premier luxury interior design studio. Crafting bespoke villas, penthouses, and high-end residences in Hyderabad with refined local heritage and contemporary minimalism.",
-        path: "/"
+        path: "/",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       about: {
         title: "About Us | The Koncept House – Luxury Interior Design Studio Hyderabad",
         description: "Discover the story, design philosophy, and in-house manufacturing capabilities behind The Koncept House, Hyderabad's leading luxury interior design studio.",
-        path: "/about-us/"
+        path: "/about-us/",
+        image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       projects: {
         title: "Luxury Interior Projects & Portfolio | The Koncept House Hyderabad",
         description: "Explore our portfolio of luxury residential interiors in Hyderabad, including independent villas, penthouses, and high-rise duplexes.",
-        path: "/projects/"
+        path: "/projects/",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'project-pramod': {
         title: "Pramod's Residence | Minimalist Family Villa Interior Hyderabad",
         description: "Inside Pramod's Residence: A 9,200 sq.ft. luxury family villa interior crafted with warm Burma teak, Italian marble, and bespoke millwork.",
-        path: "/projects/pramod-residence/"
+        path: "/projects/pramod-residence/",
+        image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'project-anil': {
         title: "Anil's Residence | Pet-Friendly Luxury Villa Interiors Hyderabad",
         description: "Explore Anil's Residence: Pet-friendly luxury villa interiors featuring scratch-resistant finishes, custom cabinetry, and seamless spatial flow.",
-        path: "/projects/anils-residence/"
+        path: "/projects/anils-residence/",
+        image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'project-sudheer': {
         title: "Sudheer's Residence | Sky Duplex Interior Design Hyderabad",
         description: "Sudheer's Residence: A 4,100 sq.ft. luxury sky duplex interior with acoustically tuned paneling, Italian marble, and custom lighting.",
-        path: "/projects/sudheers-residence/"
+        path: "/projects/sudheers-residence/",
+        image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'project-spoorthi': {
         title: "Spoorthi's Residence | Heritage Modern Luxury Interiors Hyderabad",
         description: "Spoorthi's Residence at Kohinoor Aurobindo: Timeless Bidriware brass inlay and Pochampally silk accents paired with contemporary luxury.",
-        path: "/projects/spoorthis-residence/"
+        path: "/projects/spoorthis-residence/",
+        image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&h=630&q=80"
       },
-      'project-tanushree': {
-        title: "Tanushree's Residence | Organic Earthy Luxury Interiors Hyderabad",
-        description: "Tanushree's Residence at Aparna Luxor Park: High-end organic textures, lime-wash finishes, and custom-milled cabinetry.",
-        path: "/projects/tanushrees-residence/"
+      'project-piyush': {
+        title: "Piyush's Residence | Contemporary Italian Luxury Interior Design Hyderabad",
+        description: "Piyush's Residence at Aurobindo Regent: High-rise Italian luxury, Statuario marble flooring, custom champagne gold accents, and Lutron home automation.",
+        path: "/projects/piyushs-residence/",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       blogs: {
         title: "Interior Design Insights & Trends Blog | The Koncept House",
         description: "Expert interior design advice, luxury Hyderabad home trends, modular kitchen guides, and material selection tips from The Koncept House.",
-        path: "/our-blogs/"
+        path: "/our-blogs/",
+        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       contact: {
         title: "Contact Us & Book Studio Consultation | The Koncept House Hyderabad",
         description: "Get in touch with The Koncept House for bespoke interior design consultations in Hyderabad. Visit our studio or request a turnkey estimate.",
-        path: "/contact/"
+        path: "/contact/",
+        image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'home-interior-designers-near-me': {
         title: "Best Home Interior Designers Near Me in Hyderabad | The Koncept House",
         description: "Top-rated local home interior designers in Hyderabad. Turnkey design, in-house modular manufacturing, and zero-delay execution.",
-        path: "/home-interior-designers-near-me/"
+        path: "/home-interior-designers-near-me/",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'premium-interiors': {
         title: "Premium Interior Designers in Hyderabad | The Koncept House",
         description: "Bespoke premium interior design services in Hyderabad. High-end materials, custom furniture fabrication, and white-glove turnkey execution.",
-        path: "/premium-interior-designers/"
+        path: "/premium-interior-designers/",
+        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'modern-interiors': {
         title: "Modern Interior Designers in Hyderabad | The Koncept House",
         description: "Modern, minimalist interior designers in Hyderabad. Smart modular kitchens, spatial planning, and clutter-free luxury layouts.",
-        path: "/modern-interior-designers/"
+        path: "/modern-interior-designers/",
+        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'luxury-interiors': {
         title: "Luxury Villa & Penthouse Interior Designers in Hyderabad | The Koncept House",
         description: "Prestige villa and penthouse interior design specialists in Hyderabad. Bespoke millwork, Italian marble, and architectural lighting.",
-        path: "/luxury-interior-designers/"
+        path: "/luxury-interior-designers/",
+        image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&h=630&q=80"
       }
     };
 
@@ -187,12 +201,29 @@ export default function App() {
       tag.setAttribute('content', content);
     };
 
+    const canonicalUrl = window.location.origin + currentSeo.path;
+
     setMetaTag('meta[name="description"]', 'name', 'description', currentSeo.description);
+    
+    // Open Graph Tags
     setMetaTag('meta[property="og:title"]', 'property', 'og:title', currentSeo.title);
     setMetaTag('meta[property="og:description"]', 'property', 'og:description', currentSeo.description);
-
-    const canonicalUrl = window.location.origin + currentSeo.path;
     setMetaTag('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+    setMetaTag('meta[property="og:image"]', 'property', 'og:image', currentSeo.image);
+    setMetaTag('meta[property="og:image:alt"]', 'property', 'og:image:alt', currentSeo.title);
+
+    // Twitter Card Tags
+    setMetaTag('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+    setMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', currentSeo.title);
+    setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', currentSeo.description);
+    setMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', currentSeo.image);
+    setMetaTag('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', currentSeo.title);
+
+    // Localized Geo SEO Tags
+    setMetaTag('meta[name="geo.region"]', 'name', 'geo.region', 'IN-TG');
+    setMetaTag('meta[name="geo.placename"]', 'name', 'geo.placename', 'Hyderabad, Telangana, India');
+    setMetaTag('meta[name="geo.position"]', 'name', 'geo.position', '17.4647;78.3654');
+    setMetaTag('meta[name="ICBM"]', 'name', 'ICBM', '17.4647, 78.3654');
 
     // 3. Update Canonical Link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -229,8 +260,8 @@ export default function App() {
       case 'project-spoorthi':
         path = '/projects/spoorthis-residence/';
         break;
-      case 'project-tanushree':
-        path = '/projects/tanushrees-residence/';
+      case 'project-piyush':
+        path = '/projects/piyushs-residence/';
         break;
       case 'blogs':
         path = '/our-blogs/';
@@ -269,7 +300,7 @@ export default function App() {
       case 'project-anil':
       case 'project-sudheer':
       case 'project-spoorthi':
-      case 'project-tanushree':
+      case 'project-piyush':
         return <ProjectsView currentView={currentView} onNavigate={handleNavigation} />;
         
       case 'blogs':

@@ -30,6 +30,20 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
   const activeProject = PROJECTS_DATA.find((p) => p.id === activeProjectId);
 
   if (isSingleProject && activeProject) {
+    // Check for user-uploaded custom image in localStorage
+    let customHeroSrc = '';
+    try {
+      const saved = localStorage.getItem('kh_custom_residence_images');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        customHeroSrc = parsed[`${activeProject.id}-0`] || '';
+      }
+    } catch (err) {
+      // Ignore storage error
+    }
+
+    const displayHeroUrl = customHeroSrc || activeProject.imageUrl;
+
     return (
       <div id="single-project-view" className="py-16 sm:py-24 bg-warm-beige">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
@@ -109,11 +123,20 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
             <div className="lg:col-span-7 space-y-8">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-xl border border-warm-cream bg-warm-charcoal">
                 <img
-                  src={activeProject.imageUrl}
+                  src={displayHeroUrl}
                   onError={(e) => {
+                    const target = e.currentTarget;
                     const fallback = FALLBACK_PROJECT_IMAGES[activeProject.id];
-                    if (fallback && e.currentTarget.src !== fallback) {
-                      e.currentTarget.src = fallback;
+                    const extList = ['.png', '.jpeg', '.webp', '.JPG', '.PNG', '.JPEG'];
+                    const currentAttempt = parseInt(target.getAttribute('data-ext-attempt') || '-1', 10);
+
+                    if (!customHeroSrc && displayHeroUrl.startsWith('/images/') && currentAttempt < extList.length - 1) {
+                      const nextAttempt = currentAttempt + 1;
+                      target.setAttribute('data-ext-attempt', String(nextAttempt));
+                      const basePath = displayHeroUrl.substring(0, displayHeroUrl.lastIndexOf('.'));
+                      target.src = basePath + extList[nextAttempt];
+                    } else if (fallback && target.src !== fallback) {
+                      target.src = fallback;
                     }
                   }}
                   alt={`${activeProject.title} interior photography showcase`}

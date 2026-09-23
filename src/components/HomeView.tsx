@@ -41,7 +41,11 @@ import {
   UserCheck,
   FileCheck2,
   Clock3,
-  BadgeCheck
+  BadgeCheck,
+  Upload,
+  Image as ImageIcon,
+  Trash2,
+  RefreshCw
 } from 'lucide-react';
 
 interface HomeViewProps {
@@ -102,6 +106,53 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     'project-spoorthi': 0,
     'project-anil': 0,
   });
+
+  // User uploaded custom local images state & modal
+  const [customImages, setCustomImages] = useState<Record<string, string>>(() => {
+    try {
+      const saved = localStorage.getItem('kh_custom_residence_images');
+      return saved ? JSON.parse(saved) : {};
+    } catch (err) {
+      return {};
+    }
+  });
+
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState<boolean>(false);
+
+  const handleFileUpload = (projectId: string, imgIdx: number, file: File) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const dataUrl = e.target?.result as string;
+      if (dataUrl) {
+        const key = `${projectId}-${imgIdx}`;
+        setCustomImages((prev) => {
+          const updated = { ...prev, [key]: dataUrl };
+          try {
+            localStorage.setItem('kh_custom_residence_images', JSON.stringify(updated));
+          } catch (err) {
+            console.warn('Storage quota limit', err);
+          }
+          return updated;
+        });
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveCustomPhoto = (projectId: string, imgIdx: number) => {
+    const key = `${projectId}-${imgIdx}`;
+    setCustomImages((prev) => {
+      const updated = { ...prev };
+      delete updated[key];
+      try {
+        localStorage.setItem('kh_custom_residence_images', JSON.stringify(updated));
+      } catch (err) {
+        console.warn('Storage update error', err);
+      }
+      return updated;
+    });
+  };
 
   const handleNextResidence = () => {
     setActiveResIndex((prev) => (prev + 1) % featuredProjects.length);
@@ -945,7 +996,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             {/* Carousel Navigation Buttons & Counter */}
-            <div className="flex items-center gap-3 bg-[#FAF8F5] border border-[#E8DFD3] p-2.5 shadow-xs">
+            <div className="flex flex-wrap items-center gap-3 bg-[#FAF8F5] border border-[#E8DFD3] p-2.5 shadow-xs">
+              {/* Direct Local Image Upload Manager Trigger */}
+              <button
+                onClick={() => setIsPhotoModalOpen(true)}
+                className="flex items-center gap-1.5 h-9 px-3 border border-[#A8875A]/40 bg-[#1C1B19] text-[#C5A880] hover:bg-[#A8875A] hover:text-white transition-all text-xs font-mono font-bold tracking-wider"
+                title="Upload or manage local photos directly from your computer"
+              >
+                <Upload className="h-3.5 w-3.5 text-[#C5A880]" />
+                <span className="hidden sm:inline">Upload Local Photos</span>
+                <span className="sm:hidden">Photos</span>
+              </button>
+
+              <div className="h-4 w-px bg-[#E8DFD3] hidden sm:block"></div>
+
               {/* Autoplay Pause / Play Toggle Button */}
               <button
                 onClick={() => setIsAutoplayPaused(!isAutoplayPaused)}
@@ -1005,7 +1069,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {(() => {
                 const currentProject = featuredProjects[activeResIndex];
                 const activeImgIdx = projectImageIndexes[currentProject.id] || 0;
-                const activeImgSrc = currentProject.images[activeImgIdx];
+                const customImgSrc = customImages[`${currentProject.id}-${activeImgIdx}`];
+                const defaultImgSrc = currentProject.images[activeImgIdx];
+                const activeImgSrc = customImgSrc || defaultImgSrc;
                 const fallbackImgSrc = currentProject.fallbackImages[activeImgIdx];
 
                 return (
@@ -1026,7 +1092,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         src={activeImgSrc}
                         onError={(e) => {
                           const target = e.currentTarget;
-                          if (target.src !== fallbackImgSrc) {
+                          const extList = ['.png', '.jpeg', '.webp', '.JPG', '.PNG', '.JPEG'];
+                          const currentAttempt = parseInt(target.getAttribute('data-ext-attempt') || '-1', 10);
+
+                          if (!customImgSrc && activeImgSrc.startsWith('/images/') && currentAttempt < extList.length - 1) {
+                            const nextAttempt = currentAttempt + 1;
+                            target.setAttribute('data-ext-attempt', String(nextAttempt));
+                            const basePath = defaultImgSrc.substring(0, defaultImgSrc.lastIndexOf('.'));
+                            target.src = basePath + extList[nextAttempt];
+                          } else if (target.src !== fallbackImgSrc) {
                             target.src = fallbackImgSrc;
                           }
                         }}
@@ -1682,6 +1756,130 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <p className="font-serif text-lg text-white font-light">Interactive Video Walkthrough Loaded</p>
                 <p className="text-xs text-[#C5A880] font-mono mt-1">Full 4K Ultra HD Client Story</p>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          LOCAL PHOTO UPLOAD & MANAGER MODAL
+          ========================================== */}
+      {isPhotoModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="relative w-full max-w-4xl bg-[#FAF8F5] border border-[#A8875A] shadow-2xl p-6 sm:p-8 my-8 max-h-[90vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsPhotoModalOpen(false)}
+              className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#1C1B19] text-white hover:bg-[#A8875A] transition-all"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            {/* Modal Header */}
+            <div className="mb-6 space-y-1 pr-8 border-b border-[#E8DFD3] pb-4">
+              <span className="font-mono text-xs tracking-widest text-[#A8875A] uppercase font-bold flex items-center gap-2">
+                <Upload className="h-4 w-4" /> LOCAL RESIDENCE PHOTO MANAGER
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#1C1B19]">
+                Upload Your Local Project Photos
+              </h3>
+              <p className="text-xs text-[#1C1B19]/70">
+                Select image files directly from your computer (.jpg, .jpeg, .png, .webp). The website will render your photos instantly in the Selected Residences gallery.
+              </p>
+            </div>
+
+            {/* List of Residences */}
+            <div className="space-y-8">
+              {featuredProjects.map((project) => (
+                <div key={project.id} className="bg-white border border-[#E8DFD3] p-5 shadow-xs space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E8DFD3] pb-3">
+                    <div>
+                      <h4 className="font-serif text-lg font-medium text-[#1C1B19]">{project.title}</h4>
+                      <p className="text-xs text-[#A8875A] font-mono">{project.location}</p>
+                    </div>
+                    <span className="font-mono text-[10px] bg-[#F5F1EA] px-2.5 py-1 text-[#1C1B19] uppercase font-bold self-start sm:self-auto border border-[#E8DFD3]">
+                      Folder: /public/images/selected-residences/
+                    </span>
+                  </div>
+
+                  {/* 3 Photo Slots Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {[0, 1, 2].map((slotIdx) => {
+                      const imageKey = `${project.id}-${slotIdx}`;
+                      const isCustom = !!customImages[imageKey];
+                      const currentSrc = customImages[imageKey] || project.fallbackImages[slotIdx];
+
+                      return (
+                        <div key={slotIdx} className="bg-[#FAF8F5] border border-[#E8DFD3] p-3 space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="font-mono text-[10px] text-[#A8875A] font-bold uppercase">
+                              Photo {slotIdx + 1}
+                            </span>
+                            {isCustom ? (
+                              <span className="font-mono text-[9px] bg-[#A8875A] text-white px-2 py-0.5 font-bold uppercase">
+                                Custom
+                              </span>
+                            ) : (
+                              <span className="font-mono text-[9px] text-[#1C1B19]/50 uppercase">
+                                Default
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="relative aspect-[4/3] w-full bg-[#1C1B19] overflow-hidden border border-[#E8DFD3]">
+                            <img
+                              src={currentSrc}
+                              alt={`${project.title} slot ${slotIdx + 1}`}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+
+                          <div className="flex items-center gap-2 pt-1">
+                            <label className="flex-1 cursor-pointer flex items-center justify-center gap-1.5 bg-[#1C1B19] text-[#C5A880] hover:bg-[#A8875A] hover:text-white px-3 py-2 text-[11px] font-mono font-bold transition-all text-center">
+                              <Upload className="h-3 w-3" />
+                              <span>Select File</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={(e) => {
+                                  const file = e.target.files?.[0];
+                                  if (file) {
+                                    handleFileUpload(project.id, slotIdx, file);
+                                  }
+                                }}
+                              />
+                            </label>
+
+                            {isCustom && (
+                              <button
+                                onClick={() => handleRemoveCustomPhoto(project.id, slotIdx)}
+                                className="flex h-8 w-8 items-center justify-center bg-red-100 text-red-700 hover:bg-red-700 hover:text-white transition-all"
+                                title="Reset to default photo"
+                              >
+                                <Trash2 className="h-3.5 w-3.5" />
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Footer Close */}
+            <div className="mt-8 pt-4 border-t border-[#E8DFD3] flex items-center justify-between">
+              <span className="text-xs text-[#1C1B19]/60 font-mono">
+                Changes take effect instantly in your live browser view.
+              </span>
+              <button
+                onClick={() => setIsPhotoModalOpen(false)}
+                className="bg-[#1C1B19] text-white px-6 py-2.5 font-mono text-xs font-bold uppercase hover:bg-[#A8875A] transition-all"
+              >
+                Close & View Showcase
+              </button>
             </div>
           </div>
         </div>

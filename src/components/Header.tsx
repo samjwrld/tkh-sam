@@ -64,11 +64,11 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
       subtitle: 'Pet-Friendly Luxury Residence'
     },
     { 
-      label: "Sudheer's Residence", 
-      tag: 'HYDERABAD · 4,100 SQ.FT', 
-      view: 'project-sudheer' as ViewState, 
-      img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80',
-      subtitle: 'Compact Penthouse Atelier'
+      label: "Piyush's Residence", 
+      tag: 'AUROBINDO REGENT · 4,070 SQ.FT', 
+      view: 'project-piyush' as ViewState, 
+      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+      subtitle: 'Contemporary Italian Luxury'
     },
     { 
       label: "Spoorthi's Residence", 

@@ -57,7 +57,6 @@ export type ViewState =
   | 'contact'
   | 'project-pramod'
   | 'project-spoorthi'
-  | 'project-sudheer'
   | 'project-anil'
   | 'project-piyush'
   | 'premium-interiors'

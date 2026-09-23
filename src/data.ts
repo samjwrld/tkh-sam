@@ -107,27 +107,6 @@ export const PROJECTS_DATA: Project[] = [
     linkUrl: '/projects/'
   },
   {
-    id: 'project-sudheer',
-    title: "Sudheer's Residence – Calm & Compact Living | Home Mangala",
-    subtitle: 'Optimizing small-scale layouts with airy, space-saving intelligence.',
-    location: 'Home Mangala, Miyapur, Hyderabad',
-    style: 'Scandinavian Compact',
-    size: '1,800 sq.ft. 2BHK Smart Flat',
-    year: '2024',
-    desc: 'Proof that interior design luxury is determined by layout intelligence rather than square footage. This cozy, breezy apartment uses specialized light-reflecting materials, customized dual-purpose multi-functional storage units, and soft pastel colors to design a highly practical and stress-free modern home.',
-    brief: 'A professional consultant requested a spacious, open layout within a compact 1,800 sq.ft. footprint. The client needed high-capacity storage for a vast book collection and kitchen gadgets, but insisted the flat must feel like an open, airy loft without bulky closets blocking light.',
-    solution: 'We engineered custom multi-functional modular storage: a wall-embedded fold-out dining table, a slide-out vertical kitchen pantry, and a bespoke guest Murphy-bed. Strategic floor-to-ceiling mirror placements and sliding glass panels maximize natural light penetration across the layout.',
-    result: 'The apartment feels twice its physical volume. All bulky elements are concealed flat against the walls, creating an exceptionally breezy, high-performance urban retreat.',
-    details: [
-      'Clever wall-embedded fold-out breakfast table and hidden study desk',
-      'Glossy reflective surface finishes combined with strategically mounted mirrors',
-      'Extremely space-efficient vertical slide-out pantry system in the kitchen',
-      'Bespoke Murphy-bed setup in guest room to easily transition from guest suite to playroom'
-    ],
-    imageUrl: '/images/selected-residences/sudheer-1.jpg',
-    linkUrl: '/projects/'
-  },
-  {
     id: 'project-anil',
     title: "Anil's Residence – Pet-Friendly Villa Charm | Patancheru",
     subtitle: 'Luxury villa interior design engineered for pets and luxury lovers.',

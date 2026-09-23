@@ -44,10 +44,6 @@ export default function App() {
         case '/projects/anil':
           setCurrentView('project-anil');
           break;
-        case '/projects/sudheers-residence':
-        case '/projects/sudheer':
-          setCurrentView('project-sudheer');
-          break;
         case '/projects/spoorthis-residence':
         case '/projects/spoorthi':
           setCurrentView('project-spoorthi');
@@ -128,12 +124,6 @@ export default function App() {
         description: "Explore Anil's Residence: Pet-friendly luxury villa interiors featuring scratch-resistant finishes, custom cabinetry, and seamless spatial flow.",
         path: "/projects/anils-residence/",
         image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&h=630&q=80"
-      },
-      'project-sudheer': {
-        title: "Sudheer's Residence | Sky Duplex Interior Design Hyderabad",
-        description: "Sudheer's Residence: A 4,100 sq.ft. luxury sky duplex interior with acoustically tuned paneling, Italian marble, and custom lighting.",
-        path: "/projects/sudheers-residence/",
-        image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&h=630&q=80"
       },
       'project-spoorthi': {
         title: "Spoorthi's Residence | Heritage Modern Luxury Interiors Hyderabad",
@@ -254,9 +244,6 @@ export default function App() {
       case 'project-anil':
         path = '/projects/anils-residence/';
         break;
-      case 'project-sudheer':
-        path = '/projects/sudheers-residence/';
-        break;
       case 'project-spoorthi':
         path = '/projects/spoorthis-residence/';
         break;
@@ -298,7 +285,6 @@ export default function App() {
       case 'projects':
       case 'project-pramod':
       case 'project-anil':
-      case 'project-sudheer':
       case 'project-spoorthi':
       case 'project-piyush':
         return <ProjectsView currentView={currentView} onNavigate={handleNavigation} />;

@@ -130,6 +130,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           const updated = { ...prev, [key]: dataUrl };
           try {
             localStorage.setItem('kh_custom_residence_images', JSON.stringify(updated));
+            window.dispatchEvent(new Event('kh_custom_images_updated'));
           } catch (err) {
             console.warn('Storage quota limit', err);
           }
@@ -147,6 +148,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       delete updated[key];
       try {
         localStorage.setItem('kh_custom_residence_images', JSON.stringify(updated));
+        window.dispatchEvent(new Event('kh_custom_images_updated'));
       } catch (err) {
         console.warn('Storage update error', err);
       }
@@ -172,7 +174,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [formState, setFormState] = useState({
     name: '',
     phone: '',
-    email: '',
     propertyType: 'Luxury Villa',
     location: 'Hyderabad',
     areaSqFt: '5,000 - 8,000 sq ft',
@@ -196,7 +197,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       setFormState({
         name: '',
         phone: '',
-        email: '',
         propertyType: 'Luxury Villa',
         location: 'Hyderabad',
         areaSqFt: '5,000 - 8,000 sq ft',
@@ -486,7 +486,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'faq-4',
       question: 'Can I monitor my site progress remotely if I am an NRI or busy working professional?',
-      answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp and email, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
+      answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
     },
     {
       id: 'faq-5',
@@ -1784,7 +1784,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Upload Your Local Project Photos
               </h3>
               <p className="text-xs text-[#1C1B19]/70">
-                Select image files directly from your computer (.jpg, .jpeg, .png, .webp). The website will render your photos instantly in the Selected Residences gallery.
+                Select image files directly from your computer (.jpg, .jpeg, .png, .webp). The website will render your photos instantly in both Selected Residences and Projects Gallery.
               </p>
             </div>
 
@@ -1872,7 +1872,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             {/* Footer Close */}
             <div className="mt-8 pt-4 border-t border-[#E8DFD3] flex items-center justify-between">
               <span className="text-xs text-[#1C1B19]/60 font-mono">
-                Changes take effect instantly in your live browser view.
+                Changes take effect instantly in both Home & Projects pages.
               </span>
               <button
                 onClick={() => setIsPhotoModalOpen(false)}

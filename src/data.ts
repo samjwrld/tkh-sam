@@ -180,7 +180,7 @@ For villas in Hyderabad, on-site carpenter fabrication often leads to uneven edg
 3. Key Line-Item BOQ Transparency:
 Always demand a line-item Bill of Quantities (BOQ) with zero hidden clauses before signing contracts. Ensure your interior studio commits to written 45-60 day handover deadlines with penalty clauses for delay protection.`,
     date: 'September 15, 2026',
-    author: 'Sanjay Kumar (Design Principal)',
+    author: 'The Koncept House Design Team',
     category: 'Villa Interiors & Pricing',
     readTime: '7 min read',
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
@@ -225,7 +225,7 @@ Instead of coordinating between separate carpenters, painters, electricians, and
 3. Written Timeline & Penalty Guarantees:
 Demand a legally binding agreement specifying factory manufacturing schedules, site installation phases, and handover dates. This ensures your Hyderabad property is ready for immediate move-in or high-yield rental deployment upon your arrival.`,
     date: 'August 12, 2026',
-    author: 'Sanjay Kumar (Design Principal)',
+    author: 'The Koncept House Design Team',
     category: 'NRI Special Guide',
     readTime: '5 min read',
     imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80'
@@ -251,7 +251,7 @@ Low-slung, sleek furniture silhouettes in Burma teak wood ensure the space remai
     author: 'Rohan Mehta (Technical Director)',
     category: 'Design Trends',
     readTime: '6 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'blog-5',
@@ -298,7 +298,7 @@ Ensure your contract includes a clear project schedule with defined milestone da
 Rule 5: Verify Post-Handover Warranty & Service Network
 Choose a studio that provides a written 10-year warranty on modular cabinetry and maintains a local maintenance team in Hyderabad for prompt post-handover support.`,
     date: 'June 20, 2026',
-    author: 'Sanjay Kumar (Design Principal)',
+    author: 'The Koncept House Design Team',
     category: 'Studio Selection',
     readTime: '6 min read',
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
@@ -324,7 +324,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: 'faq-4',
     question: 'Can I monitor my site progress remotely if I am an NRI or busy working professional?',
-    answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp and email, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
+    answer: 'Yes. You get a dedicated single point of contact for your project. You receive weekly HD video walkthroughs, detailed photo logs, and progress updates directly via WhatsApp, allowing you to stay updated effortlessly from anywhere in the world without having to visit the site daily.'
   },
   {
     id: 'faq-5',

@@ -29,11 +29,6 @@ PREFERRED FILE PATHS & NAMES FOR EACH RESIDENCE:
    - /public/images/selected-residences/anil-2.jpg
    - /public/images/selected-residences/anil-3.jpg
 
-5. Sudheer's Residence (Home Mangala, Miyapur):
-   - /public/images/selected-residences/sudheer-1.jpg
-   - /public/images/selected-residences/sudheer-2.jpg
-   - /public/images/selected-residences/sudheer-3.jpg
-
 Supported Formats: .jpg, .jpeg, .png, .webp
 
 AUTOMATIC FALLBACK:

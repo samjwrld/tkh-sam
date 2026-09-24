@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ViewState, Project } from '../types';
 import { PROJECTS_DATA } from '../data';
 import { MapPin, Layout, Calendar, Layers, CheckCircle2, ChevronLeft, ArrowRight, Compass } from 'lucide-react';
@@ -17,6 +17,34 @@ const FALLBACK_PROJECT_IMAGES: Record<string, string> = {
 };
 
 export default function ProjectsView({ currentView, onNavigate }: ProjectsViewProps) {
+  const [customImages, setCustomImages] = useState<Record<string, string>>(() => {
+    try {
+      const saved = localStorage.getItem('kh_custom_residence_images');
+      return saved ? JSON.parse(saved) : {};
+    } catch (err) {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    const handleStorageUpdate = () => {
+      try {
+        const saved = localStorage.getItem('kh_custom_residence_images');
+        setCustomImages(saved ? JSON.parse(saved) : {});
+      } catch (err) {
+        // Ignore storage error
+      }
+    };
+
+    window.addEventListener('storage', handleStorageUpdate);
+    window.addEventListener('kh_custom_images_updated', handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageUpdate);
+      window.removeEventListener('kh_custom_images_updated', handleStorageUpdate);
+    };
+  }, []);
+
   const handleLinkClick = (e: React.MouseEvent, view: ViewState) => {
     e.preventDefault();
     onNavigate(view);
@@ -29,18 +57,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
   const activeProject = PROJECTS_DATA.find((p) => p.id === activeProjectId);
 
   if (isSingleProject && activeProject) {
-    // Check for user-uploaded custom image in localStorage
-    let customHeroSrc = '';
-    try {
-      const saved = localStorage.getItem('kh_custom_residence_images');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        customHeroSrc = parsed[`${activeProject.id}-0`] || '';
-      }
-    } catch (err) {
-      // Ignore storage error
-    }
-
+    const customHeroSrc = customImages[`${activeProject.id}-0`];
     const displayHeroUrl = customHeroSrc || activeProject.imageUrl;
 
     return (
@@ -283,25 +300,29 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
       {/* Main Hover-Reveal Project Grid */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS_DATA.map((project) => (
-            <div
-              id={`projects-page-card-${project.id}`}
-              key={project.id}
-              onClick={(e) => handleLinkClick(e, project.id as ViewState)}
-              className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-warm-charcoal cursor-pointer shadow-md transition-all duration-300 hover:shadow-2xl"
-            >
-              <img
-                src={project.imageUrl}
-                onError={(e) => {
-                  const fallback = FALLBACK_PROJECT_IMAGES[project.id];
-                  if (fallback && e.currentTarget.src !== fallback) {
-                    e.currentTarget.src = fallback;
-                  }
-                }}
-                alt={`${project.title} detailed thumbnail`}
-                className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:opacity-65"
-                referrerPolicy="no-referrer"
-              />
+          {PROJECTS_DATA.map((project) => {
+            const customImgSrc = customImages[`${project.id}-0`];
+            const displayCardImg = customImgSrc || project.imageUrl;
+
+            return (
+              <div
+                id={`projects-page-card-${project.id}`}
+                key={project.id}
+                onClick={(e) => handleLinkClick(e, project.id as ViewState)}
+                className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-warm-charcoal cursor-pointer shadow-md transition-all duration-300 hover:shadow-2xl"
+              >
+                <img
+                  src={displayCardImg}
+                  onError={(e) => {
+                    const fallback = FALLBACK_PROJECT_IMAGES[project.id];
+                    if (fallback && e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
+                  alt={`${project.title} detailed thumbnail`}
+                  className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:opacity-65"
+                  referrerPolicy="no-referrer"
+                />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/95"></div>
 
@@ -332,7 +353,8 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

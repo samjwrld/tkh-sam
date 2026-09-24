@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Compass, CheckCircle2, Send, Clock } from 'lucide-react';
+import { Phone, MapPin, Compass, CheckCircle2, Send, Clock } from 'lucide-react';
 
 export default function ContactView() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     location: 'Hyderabad',
     service: 'Full Home Interior',
     budget: '5 - 10 Lakhs',
@@ -41,7 +40,7 @@ export default function ContactView() {
           Design Consultation Requested!
         </h1>
         <p className="text-sm text-warm-charcoal/70 leading-relaxed max-w-md mx-auto">
-          Thank you, <strong>{formData.name}</strong>. Sanjay Kumar or our senior design consultant will review your floor plan specifications and contact you at <strong>{formData.phone}</strong> within 2 business hours.
+          Thank you, <strong>{formData.name}</strong>. A senior Koncept House design consultant will review your floor plan specifications and contact you at <strong>{formData.phone}</strong> within 2 business hours.
         </p>
         <div className="p-4 rounded-xl bg-warm-cream border border-warm-cream/50 max-w-xs mx-auto text-xs text-warm-charcoal/60 flex items-center justify-center gap-2">
           <Clock className="h-4 w-4 text-warm-accent" />
@@ -55,7 +54,6 @@ export default function ContactView() {
               setFormData({
                 name: '',
                 phone: '',
-                email: '',
                 location: 'Hyderabad',
                 service: 'Full Home Interior',
                 budget: '5 - 10 Lakhs',
@@ -124,19 +122,6 @@ export default function ContactView() {
                   <p className="text-xs text-warm-charcoal/60">Studio Desk hours: Wednesday – Monday: 10:00 AM – 6:00 PM (Tuesday Closed)</p>
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-warm-cream text-warm-accent">
-                  <Mail className="h-5.5 w-5.5" />
-                </div>
-                <div>
-                  <h4 className="font-display text-xs font-bold tracking-wider text-warm-accent uppercase">EMAIL INQUIRIES</h4>
-                  <a href="mailto:info@thekoncepthouse.com" className="block text-sm text-warm-charcoal font-semibold mt-1 hover:text-warm-accent transition-colors">
-                    info@thekoncepthouse.com
-                  </a>
-                  <p className="text-xs text-warm-charcoal/60">General partner & client desk</p>
-                </div>
-              </div>
             </div>
 
             {/* Quick Map Placeholder */}
@@ -197,22 +182,6 @@ export default function ContactView() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
-                <div className="space-y-1.5">
-                  <label htmlFor="contact-email" className="block text-xs font-bold tracking-wider text-warm-charcoal/80 uppercase">
-                    Email Address *
-                  </label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="e.g., mail@example.com"
-                    className="w-full rounded-lg border border-warm-cream/80 bg-warm-beige/30 px-4 py-3 text-sm text-warm-charcoal outline-none transition-colors focus:border-warm-bronze focus:bg-white"
-                  />
-                </div>
-
                 <div className="space-y-1.5">
                   <label htmlFor="contact-location" className="block text-xs font-bold tracking-wider text-warm-charcoal/80 uppercase">
                     Property Location *

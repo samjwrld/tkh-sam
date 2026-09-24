@@ -56,10 +56,17 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
             </div>
           </div>
 
-          {/* Article Featured Image - Fixed Bug 5 */}
-          <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-warm-cream shadow-md">
+          {/* Article Featured Image */}
+          <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-warm-cream shadow-md bg-warm-charcoal">
             <img
               src={selectedPost.imageUrl}
+              onError={(e) => {
+                const target = e.currentTarget;
+                const fallback = 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80';
+                if (target.src !== fallback) {
+                  target.src = fallback;
+                }
+              }}
               alt={`${selectedPost.title} featured display`}
               className="h-full w-full object-cover object-center"
               referrerPolicy="no-referrer"
@@ -99,9 +106,9 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
                 onNavigate('contact');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="relative z-10 inline-flex items-center gap-2 rounded-full bg-warm-bronze px-5 py-2.5 font-display text-xs font-bold tracking-widest text-warm-charcoal transition-colors hover:bg-white"
+              className="relative z-10 inline-flex items-center gap-2 rounded-full bg-warm-bronze px-5 py-2.5 font-display text-xs font-bold tracking-widest text-warm-charcoal transition-colors hover:bg-white uppercase"
             >
-              TALK TO SANJAY KUMAR
+              TALK TO KONCEPT HOUSE DESIGNER
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
@@ -143,6 +150,13 @@ export default function BlogsView({ onNavigate }: BlogsViewProps) {
               <div className="aspect-[16/10] overflow-hidden bg-warm-charcoal">
                 <img
                   src={blog.imageUrl}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    const fallback = 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80';
+                    if (target.src !== fallback) {
+                      target.src = fallback;
+                    }
+                  }}
                   alt={`${blog.title} representation`}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"

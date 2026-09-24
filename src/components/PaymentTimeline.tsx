@@ -53,9 +53,9 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
   },
   {
     stageNumber: 2,
-    payPercentage: 'Pay 50%',
+    payPercentage: 'Pay 60%',
     noteUnderPay: 'Production starts',
-    cumulativePaid: '60% paid',
+    cumulativePaid: '70% paid',
     pillTitle: 'Production Starts',
     subtitle: 'Modular Production',
     images: [
@@ -76,19 +76,19 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
       }
     ],
     bullets: [
-      'Pay 50% (60% total) before production',
-      '15 days for production',
+      'Pay 60% before production starts',
+      '15 days for factory production',
       'Site keys handed to our team',
-      'Procurement of materials',
+      'Procurement of raw materials',
       'False ceiling completed',
       'Electrical work completed'
     ]
   },
   {
     stageNumber: 3,
-    payPercentage: 'Pay 30%',
+    payPercentage: 'Pay 25%',
     noteUnderPay: 'Materials on site',
-    cumulativePaid: '90% paid',
+    cumulativePaid: '95% paid',
     pillTitle: 'Materials Reach Site',
     subtitle: 'Delivery of Your Modular Products',
     images: [
@@ -109,20 +109,20 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
       }
     ],
     bullets: [
-      'Delivery of modular products',
-      'Flooring',
-      'Wall treatment',
-      'Installation begins',
+      'Pay 25% upon material delivery',
+      'Delivery of factory modular products',
+      'Flooring & wall treatments',
+      'Installation phase begins',
       'Decorative accessories',
       'Site quality check'
     ]
   },
   {
     stageNumber: 4,
-    payPercentage: 'Pay 10%',
-    noteUnderPay: 'Final handover',
+    payPercentage: 'Pay 5%',
+    noteUnderPay: 'At installation',
     cumulativePaid: '100% paid',
-    pillTitle: 'Installation',
+    pillTitle: 'Installation & Handover',
     subtitle: 'Crafting Your Dream Home',
     images: [
       {
@@ -142,10 +142,10 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
       }
     ],
     bullets: [
+      'Pay 5% at the time of installation',
       'Installation of modular products',
       'Kitchen & home accessories fitted',
-      'Tiling / marbling',
-      'Final touch-ups',
+      'Tiling & final touch-ups',
       'Handover of keys',
       '45-day delivery guaranteed'
     ]
@@ -154,7 +154,7 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
 
 export default function PaymentTimeline() {
   const [currentStageIndex, setCurrentStageIndex] = useState<number>(0);
-  const [isAutoplayActive, setIsAutoplayActive] = useState<boolean>(true);
+  const [isAutoplayActive, setIsAutoplayActive] = useState<boolean>(false);
   const [isUserHovering, setIsUserHovering] = useState<boolean>(false);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
@@ -302,6 +302,17 @@ export default function PaymentTimeline() {
             2. PROGRESS SLIDER WITH EVENLY SPACED 4 STEPS
             ======================================================== */}
         <div className="max-w-4xl mx-auto mb-14 px-2 sm:px-6">
+          {/* Drag Instruction Banner */}
+          <div className="flex items-center justify-between text-xs text-[#C5A880] mb-3 font-mono tracking-wider">
+            <span className="flex items-center gap-2 font-bold uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#C5A880] animate-ping" />
+              <span>CURRENT: {currentStage.payPercentage} ({currentStage.pillTitle})</span>
+            </span>
+            <span className="text-[#E8DFD3]/70 font-sans text-[11px] sm:text-xs">
+              👈 Drag slider to explore stages 👉
+            </span>
+          </div>
+
           <div 
             ref={trackRef}
             role="slider"
@@ -313,8 +324,23 @@ export default function PaymentTimeline() {
             aria-valuetext={`Stage ${currentStageIndex + 1} of 4: ${currentStage.pillTitle}, ${currentStage.payPercentage}`}
             onPointerDown={handleTrackPointerDown}
             onKeyDown={handleKeyDown}
-            className="relative cursor-pointer py-4 touch-none group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] focus-visible:ring-offset-4 focus-visible:ring-offset-[#1C1B19] rounded-full"
+            className="relative cursor-grab active:cursor-grabbing py-5 touch-none group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] focus-visible:ring-offset-4 focus-visible:ring-offset-[#1C1B19] rounded-full"
           >
+            {/* HTML5 Native Range Overlay for Smooth Drag & Touch Swiping */}
+            <input 
+              type="range"
+              min={0}
+              max={totalStages - 1}
+              step={1}
+              value={currentStageIndex}
+              onChange={(e) => {
+                handleUserAction();
+                selectStage(Number(e.target.value));
+              }}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-grab active:cursor-grabbing z-30"
+              aria-label="Drag payment stage slider"
+            />
+
             {/* Outer Rounded Track Background */}
             <div className="h-3 w-full bg-[#342F28] rounded-full relative overflow-hidden shadow-inner border border-[#4A433A]/40">
               {/* Warm Gold Progress Fill */}
@@ -324,12 +350,20 @@ export default function PaymentTimeline() {
               />
             </div>
 
-            {/* Draggable Circular Thumb */}
+            {/* Floating Draggable Handle Badge */}
             <div 
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 sm:w-8 sm:h-8 bg-[#FAF8F5] rounded-full shadow-xl border-2 border-[#A8875A] flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-focus:scale-110 z-20 pointer-events-none"
+              className="absolute top-0 -translate-y-full -translate-x-1/2 px-2.5 py-1 bg-[#A8875A] text-[#1C1B19] rounded-full text-[11px] font-bold shadow-lg transition-all duration-200 pointer-events-none z-20 whitespace-nowrap"
               style={{ left: `${fillPercentage}%` }}
             >
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#A8875A]" />
+              {currentStage.payPercentage}
+            </div>
+
+            {/* Draggable Circular Thumb */}
+            <div 
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 sm:w-9 sm:h-9 bg-[#FAF8F5] rounded-full shadow-2xl border-2 border-[#A8875A] flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-active:scale-125 z-20 pointer-events-none ring-4 ring-[#A8875A]/20"
+              style={{ left: `${fillPercentage}%` }}
+            >
+              <div className="w-3 h-3 rounded-full bg-[#A8875A]" />
             </div>
 
             {/* Step Ticks along the track */}

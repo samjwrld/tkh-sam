@@ -1,7 +1,7 @@
 import React from 'react';
 import { ViewState } from '../types';
 import Logo from './Logo';
-import { Compass, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Calendar } from 'lucide-react';
+import { Compass, Phone, MapPin, Facebook, Instagram, Linkedin, Calendar } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (view: ViewState) => void;
@@ -171,12 +171,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <Phone className="h-4 w-4 text-warm-bronze shrink-0" />
                 <a href="tel:+918907545678" className="hover:text-warm-bronze transition-colors">
                   +91 89075 45678
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-warm-bronze shrink-0" />
-                <a href="mailto:info@thekoncepthouse.com" className="hover:text-warm-bronze transition-colors">
-                  info@thekoncepthouse.com
                 </a>
               </li>
             </ul>

@@ -94,7 +94,7 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
     images: [
       {
         url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-        alt: 'Carefully packed modular furniture units delivered to site',
+        alt: 'Carefully packed modular cabinetry units delivered to site',
         title: 'White-Glove Site Logistics'
       },
       {
@@ -104,7 +104,7 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
       },
       {
         url: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80',
-        alt: 'Clean apartment interior prepared for modular assembly',
+        alt: 'Apartment interior prepared for modular assembly',
         title: 'Site Preparation & Flooring'
       }
     ],
@@ -113,7 +113,7 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
       'Delivery of factory modular products',
       'Flooring & wall treatments',
       'Installation phase begins',
-      'Decorative accessories',
+      'Wall paneling & millwork',
       'Site quality check'
     ]
   },
@@ -144,7 +144,7 @@ export const PAYMENT_STAGES: PaymentStageData[] = [
     bullets: [
       'Pay 5% at the time of installation',
       'Installation of modular products',
-      'Kitchen & home accessories fitted',
+      'Kitchen hardware & fittings installed',
       'Tiling & final touch-ups',
       'Handover of keys',
       '45-day delivery guaranteed'

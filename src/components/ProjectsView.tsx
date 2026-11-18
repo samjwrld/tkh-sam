@@ -57,7 +57,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
   const activeProject = PROJECTS_DATA.find((p) => p.id === activeProjectId);
 
   if (isSingleProject && activeProject) {
-    const customHeroSrc = customImages[`${activeProject.id}-0`];
+    const customHeroSrc = customImages[`${activeProject.id}-0`] || customImages[`${activeProject.id}-1`] || customImages[`${activeProject.id}-2`];
     const displayHeroUrl = customHeroSrc || activeProject.imageUrl;
 
     return (
@@ -151,7 +151,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
                       target.setAttribute('data-ext-attempt', String(nextAttempt));
                       const basePath = displayHeroUrl.substring(0, displayHeroUrl.lastIndexOf('.'));
                       target.src = basePath + extList[nextAttempt];
-                    } else if (fallback && target.src !== fallback) {
+                    } else if (!customHeroSrc && fallback && target.src !== fallback) {
                       target.src = fallback;
                     }
                   }}
@@ -301,7 +301,7 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
       <section className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS_DATA.map((project) => {
-            const customImgSrc = customImages[`${project.id}-0`];
+            const customImgSrc = customImages[`${project.id}-0`] || customImages[`${project.id}-1`] || customImages[`${project.id}-2`];
             const displayCardImg = customImgSrc || project.imageUrl;
 
             return (
@@ -314,9 +314,11 @@ export default function ProjectsView({ currentView, onNavigate }: ProjectsViewPr
                 <img
                   src={displayCardImg}
                   onError={(e) => {
-                    const fallback = FALLBACK_PROJECT_IMAGES[project.id];
-                    if (fallback && e.currentTarget.src !== fallback) {
-                      e.currentTarget.src = fallback;
+                    if (!customImgSrc) {
+                      const fallback = FALLBACK_PROJECT_IMAGES[project.id];
+                      if (fallback && e.currentTarget.src !== fallback) {
+                        e.currentTarget.src = fallback;
+                      }
                     }
                   }}
                   alt={`${project.title} detailed thumbnail`}

@@ -49,7 +49,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
             
             <p className="text-sm leading-relaxed text-warm-cream/60">
-              The Koncept House specializes exclusively in elite, smart, and highly functional residential home interiors in Hyderabad. We manufacture top-tier modular kitchens and custom furniture in our private, state-of-the-art facility.
+              The Koncept House specializes exclusively in elite, smart, and highly functional residential home interiors in Hyderabad. We manufacture top-tier modular kitchens, wardrobes, and custom architectural millwork in our private, state-of-the-art facility.
             </p>
 
             <div className="flex items-center gap-3">

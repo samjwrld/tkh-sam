@@ -80,7 +80,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'hitec-duplex',
       title: "The Kohinoor Sky Duplex",
-      subtitle: "4,100 sq ft Duplex • Bidriware Brass & Pochampally Silk Accents",
+      subtitle: "4,100 sq ft Duplex • Bidriware Brass & Fluted Teak Accents",
       location: "Kohinoor Aurobindo, HITEC City",
       tagline: "Heritage Reimagined For Modernity.",
       quote: "Custom Bidriware brass inlay embedded into dark walnut thresholds with zero-VOC satin finishes.",
@@ -116,6 +116,25 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       return {};
     }
   });
+
+  useEffect(() => {
+    const handleStorageUpdate = () => {
+      try {
+        const saved = localStorage.getItem('kh_custom_residence_images');
+        setCustomImages(saved ? JSON.parse(saved) : {});
+      } catch (err) {
+        // Ignore storage error
+      }
+    };
+
+    window.addEventListener('storage', handleStorageUpdate);
+    window.addEventListener('kh_custom_images_updated', handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageUpdate);
+      window.removeEventListener('kh_custom_images_updated', handleStorageUpdate);
+    };
+  }, []);
 
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState<boolean>(false);
 
@@ -286,7 +305,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80',
       ],
       materials: ['Bidri Metal Inlay', 'Laser Cut Brass Screen', 'Calibrated Quartz'],
-      quote: 'Nizami interior arches paired seamlessly with modern Italian leather.'
+      quote: 'Nizami interior arches paired seamlessly with contemporary architectural millwork.'
     },
     {
       id: 'project-anil',
@@ -331,7 +350,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'concern-villa',
       title: 'Building your dream villa',
-      description: 'From bare civil structure to complete turn-key move in. We manage structural modifications, electrical grids, plumbing, HVAC, and custom furniture.',
+      description: 'From bare civil structure to complete turn-key move in. We manage structural modifications, electrical grids, plumbing, HVAC, and custom modular cabinetry.',
       tag: 'TURNKEY VILLA INTERIOR STUDIO',
       targetView: 'premium-interiors' as ViewState,
       icon: Building2
@@ -404,15 +423,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       number: '02',
       title: 'Interior Concept & 3D Spatial Layout',
-      subtitle: 'Visualizing bespoke furniture, lighting & false ceiling designs',
-      description: 'Developing 3D photorealistic interior renderings, false ceiling designs, custom lighting schemas, and wall treatments. We curate bespoke furniture layouts and material palettes tailored for ultimate interior luxury.',
-      deliverables: ['3D photorealistic interior renderings', 'False ceiling & lighting layouts', 'Bespoke furniture schematics', 'Physical material sample tray'],
+      subtitle: 'Visualizing bespoke millwork, lighting & false ceiling designs',
+      description: 'Developing 3D photorealistic interior renderings, false ceiling designs, custom lighting schemas, and wall treatments. We curate bespoke cabinetry layouts and material palettes tailored for ultimate interior luxury.',
+      deliverables: ['3D photorealistic interior renderings', 'False ceiling & lighting layouts', 'Bespoke cabinetry & millwork schematics', 'Physical material sample tray'],
       duration: '2 - 3 Weeks'
     },
     {
       number: '03',
       title: 'Detailed Interior Engineering & Custom Millwork',
-      subtitle: 'Precision CAD drawings for modular furniture & woodwork',
+      subtitle: 'Precision CAD drawings for modular cabinetry & woodwork',
       description: 'Creating comprehensive interior working drawings for custom cabinetry, modular wardrobes, TV units, kitchen layouts, electrical points, and interior partition details for our in-house precision manufacturing plant.',
       deliverables: ['Full interior CAD working drawings', 'Modular kitchen & wardrobe blueprints', 'Electrical & plumbing interior grids', 'Final fixed-quote itemization'],
       duration: '2 Weeks'
@@ -427,10 +446,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     {
       number: '05',
-      title: 'Curated Interior Handover & White-Glove Styling',
-      subtitle: 'Final soft furnishings, art placement & white-glove cleaning',
-      description: 'We curate and install soft furnishings, custom curtains, rugs, accent lighting, and wall art, followed by white-glove deep cleaning before handing over your fully transformed interior with a 10-year warranty.',
-      deliverables: ['White-glove interior deep cleaning', 'Curtains, rugs & art styling', '10-Year interior material warranty', 'Care & maintenance dossier'],
+      title: 'Quality Inspection & Turnkey Handover',
+      subtitle: 'Final lighting commissioning, hardware calibration & key handover',
+      description: 'We complete architectural accent lighting commissioning, precision hardware alignment, and a comprehensive quality walkthrough before handing over your fully finished interior with a 10-year structural warranty.',
+      deliverables: ['Comprehensive quality inspection', 'Lighting & hardware calibration', '10-Year interior material warranty', 'Care & maintenance dossier'],
       duration: '1 Week'
     }
   ];
@@ -471,7 +490,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'faq-1',
       question: 'What is included in your complete turnkey interior design scope for a home?',
-      answer: 'Our turnkey scope delivers a complete, move-in ready home. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, electrical profile additions, and site cleanup. You hand over the keys and walk into a pristine, fully finished home.'
+      answer: 'Our turnkey scope delivers a complete, ready-to-live interior shell. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, and electrical profile additions. You hand over the keys and walk into a thoughtfully crafted, fully finished space.'
     },
     {
       id: 'faq-2',
@@ -481,7 +500,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       id: 'faq-3',
       question: 'How long does a turnkey interior project take from design approval to final handover?',
-      answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your furniture and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, clean, and strictly adheres to written timeline commitments.'
+      answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your modular woodwork and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, precise, and strictly adheres to written timeline commitments.'
     },
     {
       id: 'faq-4',
@@ -1227,14 +1246,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {
                 num: '03',
                 title: 'Heritage Modernization',
-                desc: 'Infusing contemporary luxury residences with subtle Deccan craft: arched thresholds, brass inlay, and hand-woven silk ikat textures crafted with modern restraint.',
-                tags: ['Nizami Arches', 'Bidri Inlay', 'Pochampally Ikat']
+                desc: 'Infusing contemporary luxury residences with subtle Deccan craft: arched thresholds, brass inlay, and carved Burma teak detailing crafted with modern restraint.',
+                tags: ['Nizami Arches', 'Bidri Inlay', 'Burma Teak']
               },
               {
                 num: '04',
-                title: 'Curation & Styling',
-                desc: 'Art advisory, custom acoustic wall paneling, imported Italian furniture curation, and layered lighting schemes created specifically for high-ceiling living rooms.',
-                tags: ['Art Curation', 'Acoustics', 'Italian Furniture']
+                title: 'Architectural Surfaces & Lighting',
+                desc: 'Custom acoustic wall paneling, fluted stone and veneer feature walls, false ceiling engineering, and layered lighting schemes created specifically for high-ceiling living rooms.',
+                tags: ['Wall Paneling', 'Acoustics', 'Layered Lighting']
               }
             ].map((srv) => (
               <div 

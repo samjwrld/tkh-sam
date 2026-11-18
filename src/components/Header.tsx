@@ -32,6 +32,35 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
   const [callbackName, setCallbackName] = useState('');
   const [callbackSubmitted, setCallbackSubmitted] = useState(false);
 
+  // Custom local residence images state for mega-menu synchronization
+  const [customImages, setCustomImages] = useState<Record<string, string>>(() => {
+    try {
+      const saved = localStorage.getItem('kh_custom_residence_images');
+      return saved ? JSON.parse(saved) : {};
+    } catch (err) {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    const handleStorageUpdate = () => {
+      try {
+        const saved = localStorage.getItem('kh_custom_residence_images');
+        setCustomImages(saved ? JSON.parse(saved) : {});
+      } catch (err) {
+        // Ignore storage error
+      }
+    };
+
+    window.addEventListener('storage', handleStorageUpdate);
+    window.addEventListener('kh_custom_images_updated', handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageUpdate);
+      window.removeEventListener('kh_custom_images_updated', handleStorageUpdate);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
@@ -231,20 +260,30 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
 
                             {/* Right Column: 4 Visual Cards */}
                             <div className="col-span-8 grid grid-cols-2 gap-4">
-                              {megaMenuProjects.map((proj) => (
-                                <a
-                                  key={proj.label}
-                                  href={`/projects/${proj.view.replace('project-', '')}-residence/`}
-                                  onClick={(e) => handleLinkClick(e, proj.view)}
-                                  className="group block space-y-2 bg-[#F5F1EA] p-2.5 border border-[#E8DFD3] hover:border-[#A8875A] transition-all hover:bg-white"
-                                >
-                                  <div className="relative aspect-[16/10] overflow-hidden bg-[#241F16]">
-                                    <img 
-                                      src={proj.img} 
-                                      alt={proj.label}
-                                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
-                                      referrerPolicy="no-referrer"
-                                    />
+                              {megaMenuProjects.map((proj) => {
+                                const customImg = customImages[`${proj.view}-0`] || customImages[`${proj.view}-1`] || customImages[`${proj.view}-2`];
+                                const displayImg = customImg || proj.img;
+
+                                return (
+                                  <a
+                                    key={proj.label}
+                                    href={`/projects/${proj.view.replace('project-', '')}-residence/`}
+                                    onClick={(e) => handleLinkClick(e, proj.view)}
+                                    className="group block space-y-2 bg-[#F5F1EA] p-2.5 border border-[#E8DFD3] hover:border-[#A8875A] transition-all hover:bg-white"
+                                  >
+                                    <div className="relative aspect-[16/10] overflow-hidden bg-[#241F16]">
+                                      <img 
+                                        src={displayImg} 
+                                        alt={proj.label}
+                                        onError={(e) => {
+                                          const target = e.currentTarget;
+                                          if (target.src !== proj.img) {
+                                            target.src = proj.img;
+                                          }
+                                        }}
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
+                                        referrerPolicy="no-referrer"
+                                      />
                                     <div className="absolute top-2 left-2 bg-[#241F16]/90 px-2 py-0.5 text-[8px] font-mono text-[#C5A880] tracking-widest uppercase">
                                       {proj.tag.split('·')[0]}
                                     </div>
@@ -259,7 +298,8 @@ export default function Header({ currentView, onNavigate }: HeaderProps) {
                                     </span>
                                   </div>
                                 </a>
-                              ))}
+                                );
+                              })}
                             </div>
 
                           </div>

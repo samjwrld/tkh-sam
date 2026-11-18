@@ -127,7 +127,7 @@ export default function App() {
       },
       'project-spoorthi': {
         title: "Spoorthi's Residence | Heritage Modern Luxury Interiors Hyderabad",
-        description: "Spoorthi's Residence at Kohinoor Aurobindo: Timeless Bidriware brass inlay and Pochampally silk accents paired with contemporary luxury.",
+        description: "Spoorthi's Residence at Kohinoor Aurobindo: Timeless Bidriware brass inlay and fluted Burma teak accents paired with contemporary luxury.",
         path: "/projects/spoorthis-residence/",
         image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&h=630&q=80"
       },
@@ -157,7 +157,7 @@ export default function App() {
       },
       'premium-interiors': {
         title: "Premium Interior Designers in Hyderabad | The Koncept House",
-        description: "Bespoke premium interior design services in Hyderabad. High-end materials, custom furniture fabrication, and white-glove turnkey execution.",
+        description: "Bespoke premium interior design services in Hyderabad. High-end materials, custom modular cabinetry fabrication, and white-glove turnkey execution.",
         path: "/premium-interior-designers/",
         image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&h=630&q=80"
       },
@@ -339,7 +339,7 @@ export default function App() {
                     Premium Interior Designers in Hyderabad
                   </h1>
                   <p className="text-xs sm:text-sm text-warm-cream/60">
-                    High-end materials, custom furniture fabrication, and turnkey design integrations.
+                    High-end materials, custom modular cabinetry fabrication, and turnkey design integrations.
                   </p>
                 </div>
                 <button
@@ -397,7 +397,7 @@ export default function App() {
                     Luxury Interior Designers in Hyderabad
                   </h1>
                   <p className="text-xs sm:text-sm text-warm-cream/60">
-                    Custom-upholstered seating, high-gloss finishes, and bespoke Gwalior-stone installations.
+                    Custom modular cabinetry, high-gloss finishes, and bespoke Gwalior-stone installations.
                   </p>
                 </div>
                 <button

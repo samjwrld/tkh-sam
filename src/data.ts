@@ -33,18 +33,18 @@ export const SERVICES_DATA: Service[] = [
     items: [
       'Custom floating TV media consoles with timber veneer styling',
       'Statement focal wall paneling in marble, louvers, or concrete textures',
-      'Bespoke, hand-upholstered sofas, lounges, and designer coffee tables',
+      'Bespoke crockery consoles, bar units, and designer partition screens',
       'Layered ambient lighting including cove, track, and accent lights'
     ]
   },
   {
     id: 'luxury-bedroom-and-suites',
     title: 'Luxury Bedroom & Master Suites',
-    description: 'Bespoke bedroom sanctuaries crafted with acoustically padded headboards, walk-in closets, and customized mood lighting tailored for restful luxury.',
+    description: 'Bespoke bedroom sanctuaries crafted with custom architectural wall paneling, walk-in closets, and customized mood lighting tailored for restful luxury.',
     icon: 'Bed',
     items: [
       'Custom floor-to-ceiling walk-in wardrobes with glass & tinted mirrors',
-      'Ergonomic acoustic headboard paneling and plush leatherette trims',
+      'Custom fluted wood & stone headboard feature wall paneling',
       'Integrated study nooks, dressing vanities & concealed jewelry drawers',
       'Layered nightstand lighting, reading spotlights & dimmable cove glow'
     ]
@@ -74,7 +74,7 @@ export const PROJECTS_DATA: Project[] = [
     year: '2025',
     desc: 'An exquisite study in light wood accents, generous negative spaces, and hidden custom storage. This residence provides a serene escape in Amberpet, Hyderabad, incorporating cozy family seating and kid-friendly play layouts without disrupting the peaceful minimalist visual stream.',
     brief: 'A tech-entrepreneur couple with a playful toddler and visiting parents wanted a clean, warm minimalist aesthetic. However, standard minimalism lacks storage and safety. They requested zero-clutter surfaces, kid-safe curved edges, and dedicated quiet workstations that physically vanish when not in use to preserve family boundaries.',
-    solution: 'We custom-built handleless ceiling-height storage panels matching the textured plaster walls to hide clutter. Curved white oak veneer columns and rounded furniture corners replaced sharp profiles. For the workspace, we engineered custom timber louvers within a quiet master suite alcove, sliding shut to conceal screens after work hours.',
+    solution: 'We custom-built handleless ceiling-height storage panels matching the textured plaster walls to hide clutter. Curved white oak veneer columns and rounded cabinetry profiles replaced sharp edges. For the workspace, we engineered custom timber louvers within a quiet master suite alcove, sliding shut to conceal screens after work hours.',
     result: 'A seamless, highly calming haven where work and family life coexist. Every toy has a hidden container, and the home transition from high-performance office to cozy residence takes under 60 seconds.',
     details: [
       'Understated matte lacquer cabinetry and light white oak veneers',
@@ -93,15 +93,15 @@ export const PROJECTS_DATA: Project[] = [
     style: 'Transitional Fusion',
     size: '4,100 sq.ft. 4BHK Premium Flat',
     year: '2025',
-    desc: 'A gorgeous transitional space combining European classical molding techniques with rich Indian textures. Custom brass partition screens, warm handpicked teak wood items, and luxurious Gwalior stone panels pair with modern Italian minimal leather sofas, demonstrating a rich, highly individualized style fusion.',
+    desc: 'A gorgeous transitional space combining European classical molding techniques with rich Indian textures. Custom brass partition screens, warm handpicked teak wood millwork, and luxurious Gwalior stone panels pair with layered architectural lighting, demonstrating a rich, highly individualized style fusion.',
     brief: 'The clients wanted an opulent, high-ceiling modern flat that honors their deep South Indian roots. They explicitly asked for an open-concept Pooja room visible yet separate from the social zones, seamless integration of ancestral teak heirlooms, and a modern kitchen capable of supporting traditional heavy culinary prep.',
-    solution: 'We framed the traditional laser-cut Pooja room in structural brass and backlit fluted glass panels. Ancestral teak items were restored and paired with clean Italian leather sectionals. In the kitchen, we designed heavy-duty waterproof marine ply carcasses finished in high-gloss anti-scratch acrylic with a custom Quartz island counter.',
+    solution: 'We framed the traditional laser-cut Pooja room in structural brass and backlit fluted glass panels. Ancestral teak items were restored and framed by custom fluted wall paneling and backlit niches. In the kitchen, we designed heavy-duty waterproof marine ply carcasses finished in high-gloss anti-scratch acrylic with a custom Quartz island counter.',
     result: 'An incredibly personalized, museum-like space where heirloom memories and ultra-modern convenience merge into a majestic, high-contrast style fusion.',
     details: [
       'Sophisticated fluted panel detailing with brushed brass gold metal trim',
       'Beautiful open-concept pooja room featuring backlit traditional laser-cut screens',
       'High-gloss acrylic handle-less kitchen drawers with premium Quartz island',
-      'Grand master bedroom featuring tufted velvet headboards and elegant marble-cladding walls'
+      'Grand master bedroom featuring walk-in glass wardrobes and elegant marble-cladding walls'
     ],
     imageUrl: '/images/selected-residences/spoorthi-1.jpg',
     linkUrl: '/projects/'
@@ -114,13 +114,13 @@ export const PROJECTS_DATA: Project[] = [
     style: 'Contemporary Rustic Villa',
     size: '5,500 sq.ft. 4BHK Independent Villa',
     year: '2024',
-    desc: 'Designed around the active daily lifestyle of three energetic retrievers and their owners. We custom-sourced premium scratch-proof high-durability textiles, laid high-strength, anti-slip vitrified flooring, and designed hidden dog-washing stations and integrated lounge tunnels, maintaining a stunning rustic luxury vibe.',
-    brief: 'A family with three playful golden retrievers wanted an earthy, upscale villa. They were tired of scratched sofas, muddy dog paws, and hair accumulation on fabric. They requested high-end materials that are totally claw-proof, mud-resistant, and easily washable, alongside cozy integrated spaces for their pets.',
-    solution: 'We sourced ultra-premium scratch-resistant polyurethane leatherette fabrics and laid anti-slip, non-porous rustic vitrified tiles. A professional dog-shower station with warm water and dedicated drying racks was built into the utility area, and custom dog-lounges were integrated under the open timber stairs.',
-    result: 'An elegant, high-luxury villa that is entirely stress-free. Paws are washed at the door, fur is swept effortlessly, and furniture remains pristine and claw-mark free.',
+    desc: 'Designed around the active daily lifestyle of three energetic retrievers and their owners. We engineered scratch-proof cabinetry laminates, laid high-strength, anti-slip vitrified flooring, and designed hidden pet-washing stations and integrated wooden alcoves, maintaining a stunning rustic luxury vibe.',
+    brief: 'A family with three playful golden retrievers wanted an earthy, upscale villa. They were tired of scratched woodwork, muddy dog paws, and high-maintenance surfaces. They requested architectural materials that are totally claw-proof, mud-resistant, and durable, alongside cozy integrated wooden spaces for their pets.',
+    solution: 'We specified ultra-premium scratch-resistant matte laminates and laid anti-slip, non-porous rustic vitrified tiles. A professional dog-shower station with warm water and dedicated drying racks was built into the utility area, and custom wooden pet alcoves were integrated under the open timber stairs.',
+    result: 'An elegant, high-luxury villa that is entirely stress-free. Paws are washed at the door, floors stay resilient, and all custom millwork remains pristine and claw-mark free.',
     details: [
       'Stunning exposed timber beam ceilings and cozy terracotta accent features',
-      'Heavy-duty scratch-resistant leatherette fabrics and robust quartz worktops',
+      'Heavy-duty scratch-resistant cabinetry laminates and robust quartz worktops',
       'Concealed pet-washing station in the utility room with specialized drying racks',
       'Beautiful double-height glass windows framing panoramic garden vistas'
     ],
@@ -137,11 +137,11 @@ export const PROJECTS_DATA: Project[] = [
     year: '2025',
     desc: 'A spectacular high-rise sanctuary in Aurobindo Regent. Designed with Italian marble flooring, bespoke fluted wall paneling, subtle architectural cove lighting, and state-of-the-art smart home integration.',
     brief: 'A high-profile C-suite executive wanted a sleek, ultra-modern luxury home in Aurobindo Regent. He requested expansive social entertaining zones, a state-of-the-art concealed acoustic home theater, and automated Lutron scene-lighting across all suites.',
-    solution: 'We opened the layout into an expansive living-dining expanse clad in book-matched Statuario marble. We integrated acoustic fabric paneling hidden behind champagne gold metal trim in the entertainment zone, and installed smart Lutron lighting controls.',
+    solution: 'We opened the layout into an expansive living-dining expanse clad in book-matched Statuario marble. We integrated acoustic fluted veneer paneling with champagne gold metal trim in the entertainment zone, and installed smart Lutron lighting controls.',
     result: 'An effortlessly sophisticated urban haven that effortlessly transitions from an elegant executive host venue to a serene family retreat.',
     details: [
       'Book-matched Italian Statuario marble flooring and custom champagne gold accents',
-      'Integrated smart home automation for Lutron lighting, climate, and window motorized drapes',
+      'Integrated smart home automation for Lutron lighting, climate, and architectural scenes',
       'Concealed acoustic home entertainment zone with bespoke fluted veneer paneling',
       'Custom Italian lacquered island kitchen with concealed motorized appliance garages'
     ],
@@ -169,9 +169,9 @@ export const BLOGS_DATA: BlogPost[] = [
     fullContent: `Designing a luxury villa in Hyderabad’s prime enclaves like Jubilee Hills, Kokapet, Financial District, and Tellapur demands a refined balance between grandeur and functional longevity. Independent villas ranging from 4,500 sq.ft. to 10,000+ sq.ft. require a structured approach to interior budgeting to prevent scope creep and budget overruns.
 
 1. Budget Allocation Breakdown for Hyderabad Villas:
-- Structural Woodwork & Modular Cabinetry (40%): High-Density Moisture-Resistant (HDMR) and Boiling Waterproof (BWP) plywood for kitchen, foyer, master wardrobes, and crockery units.
-- Premium Finishes & Paneling (25%): Italian Travertine wall cladding, veneer wall paneling, and acoustic fluted louvers.
-- Loose Furniture & Custom Upholstery (20%): Bespoke couches, marble dining tables, and accent armchairs.
+- Structural Woodwork & Modular Cabinetry (45%): High-Density Moisture-Resistant (HDMR) and Boiling Waterproof (BWP) plywood for kitchen, foyer, master wardrobes, and crockery units.
+- Premium Finishes & Wall Paneling (25%): Italian Travertine wall cladding, veneer wall paneling, and acoustic fluted louvers.
+- Civil, Tiling & Marble Flooring (15%): Book-matched marble laying, wet-zone waterproofing, and structural modifications.
 - False Ceiling & Architectural Lighting (15%): Magnetic track lights, warm LED coves, and acoustic gypsum framing.
 
 2. In-House Factory vs. On-Site Carpenter Execution:
@@ -233,20 +233,20 @@ Demand a legally binding agreement specifying factory manufacturing schedules, s
   {
     id: 'blog-4',
     title: 'Earthy Luxury & Heritage Fusion: Hyderabad Interior Design Trends for 2026',
-    excerpt: 'Explore how top Hyderabad interior designers are fusing Nizami architectural motifs, Bidriware brass inlays, and Pochampally silk upholstery with modern warm minimalism for timeless residential spaces.',
+    excerpt: 'Explore how top Hyderabad interior designers are fusing Nizami architectural motifs, Bidriware brass inlays, and fluted Burma teak millwork with modern warm minimalism for timeless residential spaces.',
     fullContent: `Hyderabad’s architectural landscape is witnessing a magnificent movement: Earthy Luxury infused with subtle heritage motifs. Homeowners in Banjara Hills, Jubilee Hills, and Film Nagar are moving away from sterile, cookie-cutter modern interiors in favor of spaces that feel deeply grounded, warm, and distinctly rooted in regional art.
 
 1. Heritage Modern Accents:
 - Bidriware Brass Inlays: Delicate brass profiles inlaid into dark walnut wood panels or natural stone foyer walls.
 - Nizami Arches & Fluted Detailing: Softer curved doorway frames and fluted teak partition screens that create gentle spatial transitions.
-- Pochampally & Kalamkari Textiles: Custom-upholstered throw cushions and lounge chairs featuring traditional weave patterns against neutral linen couches.
+- Handcrafted Timber Millwork: Custom Burma teak partition screens and carved wooden console shutters showcasing artisanal craftsmanship.
 
 2. Tactile Natural Finishes:
 - Textured Lime-Wash Walls: Hand-troweled earthy lime washes that breathe, handle Hyderabad humidity effortlessly, and age gracefully.
 - Terracotta & Gwalior Stone Accents: Warm earthy terracotta tiles paired with honed Italian marble flooring for tactile richness.
 
-3. Warm Minimalist Furniture Profiles:
-Low-slung, sleek furniture silhouettes in Burma teak wood ensure the space remains airy and uncluttered while retaining opulent craftsmanship.`,
+3. Warm Minimalist Cabinetry Profiles:
+Clean, floor-to-ceiling cabinetry silhouettes in Burma teak wood ensure the space remains airy and uncluttered while retaining opulent craftsmanship.`,
     date: 'July 24, 2026',
     author: 'Rohan Mehta (Technical Director)',
     category: 'Design Trends',
@@ -267,7 +267,7 @@ Create a multi-functional shoe console with ventilated shutters, hidden umbrella
 - Multi-Purpose Study & Work Nooks: Compact wall-mounted folding desks with built-in LED profile lighting and power management grommets.
 
 3. Acoustic Comfort for High-Rise Apartments:
-High-rise towers near major roadways benefit from acoustic drywall paneling, plush rugs, double-glazed balcony sliders, and soft fabric drapery to eliminate ambient traffic noise.
+High-rise towers near major roadways benefit from acoustic drywall paneling, fluted timber wall treatments, and double-glazed balcony sliders to eliminate ambient traffic noise.
 
 4. Balcony Leisure Transformations:
 Transform apartment balconies into relaxing green oases with weather-resistant composite wooden deck flooring, vertical plant walls, and custom stone bar counters.`,
@@ -309,7 +309,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: 'faq-1',
     question: 'What is included in your complete turnkey interior design scope for a 2BHK, 3BHK, or 4BHK home?',
-    answer: 'Our turnkey scope delivers a complete, move-in ready home. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, electrical profile additions, and site cleanup. You hand over the keys and walk into a pristine, fully finished home.'
+    answer: 'Our turnkey scope delivers a complete, ready-to-live interior shell. It includes spatial layout planning, photorealistic 3D renders, a factory-milled modular kitchen with anti-scratch surfaces, master bedroom wardrobes with soft-close hardware, custom TV media units, foyer cabinetry, false ceiling design with LED cove lighting, full-home painting, and electrical profile additions. You hand over the keys and walk into a thoughtfully crafted, fully finished space.'
   },
   {
     id: 'faq-2',
@@ -319,7 +319,7 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: 'faq-3',
     question: 'How long does a turnkey home interior project take from design approval to final handover?',
-    answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your furniture and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, clean, and strictly adheres to written timeline commitments.'
+    answer: 'Execution typically takes 45 to 60 days following final 3D design and material sign-off. Because 80% of your modular woodwork and cabinetry is pre-manufactured at our state-of-the-art Hyderabad factory while on-site civil and false ceiling work takes place simultaneously, site installation is fast, precise, and strictly adheres to written timeline commitments.'
   },
   {
     id: 'faq-4',
@@ -368,7 +368,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     name: 'Mr. Imran Sheikh',
     locality: 'Manikonda',
-    text: 'What won us over was their meticulous attention to the tiny details. They built the most gorgeous floating TV unit and customized false ceiling lighting. They also custom-upholstered a massive living room sectional matching our accent wall perfectly. Fantastic customer support and flawless craft.',
+    text: 'What won us over was their meticulous attention to the tiny details. They built the most gorgeous floating TV unit and customized false ceiling lighting. They also crafted seamless floor-to-ceiling wardrobes and fluted accent wall paneling matching our space perfectly. Fantastic customer support and flawless craft.',
     rating: 5,
     initials: 'IS'
   }
